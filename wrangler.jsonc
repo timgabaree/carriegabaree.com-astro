@@ -21,6 +21,11 @@
       {
         "name": "CONTACT_STATE",
         "class_name": "ContactState"
+      },
+      {
+        "name": "DELIVERY_STATUS",
+        "class_name": "DeliveryStatus",
+        "script_name": "family-sites-email-monitor"
       }
     ]
   },

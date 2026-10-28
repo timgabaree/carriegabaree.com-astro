@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "family-sites-email-monitor",
+  "account_id": "7459bd2037d71d23fd030e3542b9df61",
+  "main": "worker/email-monitor.ts",
+  "compatibility_date": "2026-10-23",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DELIVERY_STATUS",
+        "class_name": "DeliveryStatus"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "DeliveryStatus"
+      ]
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "logs": {
+      "invocation_logs": false
+    }
+  }
+}
