@@ -1,0 +1,12 @@
+---
+import Seo from '../components/Seo.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import AnalyticsChoices from '../components/AnalyticsChoices.astro';
+import '../styles/site.css';
+import '../styles/enhancements.css';
+interface Props {title:string;description:string;path:string;mainClass?:string;ogType?:string;noindex?:boolean;schema?:object[];}
+const {mainClass='',...meta}=Astro.props;
+const production=import.meta.env.PUBLIC_SITE_ENV==='production';
+---
+<!doctype html><html lang="en"><head><Seo {...meta} /></head><body><a class="skip-link" href="#main-content">Skip to main content</a><Navigation path={meta.path}/><main id="main-content" class={mainClass} tabindex="-1"><slot /></main><Footer /><AnalyticsChoices enableAnalytics={production} /><script is:inline src="/js/main.js" defer></script><script is:inline src="/js/analytics.js" defer></script>{meta.path==='/contact'&&<script is:inline src="/js/contact-form.js" defer></script>}{meta.path==='/thank-you'&&<script is:inline src="/js/contact-conversion.js" defer></script>}{meta.path.startsWith('/portfolio/citations/')&&<script is:inline src="/js/citation.js" defer></script>}</body></html>

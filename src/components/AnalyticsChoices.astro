@@ -1,0 +1,14 @@
+---
+interface Props { enableAnalytics: boolean; }
+const { enableAnalytics } = Astro.props;
+---
+<section id="analytics-choices" class="analytics-choices" data-analytics-panel data-analytics-enabled={enableAnalytics ? 'true' : 'false'} aria-label="Cookie preferences" hidden>
+  <button type="button" class="analytics-close" data-analytics-close aria-label="Dismiss cookie notice">×</button>
+  <p class="analytics-copy"><strong>Optional cookies.</strong> Allow Google Analytics cookies to help improve this site? <a href="/privacy#cookies-title">Privacy policy</a></p>
+  {!enableAnalytics && <p class="analytics-preview">Preview only: Google Analytics stays off.</p>}
+  <p data-analytics-status role="status"></p>
+  <div class="privacy-choice-actions">
+    <button type="button" data-analytics-accept>Allow cookies</button>
+    <button type="button" data-analytics-reject>Decline</button>
+  </div>
+</section>

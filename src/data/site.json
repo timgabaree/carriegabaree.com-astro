@@ -1,0 +1,25 @@
+{
+  "name": "Carrie Gabaree",
+  "url": "https://carriegabaree.com",
+  "email": "carrie@carriegabaree.com",
+  "analytics": "G-39QGYP8FPR",
+  "image": "/media/carriegabaree-og-1200x1200.png",
+  "navigation": [
+    {
+      "href": "/",
+      "label": "Home"
+    },
+    {
+      "href": "/publications",
+      "label": "Publications"
+    },
+    {
+      "href": "/oral-histories",
+      "label": "Oral History"
+    },
+    {
+      "href": "/contact",
+      "label": "Contact"
+    }
+  ]
+}

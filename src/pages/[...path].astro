@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import pages from '../data/pages.json';
+const components=import.meta.glob('../content/pages/*.astro',{eager:true,import:'default'});
+export function getStaticPaths(){return pages.map(page=>({params:{path:page.slug||undefined},props:{page}}));}
+const {page}=Astro.props;
+const Content=components['../content/pages/'+page.component+'.astro'] as any;
+---
+<BaseLayout {...page} path={'/'+page.slug}><Content /></BaseLayout>

@@ -1,0 +1,95 @@
+---
+import PageHeader from '../../components/PageHeader.astro';
+import CitationCard from '../../components/CitationCard.astro';
+---
+<article class="page-panel citation-page">
+  <PageHeader class="page-header">
+    <p class="eyebrow">Oral History Citation</p>
+    <h1>Erica Koelder Oral History</h1>
+    <p class="page-intro">
+      Citation information for the oral-history interview with
+      Erica Koelder, conducted by Carrie Gabaree (Gutierrez)
+      with Andrew Woods
+      at First Division Museum at Cantigny, Wheaton, Illinois on April 30, 2010.
+    </p>
+  </PageHeader>
+
+  <section class="citation-summary">
+    <p class="publication-meta">
+      Oral history · CORHC-0005 · April 30, 2010 · Runtime: 1:44:51
+    </p>
+    <p>
+      <strong>Interviewee:</strong> Erica Koelder<br />
+      <strong>Interviewer:</strong> Carrie Gabaree (Gutierrez)<br />
+      <strong>Additional participant:</strong> Andrew Woods<br />
+      <strong>Repository:</strong> Carrie Gabaree Digital Archive
+    </p>
+  </section>
+
+  <div class="citation-list">
+
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>Chicago</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="corhc-0005-chicago"> Copy citation </button>
+      </div>
+      <p id="corhc-0005-chicago" class="citation-text">
+        Koelder, Erica. Interview by Carrie Gabaree (Gutierrez). April 30, 2010. CORHC-0005, Carrie Gabaree Digital Archive. https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder.html.
+      </p>
+    </CitationCard>
+
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>MLA</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="corhc-0005-mla"> Copy citation </button>
+      </div>
+      <p id="corhc-0005-mla" class="citation-text">
+        Koelder, Erica. Interview by Carrie Gabaree (Gutierrez). <cite>Carrie Gabaree Digital Archive</cite>, April 30, 2010, https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder.html.
+      </p>
+    </CitationCard>
+
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>APA</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="corhc-0005-apa"> Copy citation </button>
+      </div>
+      <p id="corhc-0005-apa" class="citation-text">
+        Koelder, E. (2010, April 30). <cite>Erica Koelder Oral History</cite> [Oral history interview by Carrie Gabaree (Gutierrez)]. Carrie Gabaree Digital Archive. https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder.html
+      </p>
+    </CitationCard>
+
+  </div>
+
+  <aside class="citation-note">
+    <h2>Oral-history citation note</h2>
+    <p>
+      Oral-history citation practices vary by style guide and institution.
+      These citations identify the interviewee or interviewees, interviewer,
+      interview date, archival identifier, repository, and stable interview
+      page so researchers can locate the audiovisual recording and transcript.
+    </p>
+  </aside>
+
+  <div class="button-group citation-actions">
+    <a class="button button-primary" href="/portfolio/oralhistories/CORHC-0005-erica-koelder">
+      View oral history
+    </a>
+    <a class="button button-secondary" href="/portfolio/oralhistories/CORHC-0005-erica-koelder-transcript">
+      Read transcript
+    </a>
+    <a class="button button-secondary" href="/oral-histories">
+      Back to oral histories
+    </a>
+  </div>
+
+  <p class="citation-disclaimer">
+    Citations are provided for convenience. Requirements may vary by
+    institution, publisher, instructor, repository, or edition of a style guide.
+  </p>
+</article>

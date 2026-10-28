@@ -1,0 +1,2450 @@
+[
+  {
+    "slug": "",
+    "title": "Carrie Gabaree | Museum Curator and Public Historian",
+    "description": "Carrie Gabaree is a museum curator and public historian specializing in cultural heritage, collections, exhibitions, interpretation, and public engagement.",
+    "mainClass": "site",
+    "ogType": "profile",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://carriegabaree.com/#website",
+            "url": "https://carriegabaree.com/",
+            "name": "Carrie Gabaree",
+            "description": "The professional website of museum curator and public historian Carrie Gabaree.",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://carriegabaree.com/#webpage",
+            "url": "https://carriegabaree.com/",
+            "name": "Carrie Gabaree | Museum Curator and Public Historian",
+            "description": "Carrie Gabaree is a museum curator and public historian specializing in cultural heritage, collections, exhibitions, interpretation, and public engagement.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/#primaryimage"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "email": "mailto:carrie@carriegabaree.com",
+            "jobTitle": "Museum Curator and Public Historian",
+            "description": "Museum curator and public historian focused on cultural heritage, collections, exhibitions, interpretation, education, and public engagement.",
+            "image": {
+              "@id": "https://carriegabaree.com/#primaryimage",
+              "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ],
+            "spouse": {
+              "@type": "Person",
+              "name": "Tim Gabaree",
+              "url": "https://timgabaree.com/"
+            },
+            "knowsAbout": [
+              "Museum Curation",
+              "Museum Studies",
+              "Public History",
+              "Collections Management",
+              "Museum Education",
+              "Cultural Heritage",
+              "Exhibition Development",
+              "Historical Interpretation",
+              "Historic Preservation",
+              "Public Engagement"
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/#webpage"
+            }
+          }
+        ]
+      }
+    ],
+    "component": "home"
+  },
+  {
+    "slug": "publications",
+    "title": "Publications | Carrie Gabaree",
+    "description": "Selected publications by museum curator and public historian Carrie Gabaree about U.S. Army artifacts, military material culture, body armor, and helmets during World War I.",
+    "mainClass": "site",
+    "ogType": "website",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/publications#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://carriegabaree.com/publications#webpage",
+            "url": "https://carriegabaree.com/publications.html",
+            "name": "Publications | Carrie Gabaree",
+            "description": "Selected publications by museum curator and public historian Carrie Gabaree about U.S. Army artifacts, military material culture, body armor, and helmets during World War I.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "author": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/publications#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/publications#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/publications#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Publications",
+                "item": "https://carriegabaree.com/publications.html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Book",
+            "@id": "https://carriegabaree.com/publications#the-great-war",
+            "url": "https://carriegabaree.com/portfolio/armypubs/cmhPub_70-128.pdf",
+            "name": "The Great War: U.S. Army Artifacts",
+            "description": "A United States Army Center of Military History publication presenting artifacts associated with the American experience during World War I.",
+            "datePublished": "2018",
+            "copyrightYear": 2018,
+            "inLanguage": "en-US",
+            "bookEdition": "CMH Pub 70-128",
+            "editor": {
+              "@type": "Person",
+              "name": "Sarah G. Forgey"
+            },
+            "contributor": [
+              {
+                "@type": "Person",
+                "name": "Alan T. Bogan"
+              },
+              {
+                "@id": "https://carriegabaree.com/#person"
+              },
+              {
+                "@type": "Person",
+                "name": "Paul M. Miller"
+              },
+              {
+                "@type": "Person",
+                "name": "Brian F. Neumann"
+              }
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "Center of Military History, United States Army"
+            },
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "World War I"
+              },
+              {
+                "@type": "Thing",
+                "name": "United States Army"
+              },
+              {
+                "@type": "Thing",
+                "name": "Military material culture"
+              },
+              {
+                "@type": "Thing",
+                "name": "Military artifacts"
+              }
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/cmhpub70-128#webpage"
+            },
+            "subjectOf": {
+              "@type": "WebPage",
+              "@id": "https://carriegabaree.com/publications#webpage"
+            }
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://carriegabaree.com/publications#protecting-the-doughboys",
+            "url": "https://carriegabaree.com/portfolio/armypubs/AH106Wpp30-31.pdf",
+            "headline": "Protecting the Doughboys: The Development of American Body Armor During World War I",
+            "name": "Protecting the Doughboys: The Development of American Body Armor During World War I",
+            "description": "Carrie Gabaree examines the development and testing of experimental American body armor during World War I.",
+            "author": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "datePublished": "2018",
+            "inLanguage": "en-US",
+            "pagination": "30-31",
+            "pageStart": "30",
+            "pageEnd": "31",
+            "isPartOf": {
+              "@type": "PublicationIssue",
+              "issueNumber": "106",
+              "datePublished": "2018",
+              "name": "Army History, No. 106, Winter 2018",
+              "isPartOf": {
+                "@type": "Periodical",
+                "name": "Army History",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Center of Military History, United States Army"
+                }
+              }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Center of Military History, United States Army"
+            },
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "World War I"
+              },
+              {
+                "@type": "Thing",
+                "name": "American body armor"
+              },
+              {
+                "@type": "Thing",
+                "name": "United States Army equipment"
+              },
+              {
+                "@type": "Thing",
+                "name": "Military material culture"
+              }
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/ah106wpp30-31#webpage"
+            },
+            "subjectOf": {
+              "@type": "WebPage",
+              "@id": "https://carriegabaree.com/publications#webpage"
+            }
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://carriegabaree.com/publications#a-new-helmet-for-a-new-army",
+            "url": "https://carriegabaree.com/portfolio/armypubs/AH104Wpp30-31.pdf",
+            "headline": "A New Helmet for a New Army: The Development of an American Helmet During World War I",
+            "name": "A New Helmet for a New Army: The Development of an American Helmet During World War I",
+            "description": "Carrie Gabaree examines the development and evaluation of American protective helmet designs during World War I.",
+            "author": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "datePublished": "2017",
+            "inLanguage": "en-US",
+            "pagination": "30-31",
+            "pageStart": "30",
+            "pageEnd": "31",
+            "isPartOf": {
+              "@type": "PublicationIssue",
+              "issueNumber": "104",
+              "datePublished": "2017",
+              "name": "Army History, No. 104, Summer 2017",
+              "isPartOf": {
+                "@type": "Periodical",
+                "name": "Army History",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Center of Military History, United States Army"
+                }
+              }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Center of Military History, United States Army"
+            },
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "World War I"
+              },
+              {
+                "@type": "Thing",
+                "name": "American military helmets"
+              },
+              {
+                "@type": "Thing",
+                "name": "United States Army equipment"
+              },
+              {
+                "@type": "Thing",
+                "name": "Military material culture"
+              }
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/ah104wpp30-31#webpage"
+            },
+            "subjectOf": {
+              "@type": "WebPage",
+              "@id": "https://carriegabaree.com/publications#webpage"
+            }
+          }
+        ]
+      }
+    ],
+    "component": "publications"
+  },
+  {
+    "slug": "oral-histories",
+    "title": "Oral Histories | Carrie Gabaree",
+    "description": "Oral-history research, interviews, documentation, preservation, and interpretation by museum curator and public historian Carrie Gabaree.",
+    "mainClass": "site",
+    "ogType": "website",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/oral-histories#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "CollectionPage",
+            "@id": "https://carriegabaree.com/oral-histories#webpage",
+            "url": "https://carriegabaree.com/oral-histories.html",
+            "name": "Oral Histories | Carrie Gabaree",
+            "description": "Oral-history research, interviews, documentation, preservation, and interpretation by museum curator and public historian Carrie Gabaree.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "author": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/oral-histories#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/oral-histories#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/oral-histories#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "oral-histories"
+  },
+  {
+    "slug": "contact",
+    "title": "Contact | Carrie Gabaree",
+    "description": "Contact Carrie Gabaree regarding museum collections, publications, oral history, historical research, museum consulting, speaking, and professional collaboration.",
+    "mainClass": "",
+    "ogType": "website",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://carriegabaree.com/#website",
+            "url": "https://carriegabaree.com/",
+            "name": "Carrie Gabaree",
+            "description": "The professional website of museum curator and public historian Carrie Gabaree.",
+            "inLanguage": "en-US",
+            "publisher": {
+              "@id": "https://carriegabaree.com/#person"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "url": "https://carriegabaree.com/",
+            "image": {
+              "@id": "https://carriegabaree.com/#primaryimage"
+            },
+            "jobTitle": [
+              "Museum Curator",
+              "Public Historian"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Professional inquiries",
+              "email": "mailto:carrie@carriegabaree.com",
+              "url": "https://carriegabaree.com/contact.html",
+              "availableLanguage": "English"
+            }
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian"
+          },
+          {
+            "@type": "ContactPage",
+            "@id": "https://carriegabaree.com/contact#webpage",
+            "url": "https://carriegabaree.com/contact.html",
+            "name": "Contact Carrie Gabaree",
+            "description": "Contact Carrie Gabaree regarding museum collections, publications, oral history, historical research, museum consulting, speaking, and collaboration.",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/contact#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/contact#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact",
+                "item": "https://carriegabaree.com/contact.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "contact"
+  },
+  {
+    "slug": "privacy",
+    "title": "Privacy Policy | Carrie Gabaree",
+    "description": "Privacy Policy for carriegabaree.com explaining what information may be collected, how it is used, and the privacy choices available to website visitors.",
+    "mainClass": "site privacy-page",
+    "ogType": "website",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://carriegabaree.com/#website",
+            "url": "https://carriegabaree.com/",
+            "name": "Carrie Gabaree",
+            "description": "The professional website of museum curator and public historian Carrie Gabaree.",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/privacy#webpage",
+            "url": "https://carriegabaree.com/privacy.html",
+            "name": "Privacy Policy | Carrie Gabaree",
+            "description": "Privacy Policy for carriegabaree.com explaining what information may be collected, how it is used, and the privacy choices available to website visitors.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "dateModified": "2026-08-15",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "privacy"
+  },
+  {
+    "slug": "thank-you",
+    "title": "Thank You | Carrie Gabaree",
+    "description": "Thank you for contacting Carrie Gabaree. Your message has been received and will be reviewed as soon as possible.",
+    "mainClass": "site",
+    "ogType": "website",
+    "noindex": true,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://carriegabaree.com/thank-you.html",
+        "url": "https://carriegabaree.com/thank-you.html",
+        "name": "Thank You",
+        "description": "Confirmation page after submitting the contact form.",
+        "isPartOf": {
+          "@id": "https://carriegabaree.com/#website"
+        },
+        "about": {
+          "@id": "https://carriegabaree.com/#person"
+        }
+      }
+    ],
+    "component": "thank-you"
+  },
+  {
+    "slug": "portfolio/citations/CORHC-0001-nicole-smith-citation",
+    "title": "How to Cite Nicole Smith Oral History | Carrie Gabaree",
+    "description": "Citation information for the Nicole Smith oral-history interview conducted by Andrew Woods with Carrie Gabaree (Tarasuk) at the First Division Museum at Cantigny on October 21, 2005.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0001-nicole-smith-citation#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0001-nicole-smith-citation#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/CORHC-0001-nicole-smith-citation.html",
+            "name": "How to Cite Nicole Smith Oral History | Carrie Gabaree",
+            "description": "Citation information for the Nicole Smith oral-history interview conducted by Andrew Woods with Carrie Gabaree (Tarasuk) at the First Division Museum at Cantigny on October 21, 2005.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#oralhistory"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#oralhistory"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0001-nicole-smith-citation#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0001-nicole-smith-citation#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#oralhistory",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith.html",
+            "name": "Nicole Smith Oral History",
+            "identifier": "CORHC-0001",
+            "dateCreated": "2005-10-21",
+            "inLanguage": "en-US",
+            "about": "Oral history",
+            "creator": "Nicole Smith",
+            "contributor": "Andrew Woods",
+            "isPartOf": {
+              "@type": "Collection",
+              "name": "Carrie Gabaree Digital Archive"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0001-nicole-smith-citation#webpage"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0001-nicole-smith-citation#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Nicole Smith Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Citation",
+                "item": "https://carriegabaree.com/portfolio/citations/CORHC-0001-nicole-smith-citation.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__citations__CORHC-0001-nicole-smith-citation"
+  },
+  {
+    "slug": "portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation",
+    "title": "How to Cite Clark Welch & Ray Albin Oral History | Carrie Gabaree",
+    "description": "Citation information for the Clark Welch and Ray Albin oral-history interview conducted by Carrie Gabaree (Tarasuk) at the First Division Reunion in St. Louis, Missouri, on August 10, 2007.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation.html",
+            "name": "How to Cite Clark Welch & Ray Albin Oral History | Carrie Gabaree",
+            "description": "Citation information for the Clark Welch and Ray Albin oral-history interview conducted by Carrie Gabaree (Tarasuk) at the First Division Reunion in St. Louis, Missouri, on August 10, 2007.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#oralhistory"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#oralhistory"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#oralhistory",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin.html",
+            "name": "Clark Welch & Ray Albin Oral History",
+            "identifier": "CORHC-0002",
+            "dateCreated": "2007-08-10",
+            "inLanguage": "en-US",
+            "about": "Oral history",
+            "creator": "Clark Welch and Ray Albin",
+            "contributor": "Carrie Gabaree (Tarasuk)",
+            "isPartOf": {
+              "@type": "Collection",
+              "name": "Carrie Gabaree Digital Archive"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation#webpage"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Clark Welch & Ray Albin Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Citation",
+                "item": "https://carriegabaree.com/portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__citations__CORHC-0002-clark-welch-ray-albin-citation"
+  },
+  {
+    "slug": "portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation",
+    "title": "How to Cite Clark Welch & Ray Albin Oral History | Carrie Gabaree",
+    "description": "Citation information for the Clark Welch and Ray Albin follow-up oral-history interview conducted by Carrie Gabaree (Tarasuk) with Andrew Woods at the First Division Museum at Cantigny on October 1, 2008.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation-citation#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation-citation.html",
+            "name": "How to Cite Clark Welch & Ray Albin Oral History | Carrie Gabaree",
+            "description": "Citation information for the Clark Welch and Ray Albin follow-up oral-history interview conducted by Carrie Gabaree (Tarasuk) with Andrew Woods at the First Division Museum at Cantigny on October 1, 2008.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#oralhistory"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#oralhistory"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#oralhistory",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin.html",
+            "name": "Clark Welch & Ray Albin Oral History",
+            "identifier": "CORHC-0003",
+            "dateCreated": "2008-10-01",
+            "inLanguage": "en-US",
+            "about": "Oral history",
+            "creator": "Clark Welch and Ray Albin",
+            "contributor": "Carrie Gabaree (Tarasuk)",
+            "isPartOf": {
+              "@type": "Collection",
+              "name": "Carrie Gabaree Digital Archive"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation#webpage"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Clark Welch & Ray Albin Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin-citation.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Citation",
+                "item": "https://carriegabaree.com/portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__citations__CORHC-0003-clark-welch-ray-albin-citation"
+  },
+  {
+    "slug": "portfolio/citations/CORHC-0004-shannon-morgan-citation",
+    "title": "How to Cite Shannon Morgan Oral History | Carrie Gabaree",
+    "description": "Citation information for the Shannon Morgan oral-history interview conducted by Carrie Gabaree (Gutierrez) at the McCormick Research Center at the First Division Museum at Cantigny on April 1, 2009.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0004-shannon-morgan-citation#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0004-shannon-morgan-citation#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/CORHC-0004-shannon-morgan-citation.html",
+            "name": "How to Cite Shannon Morgan Oral History | Carrie Gabaree",
+            "description": "Citation information for the Shannon Morgan oral-history interview conducted by Carrie Gabaree (Gutierrez) at the McCormick Research Center at the First Division Museum at Cantigny on April 1, 2009.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#oralhistory"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#oralhistory"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0004-shannon-morgan-citation#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0004-shannon-morgan-citation#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#oralhistory",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan.html",
+            "name": "Shannon Morgan Oral History",
+            "identifier": "CORHC-0004",
+            "dateCreated": "2009-04-01",
+            "inLanguage": "en-US",
+            "about": "Oral history",
+            "creator": "Shannon Morgan",
+            "contributor": "Carrie Gabaree (Gutierrez)",
+            "isPartOf": {
+              "@type": "Collection",
+              "name": "Carrie Gabaree Digital Archive"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0004-shannon-morgan-citation#webpage"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Gutierrez",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0004-shannon-morgan-citation#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Shannon Morgan Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Citation",
+                "item": "https://carriegabaree.com/portfolio/citations/CORHC-0004-shannon-morgan-citation.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__citations__CORHC-0004-shannon-morgan-citation"
+  },
+  {
+    "slug": "portfolio/citations/CORHC-0005-erica-koelder-citation",
+    "title": "How to Cite Erica Koelder Oral History | Carrie Gabaree",
+    "description": "Citation information for the Erica Koelder oral-history interview conducted by Carrie Gabaree (Gutierrez) with Andrew Woods at the First Division Museum at Cantigny on April 30, 2010.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0005-erica-koelder-citation#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0005-erica-koelder-citation#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/CORHC-0005-erica-koelder-citation.html",
+            "name": "How to Cite Erica Koelder Oral History | Carrie Gabaree",
+            "description": "Citation information for the Erica Koelder oral-history interview conducted by Carrie Gabaree (Gutierrez) with Andrew Woods at the First Division Museum at Cantigny on April 30, 2010.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#oralhistory"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#oralhistory"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0005-erica-koelder-citation#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0005-erica-koelder-citation#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#oralhistory",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder.html",
+            "name": "Erica Koelder Oral History",
+            "identifier": "CORHC-0005",
+            "dateCreated": "2010-04-30",
+            "inLanguage": "en-US",
+            "about": "Oral history",
+            "creator": "Erica Koelder",
+            "contributor": "Carrie Gabaree (Gutierrez)",
+            "isPartOf": {
+              "@type": "Collection",
+              "name": "Carrie Gabaree Digital Archive"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0005-erica-koelder-citation#webpage"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Gutierrez",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0005-erica-koelder-citation#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Erica Koelder Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Citation",
+                "item": "https://carriegabaree.com/portfolio/citations/CORHC-0005-erica-koelder-citation.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__citations__CORHC-0005-erica-koelder-citation"
+  },
+  {
+    "slug": "portfolio/citations/ah104wpp30-31",
+    "title": "How to Cite “A New Helmet for a New Army” | Carrie Gabaree",
+    "description": "Citation information for Carrie Gabaree’s Army History article, A New Helmet for a New Army: The Development of an American Helmet During World War I.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/portfolio/citations/ah104wpp30-31#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/citations/ah104wpp30-31#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/ah104wpp30-31.html",
+            "name": "How to Cite “A New Helmet for a New Army” | Carrie Gabaree",
+            "description": "Citation information for Carrie Gabaree’s Army History article, A New Helmet for a New Army: The Development of an American Helmet During World War I.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/publications#a-new-helmet-for-a-new-army"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/publications#a-new-helmet-for-a-new-army"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/ah104wpp30-31#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/citations/ah104wpp30-31#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://carriegabaree.com/publications#a-new-helmet-for-a-new-army",
+            "url": "https://carriegabaree.com/portfolio/armypubs/AH104Wpp30-31.pdf",
+            "headline": "A New Helmet for a New Army: The Development of an American Helmet During World War I",
+            "name": "A New Helmet for a New Army: The Development of an American Helmet During World War I",
+            "description": "Carrie Gabaree examines the development and evaluation of American protective helmet designs during World War I.",
+            "author": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "datePublished": "2017",
+            "inLanguage": "en-US",
+            "pagination": "30-31",
+            "pageStart": "30",
+            "pageEnd": "31",
+            "isPartOf": {
+              "@type": "PublicationIssue",
+              "issueNumber": "104",
+              "datePublished": "2017",
+              "name": "Army History, No. 104, Summer 2017",
+              "isPartOf": {
+                "@type": "Periodical",
+                "name": "Army History",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Center of Military History, United States Army"
+                }
+              }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Center of Military History, United States Army"
+            },
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "World War I"
+              },
+              {
+                "@type": "Thing",
+                "name": "American military helmets"
+              },
+              {
+                "@type": "Thing",
+                "name": "United States Army equipment"
+              },
+              {
+                "@type": "Thing",
+                "name": "Military material culture"
+              }
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/ah104wpp30-31#webpage"
+            },
+            "subjectOf": {
+              "@type": "WebPage",
+              "@id": "https://carriegabaree.com/publications#webpage"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/citations/ah104wpp30-31#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Publications",
+                "item": "https://carriegabaree.com/publications.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "A New Helmet for a New Army",
+                "item": "https://carriegabaree.com/portfolio/citations/ah104wpp30-31.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__citations__ah104wpp30-31"
+  },
+  {
+    "slug": "portfolio/citations/ah106wpp30-31",
+    "title": "How to Cite “Protecting the Doughboys” | Carrie Gabaree",
+    "description": "Citation information for Carrie Gabaree’s Army History article, Protecting the Doughboys: The Development of American Body Armor During World War I.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/portfolio/citations/ah106wpp30-31#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/citations/ah106wpp30-31#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/ah106wpp30-31.html",
+            "name": "How to Cite “Protecting the Doughboys” | Carrie Gabaree",
+            "description": "Citation information for Carrie Gabaree’s Army History article, Protecting the Doughboys: The Development of American Body Armor During World War I.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/publications#protecting-the-doughboys"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/publications#protecting-the-doughboys"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/ah106wpp30-31#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/citations/ah106wpp30-31#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://carriegabaree.com/publications#protecting-the-doughboys",
+            "url": "https://carriegabaree.com/portfolio/armypubs/AH106Wpp30-31.pdf",
+            "headline": "Protecting the Doughboys: The Development of American Body Armor During World War I",
+            "name": "Protecting the Doughboys: The Development of American Body Armor During World War I",
+            "description": "Carrie Gabaree examines the development and testing of experimental American body armor during World War I.",
+            "author": {
+              "@id": "https://carriegabaree.com/#person"
+            },
+            "datePublished": "2018",
+            "inLanguage": "en-US",
+            "pagination": "30-31",
+            "pageStart": "30",
+            "pageEnd": "31",
+            "isPartOf": {
+              "@type": "PublicationIssue",
+              "issueNumber": "106",
+              "datePublished": "2018",
+              "name": "Army History, No. 106, Winter 2018",
+              "isPartOf": {
+                "@type": "Periodical",
+                "name": "Army History",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Center of Military History, United States Army"
+                }
+              }
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Center of Military History, United States Army"
+            },
+            "about": [
+              {
+                "@type": "Thing",
+                "name": "World War I"
+              },
+              {
+                "@type": "Thing",
+                "name": "American body armor"
+              },
+              {
+                "@type": "Thing",
+                "name": "United States Army equipment"
+              },
+              {
+                "@type": "Thing",
+                "name": "Military material culture"
+              }
+            ],
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/ah106wpp30-31#webpage"
+            },
+            "subjectOf": {
+              "@type": "WebPage",
+              "@id": "https://carriegabaree.com/publications#webpage"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/citations/ah106wpp30-31#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Publications",
+                "item": "https://carriegabaree.com/publications.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Protecting the Doughboys",
+                "item": "https://carriegabaree.com/portfolio/citations/ah106wpp30-31.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__citations__ah106wpp30-31"
+  },
+  {
+    "slug": "portfolio/citations/cmhpub70-128",
+    "title": "How to Cite The Great War: U.S. Army Artifacts | Carrie Gabaree",
+    "description": "Citation information for The Great War: U.S. Army Artifacts, published by the Center of Military History, United States Army, with contributions by Carrie M. Gabaree.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://carriegabaree.com/portfolio/citations/cmhpub70-128#primaryimage",
+            "url": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "contentUrl": "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png",
+            "width": 1200,
+            "height": 1200,
+            "encodingFormat": "image/png",
+            "caption": "Carrie Gabaree, museum curator and public historian",
+            "representativeOfPage": true
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/citations/cmhpub70-128#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/cmhpub70-128.html",
+            "name": "How to Cite The Great War: U.S. Army Artifacts | Carrie Gabaree",
+            "description": "Citation information for The Great War: U.S. Army Artifacts, published by the Center of Military History, United States Army, with contributions by Carrie M. Gabaree.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/publications#the-great-war"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/publications#the-great-war"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/cmhpub70-128#primaryimage"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/citations/cmhpub70-128#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Book",
+            "@id": "https://carriegabaree.com/publications#the-great-war",
+            "url": "https://carriegabaree.com/portfolio/armypubs/cmhPub_70-128.pdf",
+            "name": "The Great War: U.S. Army Artifacts",
+            "description": "A Center of Military History publication presenting artifacts associated with the American experience during World War I.",
+            "datePublished": "2018",
+            "copyrightYear": 2018,
+            "bookEdition": "CMH Pub 70-128",
+            "inLanguage": "en-US",
+            "editor": {
+              "@type": "Person",
+              "name": "Sarah G. Forgey"
+            },
+            "contributor": [
+              {
+                "@type": "Person",
+                "name": "Alan T. Bogan"
+              },
+              {
+                "@id": "https://carriegabaree.com/#person"
+              },
+              {
+                "@type": "Person",
+                "name": "Paul M. Miller"
+              },
+              {
+                "@type": "Person",
+                "name": "Brian F. Neumann"
+              }
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "Center of Military History, United States Army"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/citations/cmhpub70-128#webpage"
+            },
+            "subjectOf": {
+              "@type": "WebPage",
+              "@id": "https://carriegabaree.com/publications#webpage"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/citations/cmhpub70-128#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Publications",
+                "item": "https://carriegabaree.com/publications.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "The Great War: U.S. Army Artifacts",
+                "item": "https://carriegabaree.com/portfolio/citations/cmhpub70-128.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__citations__cmhpub70-128"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0001-nicole-smith-transcript",
+    "title": "Nicole Smith Oral History Transcript — October 21, 2005 | Carrie Gabaree",
+    "description": "Transcript of the Nicole Smith oral-history interview conducted by Andrew Woods with Carrie Gabaree (Tarasuk) at the First Division Museum at Cantigny on October 21, 2005.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith-transcript#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith-transcript.html",
+            "name": "Nicole Smith Oral History Transcript — October 21, 2005 | Carrie Gabaree",
+            "description": "Transcript of the Nicole Smith oral-history interview conducted by Andrew Woods with Carrie Gabaree (Tarasuk) at the First Division Museum at Cantigny on October 21, 2005.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith-transcript#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith-transcript#transcript",
+            "name": "Nicole Smith Oral History Transcript",
+            "identifier": "CORHC-0001",
+            "dateCreated": "2005-10-21",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#oralhistory"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith-transcript#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Nicole Smith Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Transcript",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith-transcript.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0001-nicole-smith-transcript"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0001-nicole-smith",
+    "title": "Nicole Smith Oral History — October 21, 2005 | Carrie Gabaree",
+    "description": "Oral-history interview with Nicole Smith, conducted by Andrew Woods with Carrie Gabaree (Tarasuk) at the First Division Museum at Cantigny on October 21, 2005.",
+    "mainClass": "",
+    "ogType": "video.other",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith.html",
+            "name": "Nicole Smith Oral History — October 21, 2005 | Carrie Gabaree",
+            "description": "Oral-history interview with Nicole Smith, conducted by Andrew Woods with Carrie Gabaree (Tarasuk) at the First Division Museum at Cantigny on October 21, 2005.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#oralhistory"
+            },
+            "mainEntity": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#video"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "VideoObject",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#video",
+            "name": "Nicole Smith Oral History — October 21, 2005",
+            "description": "Oral-history interview with Nicole Smith, conducted by Andrew Woods with Carrie Gabaree (Tarasuk) at the First Division Museum at Cantigny.",
+            "uploadDate": "2026-08-11",
+            "dateCreated": "2005-10-21",
+            "duration": "PT1H58M31S",
+            "thumbnailUrl": [
+              "https://carriegabaree.com/media/carriegabaree-og-1200x1200.png"
+            ],
+            "embedUrl": "https://customer-txz6xqq5qm2ofi03.cloudflarestream.com/2d5e83fa289412c2c16cfbdc447921eb/iframe",
+            "contentUrl": "https://customer-txz6xqq5qm2ofi03.cloudflarestream.com/2d5e83fa289412c2c16cfbdc447921eb/watch",
+            "inLanguage": "en-US",
+            "isFamilyFriendly": true,
+            "mainEntityOfPage": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#webpage"
+            }
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#oralhistory",
+            "name": "Nicole Smith Oral History",
+            "identifier": "CORHC-0001",
+            "dateCreated": "2005-10-21",
+            "inLanguage": "en-US",
+            "about": {
+              "@type": "Person",
+              "name": "Nicole Smith"
+            },
+            "contributor": [
+              {
+                "@type": "Person",
+                "name": "Andrew Woods"
+              },
+              {
+                "@id": "https://carriegabaree.com/#person"
+              }
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Nicole Smith Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0001-nicole-smith"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin-transcript",
+    "title": "Clark Welch & Ray Albin Oral History Transcript — August 10, 2007 | Carrie Gabaree",
+    "description": "Transcript of the Clark Welch and Ray Albin oral-history interview conducted by Carrie Gabaree (Tarasuk) at the First Division Reunion in St. Louis, Missouri, on August 10, 2007.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin-transcript#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin-transcript.html",
+            "name": "Clark Welch & Ray Albin Oral History Transcript — August 10, 2007 | Carrie Gabaree",
+            "description": "Transcript of the Clark Welch and Ray Albin oral-history interview conducted by Carrie Gabaree (Tarasuk) at the First Division Reunion in St. Louis, Missouri, on August 10, 2007.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin-transcript#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin-transcript#transcript",
+            "name": "Clark Welch & Ray Albin Oral History Transcript",
+            "identifier": "CORHC-0002",
+            "dateCreated": "2007-08-10",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#oralhistory"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin-transcript#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Clark Welch & Ray Albin Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Transcript",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin-transcript.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0002-clark-welch-ray-albin-transcript"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin",
+    "title": "Clark Welch & Ray Albin Oral History — August 10, 2007 | Carrie Gabaree",
+    "description": "Oral-history interview with First Division veterans Clark Welch and Ray Albin concerning their Vietnam War service, Operation Shenandoah II, the Battle of Ong Thanh, command decisions, and their experiences during and after the battle.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin.html",
+            "name": "Clark Welch & Ray Albin Oral History — August 10, 2007 | Carrie Gabaree",
+            "description": "Oral-history interview with First Division veterans Clark Welch and Ray Albin concerning their Vietnam War service, Operation Shenandoah II, the Battle of Ong Thanh, command decisions, and their experiences during and after the battle.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#oralhistory",
+            "name": "Clark Welch & Ray Albin Oral History",
+            "identifier": "CORHC-0002",
+            "dateCreated": "2007-08-10",
+            "description": "Oral-history interview with First Division veterans Clark Welch and Ray Albin concerning their Vietnam War service, Operation Shenandoah II, the Battle of Ong Thanh, command decisions, and their experiences during and after the battle.",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Clark Welch & Ray Albin Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0002-clark-welch-ray-albin"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin-transcript",
+    "title": "Clark Welch & Ray Albin Oral History Transcript — October 1, 2008 | Carrie Gabaree",
+    "description": "Transcript of the Clark Welch and Ray Albin follow-up oral-history interview conducted by Carrie Gabaree (Tarasuk) with Andrew Woods at the First Division Museum at Cantigny on October 1, 2008.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin-transcript#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin-transcript.html",
+            "name": "Clark Welch & Ray Albin Oral History Transcript — October 1, 2008 | Carrie Gabaree",
+            "description": "Transcript of the Clark Welch and Ray Albin follow-up oral-history interview conducted by Carrie Gabaree (Tarasuk) with Andrew Woods at the First Division Museum at Cantigny on October 1, 2008.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin-transcript#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin-transcript#transcript",
+            "name": "Clark Welch & Ray Albin Oral History Transcript",
+            "identifier": "CORHC-0003",
+            "dateCreated": "2008-10-01",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#oralhistory"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin-transcript#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Clark Welch & Ray Albin Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Transcript",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin-transcript.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0003-clark-welch-ray-albin-transcript"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin",
+    "title": "Clark Welch & Ray Albin Oral History — October 1, 2008 | Carrie Gabaree",
+    "description": "Follow-up oral-history interview with First Division veterans Clark Welch and Ray Albin examining Operation Shenandoah II and the Battle of Ong Thanh in greater detail, including their ranks, battlefield experiences, command decisions, and points requiring clarification from earlier research and interviews.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin.html",
+            "name": "Clark Welch & Ray Albin Oral History — October 1, 2008 | Carrie Gabaree",
+            "description": "Follow-up oral-history interview with First Division veterans Clark Welch and Ray Albin examining Operation Shenandoah II and the Battle of Ong Thanh in greater detail, including their ranks, battlefield experiences, command decisions, and points requiring clarification from earlier research and interviews.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#oralhistory",
+            "name": "Clark Welch & Ray Albin Oral History",
+            "identifier": "CORHC-0003",
+            "dateCreated": "2008-10-01",
+            "description": "Follow-up oral-history interview with First Division veterans Clark Welch and Ray Albin examining Operation Shenandoah II and the Battle of Ong Thanh in greater detail, including their ranks, battlefield experiences, command decisions, and points requiring clarification from earlier research and interviews.",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Clark Welch & Ray Albin Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0003-clark-welch-ray-albin"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0004-shannon-morgan-transcript",
+    "title": "Shannon Morgan Oral History Transcript — April 1, 2009 | Carrie Gabaree",
+    "description": "Transcript of the Shannon Morgan oral-history interview conducted by Carrie Gabaree (Gutierrez) at the McCormick Research Center at the First Division Museum at Cantigny on April 1, 2009.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan-transcript#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan-transcript.html",
+            "name": "Shannon Morgan Oral History Transcript — April 1, 2009 | Carrie Gabaree",
+            "description": "Transcript of the Shannon Morgan oral-history interview conducted by Carrie Gabaree (Gutierrez) at the McCormick Research Center at the First Division Museum at Cantigny on April 1, 2009.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan-transcript#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan-transcript#transcript",
+            "name": "Shannon Morgan Oral History Transcript",
+            "identifier": "CORHC-0004",
+            "dateCreated": "2009-04-01",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#oralhistory"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Gutierrez",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan-transcript#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Shannon Morgan Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Transcript",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan-transcript.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0004-shannon-morgan-transcript"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0004-shannon-morgan",
+    "title": "Shannon Morgan Oral History — April 1, 2009 | Carrie Gabaree",
+    "description": "Oral-history interview with Shannon Morgan about joining the U.S. Army after September 11, 2001, serving as a tracked-vehicle mechanic with the 1st Infantry Division, and her experience with Team Lioness in Iraq.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan.html",
+            "name": "Shannon Morgan Oral History — April 1, 2009 | Carrie Gabaree",
+            "description": "Oral-history interview with Shannon Morgan about joining the U.S. Army after September 11, 2001, serving as a tracked-vehicle mechanic with the 1st Infantry Division, and her experience with Team Lioness in Iraq.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#oralhistory",
+            "name": "Shannon Morgan Oral History",
+            "identifier": "CORHC-0004",
+            "dateCreated": "2009-04-01",
+            "description": "Oral-history interview with Shannon Morgan about joining the U.S. Army after September 11, 2001, serving as a tracked-vehicle mechanic with the 1st Infantry Division, and her experience with Team Lioness in Iraq.",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Shannon Morgan Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0004-shannon-morgan"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0005-erica-koelder-transcript",
+    "title": "Erica Koelder Oral History Transcript — April 30, 2010 | Carrie Gabaree",
+    "description": "Transcript of the Erica Koelder oral-history interview conducted by Carrie Gabaree (Gutierrez) with Andrew Woods at the First Division Museum at Cantigny on April 30, 2010.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder-transcript#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder-transcript.html",
+            "name": "Erica Koelder Oral History Transcript — April 30, 2010 | Carrie Gabaree",
+            "description": "Transcript of the Erica Koelder oral-history interview conducted by Carrie Gabaree (Gutierrez) with Andrew Woods at the First Division Museum at Cantigny on April 30, 2010.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder-transcript#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder-transcript#transcript",
+            "name": "Erica Koelder Oral History Transcript",
+            "identifier": "CORHC-0005",
+            "dateCreated": "2010-04-30",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#oralhistory"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Gutierrez",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder-transcript#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Erica Koelder Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Transcript",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder-transcript.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0005-erica-koelder-transcript"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0005-erica-koelder",
+    "title": "Erica Koelder Oral History — April 30, 2010 | Carrie Gabaree",
+    "description": "Oral-history interview with Erica Koelder about Army family life, her husband's service with the 1st Infantry Division, and her work supporting soldiers and families through the Family Readiness Support Assistant program.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder.html",
+            "name": "Erica Koelder Oral History — April 30, 2010 | Carrie Gabaree",
+            "description": "Oral-history interview with Erica Koelder about Army family life, her husband's service with the 1st Infantry Division, and her work supporting soldiers and families through the Family Readiness Support Assistant program.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#oralhistory",
+            "name": "Erica Koelder Oral History",
+            "identifier": "CORHC-0005",
+            "dateCreated": "2010-04-30",
+            "description": "Oral-history interview with Erica Koelder about Army family life, her husband's service with the 1st Infantry Division, and her work supporting soldiers and families through the Family Readiness Support Assistant program.",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Erica Koelder Oral History",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0005-erica-koelder"
+  }
+]

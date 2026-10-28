@@ -1,0 +1,4 @@
+---
+const { class: className='content-card', ...attrs }=Astro.props;
+---
+<section class={className} {...attrs}><slot /></section>

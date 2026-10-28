@@ -1,0 +1,4 @@
+import type { APIRoute } from 'astro';
+import pages from '../data/pages.json';import media from '../data/media.json';import site from '../data/site.json';
+const xml=(s:string)=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+export const GET:APIRoute=()=>new Response('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">'+[...pages.filter(p=>!p.noindex).map(p=>'/'+p.slug),'/sitemap'].map(p=>'<url><loc>'+xml(site.url+p)+'</loc>'+media.filter(m=>m.page===p).map(m=>'<image:image><image:loc>'+xml(site.url+m.src)+'</image:loc></image:image>').join('')+'</url>').join('')+'</urlset>',{headers:{'Content-Type':'application/xml; charset=utf-8'}});

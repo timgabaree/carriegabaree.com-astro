@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-production/
+.astro/
+.wrangler/
+worker-build/
+.env*
+.dev.vars*
+*.log
+.DS_Store
+.idea/
+.local/
+public/media/generated/

@@ -1,0 +1,7 @@
+---
+import site from '../data/site.json';
+interface Props {path:string;}
+const {path}=Astro.props;
+const current=(href:string)=>href==='/'?path==='/':path===href||(href==='/oral-histories'&&path.startsWith('/portfolio/oralhistories'))||(href==='/publications'&&path.startsWith('/portfolio/citations'));
+---
+<header class="site-header"><div class="site-header-inner"><a class="site-brand" href="/" aria-label="Carrie Gabaree home"><img src="/media/carriegabaree-header-192x192.webp" alt="" class="site-brand-image" width="44" height="44" /><span class="site-brand-text"><span class="site-brand-name">{site.name}</span><span class="site-brand-role">Museum Curator • Public Historian</span></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span></button><nav class="site-nav" id="primary-navigation" aria-label="Primary navigation">{site.navigation.map(item=><a href={item.href} aria-current={current(item.href)?'page':undefined}>{item.label}</a>)}</nav></div></header>

@@ -1,0 +1,87 @@
+---
+import PageHeader from '../../components/PageHeader.astro';
+import CitationCard from '../../components/CitationCard.astro';
+---
+<article class="page-panel citation-page">
+  <PageHeader class="page-header">
+    <p class="eyebrow">Publication Citation</p>
+    <h1> “A New Helmet for a New Army: The Development of an American Helmet
+      During World War I” </h1>
+    <p class="page-intro"> Citation information for Carrie Gabaree’s article in <cite>Army History</cite>, no. 104, Summer 2017, pages 30–31. </p>
+  </PageHeader>
+  <section class="citation-summary">
+    <p class="publication-meta">Army History · No. 104 · Summer 2017</p>
+    <p> Carrie Gabaree examines the development of American protective helmets
+      during World War I. </p>
+  </section>
+  <div class="citation-list">
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>Chicago</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="ah104-chicago"> Copy citation </button>
+      </div>
+      <p id="ah104-chicago" class="citation-text"> Gabaree, Carrie. “A New Helmet for a New Army: The Development of an
+        American Helmet During World War I.” <cite>Army History</cite>,
+        no. 104 (Summer 2017): 30–31. </p>
+    </CitationCard>
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>MLA</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="ah104-mla"> Copy citation </button>
+      </div>
+      <p id="ah104-mla" class="citation-text"> Gabaree, Carrie. “A New Helmet for a New Army: The Development of an
+        American Helmet During World War I.” <cite>Army History</cite>,
+        no. 104, Summer 2017, pp. 30–31. </p>
+    </CitationCard>
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>APA</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="ah104-apa"> Copy citation </button>
+      </div>
+      <p id="ah104-apa" class="citation-text"> Gabaree, C. (2017). A new helmet for a new army: The development of
+        an American helmet during World War I. <cite>Army History</cite>,
+        (104), 30–31. </p>
+    </CitationCard>
+  </div>
+ <div class="publication-media-actions">
+
+  <div class="publication-media-item">
+    <a href="/portfolio/armypubs/AH104(W).pdf" target="_blank" rel="noopener noreferrer" aria-label="View Army History No. 104 full issue">
+      <img src="/media/AH104W-cover-200x257.webp" alt="Cover of Army History, No. 104, Summer 2017" width="200" height="257" loading="lazy" />
+    </a>
+
+    <a class="button button-secondary" href="/portfolio/armypubs/AH104(W).pdf" target="_blank" rel="noopener noreferrer">
+      View full issue
+    </a>
+  </div>
+
+  <div class="publication-media-item">
+    <a href="/portfolio/armypubs/AH104Wpp30-31.pdf" target="_blank" rel="noopener noreferrer" aria-label="Read A New Helmet for a New Army article">
+      <img src="/media/AH104W-p30-200x257.webp" alt="First page of A New Helmet for a New Army: The Development of an American Helmet During World War I" width="200" height="257" loading="lazy" />
+    </a>
+
+    <a class="button button-secondary" href="/portfolio/armypubs/AH104Wpp30-31.pdf" target="_blank" rel="noopener noreferrer">
+      Read article
+    </a>
+  </div>
+
+<div class="publication-media-item">
+  <a href="/publications" aria-label="Back to publications">
+    <img src="/media/return-to-publications-200x257.webp" alt="Return to publications icon" width="200" height="257" loading="lazy" />
+  </a>
+
+  <a class="button button-secondary" href="/publications">
+    Back to publications
+  </a>
+</div>
+
+</div>
+  <p class="citation-disclaimer"> Citations are provided for convenience. Requirements may vary by
+    institution, publisher, instructor, or edition of a style guide. </p>
+</article>

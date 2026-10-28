@@ -1,0 +1,94 @@
+---
+import PageHeader from '../../components/PageHeader.astro';
+import CitationCard from '../../components/CitationCard.astro';
+---
+<article class="page-panel citation-page">
+  <PageHeader class="page-header">
+    <p class="eyebrow">Oral History Citation</p>
+    <h1>Shannon Morgan Oral History</h1>
+    <p class="page-intro">
+      Citation information for the oral-history interview with
+      Shannon Morgan, conducted by Carrie Gabaree (Gutierrez)
+
+      at McCormick Research Center, First Division Museum at Cantigny, Wheaton, Illinois on April 1, 2009.
+    </p>
+  </PageHeader>
+
+  <section class="citation-summary">
+    <p class="publication-meta">
+      Oral history · CORHC-0004 · April 1, 2009 · Runtime: 27:44
+    </p>
+    <p>
+      <strong>Interviewee:</strong> Shannon Morgan<br />
+      <strong>Interviewer:</strong> Carrie Gabaree (Gutierrez)<br />
+      <strong>Repository:</strong> Carrie Gabaree Digital Archive
+    </p>
+  </section>
+
+  <div class="citation-list">
+
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>Chicago</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="corhc-0004-chicago"> Copy citation </button>
+      </div>
+      <p id="corhc-0004-chicago" class="citation-text">
+        Morgan, Shannon. Interview by Carrie Gabaree (Gutierrez). April 1, 2009. CORHC-0004, Carrie Gabaree Digital Archive. https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan.html.
+      </p>
+    </CitationCard>
+
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>MLA</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="corhc-0004-mla"> Copy citation </button>
+      </div>
+      <p id="corhc-0004-mla" class="citation-text">
+        Morgan, Shannon. Interview by Carrie Gabaree (Gutierrez). <cite>Carrie Gabaree Digital Archive</cite>, April 1, 2009, https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan.html.
+      </p>
+    </CitationCard>
+
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>APA</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="corhc-0004-apa"> Copy citation </button>
+      </div>
+      <p id="corhc-0004-apa" class="citation-text">
+        Morgan, S. (2009, April 1). <cite>Shannon Morgan Oral History</cite> [Oral history interview by Carrie Gabaree (Gutierrez)]. Carrie Gabaree Digital Archive. https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan.html
+      </p>
+    </CitationCard>
+
+  </div>
+
+  <aside class="citation-note">
+    <h2>Oral-history citation note</h2>
+    <p>
+      Oral-history citation practices vary by style guide and institution.
+      These citations identify the interviewee or interviewees, interviewer,
+      interview date, archival identifier, repository, and stable interview
+      page so researchers can locate the audiovisual recording and transcript.
+    </p>
+  </aside>
+
+  <div class="button-group citation-actions">
+    <a class="button button-primary" href="/portfolio/oralhistories/CORHC-0004-shannon-morgan">
+      View oral history
+    </a>
+    <a class="button button-secondary" href="/portfolio/oralhistories/CORHC-0004-shannon-morgan-transcript">
+      Read transcript
+    </a>
+    <a class="button button-secondary" href="/oral-histories">
+      Back to oral histories
+    </a>
+  </div>
+
+  <p class="citation-disclaimer">
+    Citations are provided for convenience. Requirements may vary by
+    institution, publisher, instructor, repository, or edition of a style guide.
+  </p>
+</article>

@@ -1,0 +1,6 @@
+---
+interface Props {src:string;title:string;}
+const {src,title}=Astro.props;
+if(!/^https:\/\/customer-txz6xqq5qm2ofi03\.cloudflarestream\.com\/[a-f0-9]{32}\/iframe$/.test(src))throw new Error('Unexpected video provider');
+---
+<iframe src={src} title={title} allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>

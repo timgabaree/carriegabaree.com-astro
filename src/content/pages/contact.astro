@@ -1,0 +1,111 @@
+---
+import ContactForm from '../../components/ContactForm.astro';
+import ContentCard from '../../components/ContentCard.astro';
+---
+<section class="page-hero contact-hero">
+    <div class="content-card">
+      <p class="section-kicker">Contact</p>
+      <h1>Get in Touch</h1>
+      <p class="hero-intro"> Whether your interest is museum collections, historical research,
+        publications, oral history, exhibitions, or potential collaboration,
+        I welcome the opportunity to hear from you. </p>
+    </div>
+  </section>
+  <section class="contact-section">
+    <div class="contact-grid">
+
+
+
+      <article class="content-card contact-form-card">
+        <h2>Send a Message</h2>
+        <p> Please complete the form below. Required fields are marked with
+          an asterisk (<strong>*</strong>). </p>
+        <ContactForm><input type="hidden" name="csrf_token" id="csrf_token" value="" /><p id="contact-required-fields" class="visually-hidden">Fields marked with an asterisk are required.</p>
+
+
+          <div class="hp-field" aria-hidden="true">
+            <label for="website"> Leave this field blank </label>
+            <input     type="text"
+    id="website"
+    name="website"
+    tabindex="-1"
+    autocomplete="off" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name"> Name <span aria-hidden="true">*</span> </label>
+              <input type="text" id="name" name="name" maxlength="100" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="organization"> Organization </label>
+              <input type="text" id="organization" name="organization" maxlength="150" autocomplete="organization" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email"> Email <span aria-hidden="true">*</span> </label>
+              <input type="email" id="email" name="email" maxlength="254" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="phone"> Phone </label>
+              <input type="tel" id="phone" name="phone" maxlength="40" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="topic"> Topic <span aria-hidden="true">*</span> </label>
+            <select     id="topic"
+    name="topic"
+    required
+    autocomplete="off">
+              <option value="" selected disabled> Please select... </option>
+              <option value="research"> Research Inquiry </option>
+              <option value="oral-history"> Oral History </option>
+              <option value="collections"> Collections or Artifacts </option>
+              <option value="publications"> Publications </option>
+              <option value="rights-permissions-privacy"> Rights, Permissions, or Privacy </option>
+              <option value="speaking"> Speaking or Collaboration </option>
+              <option value="other"> Other </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message"> Message <span aria-hidden="true">*</span> </label>
+            <textarea               id="message"
+              name="message"
+              rows="8"
+              maxlength="5000"
+              required></textarea>
+          </div>
+          <button class="button-primary" type="submit" disabled> Send Message </button>
+          <p class="form-privacy-note"> Information submitted through this form will be used to respond to
+            your inquiry. Please do not include confidential, highly sensitive,
+            or restricted personal information. <a href="/privacy" target="_blank" rel="noopener noreferrer"> View the Privacy Policy. </a> </p>
+        <noscript><p>JavaScript is needed to secure this form. You can email <a href="mailto:carrie@carriegabaree.com">carrie@carriegabaree.com</a> instead.</p></noscript></ContactForm>
+      </article>
+
+
+
+      <aside class="content-card contact-sidebar"> <img src="/media/carriegabaree-header-192x192.webp" alt="Portrait of Carrie Gabaree" class="contact-photo" loading="lazy" width="192" height="192" />
+        <h2>Contact Information</h2>
+        <p class="contact-title"> Museum Curator<br />
+          Public Historian </p>
+        <hr />
+        <h3>Email</h3>
+        <p> <a href="mailto:carrie@carriegabaree.com"> carrie@carriegabaree.com </a> </p>
+        <h3>LinkedIn</h3>
+        <p> <a href="https://www.linkedin.com/in/carriegabaree" target="_blank" rel="noopener noreferrer"> View Profile </a> </p>
+        <br />
+        <br />
+        <p> Most inquiries receive a response within two business days. </p>
+      </aside>
+    </div>
+  </section>
+  <ContentCard class="content-card interests-card">
+    <h2>Areas of Interest</h2>
+    <p> Museum Collections &bull;
+      Military History &bull;
+      Public History &bull;
+      Oral History &bull;
+      Historical Research &bull;
+      Museum Consulting &bull;
+      Speaking Engagements </p>
+  </ContentCard>

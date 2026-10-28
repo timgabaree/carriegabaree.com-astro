@@ -1,0 +1,102 @@
+---
+import PageHeader from '../../components/PageHeader.astro';
+import CitationCard from '../../components/CitationCard.astro';
+---
+<article class="page-panel citation-page">
+  <PageHeader class="page-header">
+    <p class="eyebrow">Publication Citation</p>
+    <h1><cite>The Great War: U.S. Army Artifacts</cite></h1>
+    <p class="page-intro"> Citation information for <cite>The Great War: U.S. Army Artifacts</cite>,
+      published by the Center of Military History, United States Army, in 2018.
+      Carrie M. Gabaree is one of the publication’s contributing authors. </p>
+  </PageHeader>
+  <section class="citation-summary">
+    <p class="publication-meta">Book contribution · CMH Pub 70-128 · 2018</p>
+    <p> General editor Sarah G. Forgey. Contributions by Alan T. Bogan,
+      Carrie M. Gabaree, Paul M. Miller, and Brian F. Neumann.
+      Photography by Pablo Jimenez-Reyes. </p>
+  </section>
+  <div class="citation-list">
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>Chicago</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="cmh-chicago"> Copy citation </button>
+      </div>
+      <p id="cmh-chicago" class="citation-text"> Forgey, Sarah G., ed. <cite>The Great War: U.S. Army Artifacts</cite>.
+        Contributions by Alan T. Bogan, Carrie M. Gabaree, Paul M. Miller,
+        and Brian F. Neumann. Washington, DC: Center of Military History,
+        United States Army, 2018. </p>
+    </CitationCard>
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>MLA</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="cmh-mla"> Copy citation </button>
+      </div>
+      <p id="cmh-mla" class="citation-text"> Forgey, Sarah G., general editor. <cite>The Great War: U.S. Army
+        Artifacts</cite>. Contributions by Alan T. Bogan, Carrie M. Gabaree,
+        Paul M. Miller, and Brian F. Neumann, Center of Military History,
+        United States Army, 2018. </p>
+    </CitationCard>
+    <CitationCard class="citation-card">
+      <div class="citation-card-header">
+        <h2>APA</h2>
+        <button class="citation-copy"
+                type="button"
+                data-copy-target="cmh-apa"> Copy citation </button>
+      </div>
+      <p id="cmh-apa" class="citation-text"> Forgey, S. G. (Ed.). (2018). <cite>The great war: U.S. Army
+        artifacts</cite>. Center of Military History, United States Army. </p>
+    </CitationCard>
+  </div>
+  <aside class="citation-note">
+    <h2>Contributor information</h2>
+    <p> Carrie M. Gabaree is credited as a contributor to the complete work.
+      Standard citation styles generally identify the editor of an edited
+      volume rather than listing every contributor. The expanded Chicago and
+      MLA citations above retain the contributor information to document
+      Carrie’s role. </p>
+  </aside>
+ <div class="publication-media-actions">
+
+  <div class="publication-media-item">
+    <a href="/portfolio/armypubs/cmhPub_70-128.pdf" target="_blank" rel="noopener noreferrer" aria-label="View The Great War: U.S. Army Artifacts publication">
+      <img src="/media/cmhPub_70-128-cover-200x150.webp" alt="Cover of The Great War: U.S. Army Artifacts" width="200" height="150" loading="lazy" />
+    </a>
+
+    <a class="button button-secondary" href="/portfolio/armypubs/cmhPub_70-128.pdf" target="_blank" rel="noopener noreferrer">
+      View publication
+    </a>
+  </div>
+
+<div class="publication-media-item">
+  <a href="https://history.army.mil/Publications/Publications-Catalog/The-Great-War-Artifacts/" target="_blank" rel="noopener noreferrer" aria-label="View official Army source for The Great War: U.S. Army Artifacts">
+    <img src="/media/cmh-seal-200x150.webp" alt="Center of Military History, United States Army seal" width="200" height="150" loading="lazy" />
+  </a>
+
+  <a class="button button-secondary" href="https://history.army.mil/Publications/Publications-Catalog/The-Great-War-Artifacts/" target="_blank" rel="noopener noreferrer">
+    Official Army source
+  </a>
+</div>
+
+<div class="publication-media-item">
+  <a href="/publications" aria-label="Back to publications">
+    <img src="/media/return-to-publications-200x150.webp" alt="Return to publications icon" width="200" height="150" loading="lazy" />
+  </a>
+
+  <a class="button button-secondary" href="/publications">
+    Back to publications
+  </a>
+</div>
+
+</div>
+
+
+
+
+  <p class="citation-disclaimer"> Citations are provided for convenience. Requirements may vary by
+    institution, publisher, instructor, or edition of a style guide. </p>
+</article>
