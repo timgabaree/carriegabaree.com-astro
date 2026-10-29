@@ -4,7 +4,7 @@
 
 Live on Cloudflare at https://carriegabaree.com/. Exact-host routes `carriegabaree.com/*` and `www.carriegabaree.com/*` serve the production Astro Worker. HTTPS and the apex hostname are canonical. Existing website DNS still points to the preserved GoDaddy origin; no existing DNS records were replaced.
 
-Production version: `41efb677-c1b8-489b-b573-bc0e55ab0029` (October 28 monitoring update; page assets unchanged). Protected staging version: `c7dffb4b-c0a5-4f88-b586-d3290abb5793`. Production workers.dev and preview URLs remain disabled. Routes are dashboard-managed: use versions upload/deploy for subsequent production releases, not ordinary deploy.
+Production version: `2e8a930e-932e-4f6b-b997-867ed186f439` (October 28 footer/sitemap style release, source commit `d294c33`). Protected staging version: `c7dffb4b-c0a5-4f88-b586-d3290abb5793` (unchanged). Production workers.dev and preview URLs remain disabled. Routes are dashboard-managed: use versions upload/deploy for subsequent production releases, not ordinary deploy.
 
 Private repository: https://github.com/timgabaree/carriegabaree.com-astro
 
@@ -12,6 +12,7 @@ Staging: https://carriegabaree-com-astro-staging.timgabaree-com-astro.workers.de
 
 ## Verified
 
+- October 28 style release: Privacy choices matches the adjacent footer links; all 51 sitemap page/media links render white without underlines, with explicit matching visited styling. Live Enter/Escape controls and visible keyboard focus verified. Clean type checks, 55 unit tests, production build, 1,059 local content/link checks, and 231 live checks across 25 pages passed. The www redirect preserves path/query. Monitoring, staging, GoDaddy, and all DNS were unchanged; no email was sent.
 - Original GoDaddy web files archived and independently extracted/hashed: 81 files unchanged before/after backup.
 - Second ordinary ZIP saved in the requested Dropbox Archive folder; ZIP integrity and hashes verified. Off-device Dropbox sync is not verified.
 - All 24 current source pages match live source text. Local fixes to three old citation links retained.
