@@ -29,19 +29,45 @@ export async function recordIssue(namespace: DurableObjectNamespace, name: strin
   throw new Error('Failure monitoring unavailable');
 }
 
+export type Incident = { revision: string; issue: string; environment: string; detectedAt: string };
 export async function readDeliveryIncidents(namespace: DurableObjectNamespace) {
-  return Promise.all(deliveryStatusNames.map(async name => {
-    const response = await namespace.get(namespace.idFromName(name)).fetch('https://status.internal/status', {
-      signal: AbortSignal.timeout(3000),
-    });
-    if (!response.ok) throw new Error('Status unavailable');
-    const result = await response.json<{ incident: { revision: string; issue: string; environment: string; detectedAt: string } | null }>();
+  const groups = await Promise.all(deliveryStatusNames.map(async name => {
+    const result = await statusOperation(namespace, name, '/status') as { incident: Incident | null; incidents?: Incident[] };
     if (!Object.hasOwn(result, 'incident') || (result.incident !== null &&
-        (typeof result.incident !== 'object' || typeof result.incident.revision !== 'string'))) {
-      throw new Error('Invalid status response');
-    }
-    return { name, incident: result.incident };
+        (typeof result.incident !== 'object' || typeof result.incident.revision !== 'string')) ||
+        (result.incidents !== undefined && (!Array.isArray(result.incidents) ||
+          result.incidents.some(i => !i || typeof i.revision !== 'string')))) throw Error('Invalid status response');
+    const incidents = result.incidents ?? (result.incident ? [result.incident] : []);
+    return incidents.length ? incidents.map(incident => ({ name, incident: incident as Incident | null })) : [{ name, incident: null as Incident | null }];
   }));
+  return groups.flat();
+}
+
+// Internal binding only. Never expose recovery controls as public HTTP routes.
+export async function statusOperation(namespace: DurableObjectNamespace, name: string, path: string, body?: unknown): Promise<unknown> {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const response = await namespace.get(namespace.idFromName(name)).fetch('https://status.internal' + path, {
+        method: body === undefined ? 'GET' : 'POST',
+        ...(body === undefined ? {} : { body: JSON.stringify(body) }), signal: AbortSignal.timeout(3000),
+      });
+      if (!response.ok) throw Error('Status operation failed');
+      return response.status === 204 ? null : await response.json();
+    } catch { /* Retry sanitized, idempotent binding operations with a fresh stub. */ }
+  }
+  throw Error('Status operation unavailable');
+}
+
+export async function recoverDelivery(namespace: DurableObjectNamespace, environment: string, occurredAt: number) {
+  for (const name of deliveryStatusNames) await statusOperation(namespace, name, '/delivered', { environment, occurredAt });
+}
+
+// All stores must pass both reads and writes before any runtime recovery advances.
+export async function checkMonitorRecovery(namespace: DurableObjectNamespace, names: readonly string[], statuses: { name: string; incident: Incident | null }[]) {
+  for (const name of names) await statusOperation(namespace, name, '/probe', {});
+  for (const { name, incident } of statuses) {
+    if (incident?.issue === 'monitor_runtime_error') await statusOperation(namespace, name, '/recover-runtime', { revision: incident.revision });
+  }
 }
 
 export function reportMailIssue(environment: string, issue: MailIssue): void {

@@ -1,5 +1,5 @@
 import { Webhook } from 'svix';
-import { reportMailIssue, persistMailIssue, recordIssue, readDeliveryIncidents, deliveryStatusNames, scopedStatus } from './monitoring-core.ts';
+import { reportMailIssue, persistMailIssue, recordIssue, readDeliveryIncidents, deliveryStatusNames, scopedStatus, recoverDelivery, checkMonitorRecovery, statusOperation } from './monitoring-core.ts';
 import type { MailIssue } from './monitoring-core.ts';
 export { DeliveryStatus } from './delivery-status.ts';
 
@@ -54,11 +54,24 @@ export class MonitorEvent {
 
 async function handle(request: Request, env: MonitorEnv): Promise<Response> {
   const url = new URL(request.url);
-  if (url.search || !['/health', '/resend', '/delivery-status', '/admin/status', '/admin/acknowledge', '/admin/test'].includes(url.pathname)) return new Response(null, { status: 404 });
+  if (url.search || !['/health', '/resend', '/delivery-status', '/delivery-status/rgesol', '/delivery-status/carrie', '/monitor-status', '/admin/status', '/admin/history', '/admin/acknowledge', '/admin/test'].includes(url.pathname)) return new Response(null, { status: 404 });
   if (!env.RESEND_WEBHOOK_SECRET || !env.DELIVERY_STATUS || !env.MONITOR_ADMIN_KEY) return new Response(null, { status: 503 });
   if (url.pathname === '/delivery-status') {
     if (!['GET', 'HEAD'].includes(request.method)) return new Response(null, { status: 405 });
     const statuses = await allStatuses(env);
+    return new Response(null, { status: statuses.some(s => s.incident) ? 503 : 200 });
+  }
+  if (url.pathname === '/monitor-status') {
+    if (!['GET', 'HEAD'].includes(request.method)) return new Response(null, { status: 405 });
+    // Verify every store is readable, but do not duplicate site delivery alerts.
+    // Infrastructure incidents recover only after repeated scheduled storage checks.
+    const statuses = await allStatuses(env);
+    return new Response(null, { status: statuses.some(s => s.incident?.site === 'monitor') ? 503 : 200 });
+  }
+  if (url.pathname.startsWith('/delivery-status/')) {
+    if (!['GET', 'HEAD'].includes(request.method)) return new Response(null, { status: 405 });
+    const site = url.pathname.endsWith('/rgesol') ? 'rgesol' : 'carrie';
+    const statuses = await readDeliveryIncidents(scopedStatus(env.DELIVERY_STATUS, site));
     return new Response(null, { status: statuses.some(s => s.incident) ? 503 : 200 });
   }
   if (url.pathname.startsWith('/admin/')) {
@@ -71,6 +84,13 @@ async function handle(request: Request, env: MonitorEnv): Promise<Response> {
     const a = new Uint8Array(actual), b = new Uint8Array(expected);
     for (let i = 0; i < a.length; i++) difference |= a[i] ^ b[i];
     if (difference) return new Response(null, { status: 401 });
+    if (url.pathname === '/admin/history') {
+      if (request.method !== 'GET') return new Response(null, { status: 405 });
+      const history = await Promise.all(sites.flatMap(site => deliveryStatusNames.map(name => site + '/' + name)).map(async name => ({
+        store: name, ...(await statusOperation(env.DELIVERY_STATUS, name, '/history') as { history: unknown[] }),
+      })));
+      return Response.json({ stores: history });
+    }
     if (url.pathname === '/admin/status') {
       if (request.method !== 'GET') return new Response(null, { status: 405 });
       const incidents = (await allStatuses(env)).flatMap(s => s.incident ? [s.incident] : []);
@@ -127,10 +147,17 @@ async function handle(request: Request, env: MonitorEnv): Promise<Response> {
   const application = event?.data?.tags?.application;
   const site = application === 'rgesol-contact' ? 'rgesol' : application === 'carrie-contact' ? 'carrie' : null;
   const recipient = site === 'rgesol' ? 'timgabaree@rgesol.com' : environment === 'staging' ? 'tim@timgabaree.com' : 'carrie@carriegabaree.com';
-  if (!failures.has(event?.type) || !site ||
+  if ((!failures.has(event?.type) && event?.type !== 'email.delivered') || !site ||
       !['production', 'staging'].includes(environment) ||
       !Array.isArray(event?.data?.to) || event.data.to.length !== 1 ||
       typeof event.data.to[0] !== 'string' || event.data.to[0].toLowerCase() !== recipient) return new Response(null, { status: 204 });
+  if (event.type === 'email.delivered') {
+    const occurredAt = typeof event.created_at === 'string' ? Date.parse(event.created_at) : NaN;
+    if (Number.isFinite(occurredAt) && occurredAt > 0 && occurredAt <= Date.now()) {
+      await recoverDelivery(scopedStatus(env.DELIVERY_STATUS, site), environment, occurredAt);
+    }
+    return new Response(null, { status: 204 });
+  }
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(id));
   const key = Array.from(new Uint8Array(digest), (byte) => byte.toString(16).padStart(2, '0')).join('');
   const { fresh } = await recordIssue(scopedStatus(env.DELIVERY_STATUS, site), deliveryStatusNames[0], { key, environment, issue: event.type });
@@ -139,6 +166,15 @@ async function handle(request: Request, env: MonitorEnv): Promise<Response> {
 }
 
 export default {
+  async scheduled(_controller: ScheduledController, env: MonitorEnv): Promise<void> {
+    try {
+      if (!env.RESEND_WEBHOOK_SECRET || !env.MONITOR_ADMIN_KEY || !env.DELIVERY_STATUS) throw Error('Missing configuration');
+      await checkMonitorRecovery(env.DELIVERY_STATUS, sites.flatMap(site => deliveryStatusNames.map(name => site + '/' + name)), await allStatuses(env));
+    } catch {
+      await persistMailIssue({ ENVIRONMENT: 'production', DELIVERY_STATUS: scopedStatus(env.DELIVERY_STATUS, 'monitor') }, 'monitor_runtime_error');
+      throw Error('Scheduled monitor checks failed');
+    }
+  },
   async fetch(request: Request, env: MonitorEnv): Promise<Response> {
     let response: Response;
     try { response = await handle(request, env); }

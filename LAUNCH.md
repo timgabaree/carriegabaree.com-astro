@@ -1,4 +1,4 @@
-# Migration status — 2026-10-28
+# Migration status — 2026-10-30
 
 ## Current state
 
@@ -46,9 +46,13 @@ Reports: [home](https://pagespeed.web.dev/analysis/https-carriegabaree-com/svc2x
 
 ## Follow-up
 
-- Coordinated monitoring is now configured; see README's monitoring runbook. UptimeRobot homepage monitor `804464246` and shared RGE/Carrie failure monitor `804464267` alert Tim. Monitoring release passed 55 unit tests, 22 local runtime tests, clean type checks, 231 live and 236 protected-staging checks. Page assets were unchanged on both uploads.
+- October 30 monitoring-only release `e8b19da1-ff69-4567-a456-a3ea23503e5d` adds automatic recovery and private resolution history; see [MONITORING.md](MONITORING.md). Signed delivery recovery and timed runtime recovery passed local tests. All five email-related UptimeRobot checks were UP after deployment; no new inquiry or live synthetic alert was sent.
+
+- October 29 monitoring reorganization: see [MONITORING.md](MONITORING.md). Solo 50 annual, 23 active checks and six paused predecessors; alerts to `tim@timgabaree.com` per Tim's clarification; Gmail remains the account login. New site-specific email-failure checks replace the combined failure check; `804464267` now monitors shared infrastructure. Shared receiver version `3d5f0f84-96cf-47a9-b845-8a86188461fe`, 57 unit tests, 33 local runtime checks and clean type checks. Website/staging deployments were not changed.
+- October 29 Carrie inbox issue: Tim located form emails in Advanced Security Cloud Protect quarantine, added an exception himself, and confirmed a subsequent form message arrived. Recipient remained `carrie@carriegabaree.com`. Resend acceptance alone cannot detect downstream quarantine.
+- Historical October 28 monitoring release passed 55 unit tests, 22 local runtime tests, clean type checks, 231 live and 236 protected-staging checks. Page assets were unchanged on both uploads.
 - Hosted alert test: Carrie fallback `monitor_self_test` and a synthetic signed RGE staging `email.failed` event persisted independently. UptimeRobot incident `373980481164829341` began at 18:44:54 Central and recorded successful email dispatch at 18:44:57. Tim confirmed the automatic DOWN alert arrived. Only the two reviewed synthetic revisions were acknowledged: clearing RGE alone left the probe at 503; clearing Carrie then restored 200 with no incidents. UptimeRobot resolved the incident at 18:48:08 and recorded successful recovery-email dispatch at 18:48:11. Recovery inbox receipt was not separately confirmed. No contact inquiry was sent and neither website was taken down.
-- Shared receiver version after secret configuration: `2d76d1bf-d093-44ab-9e85-fa7db79687bb`. TLS verification accepted the served certificates for all five sites. UptimeRobot expiry reminders are enabled; no expired-certificate simulation was performed.
+- Historical October 28 receiver version after secret configuration: `2d76d1bf-d093-44ab-9e85-fa7db79687bb` (superseded by the October 29 monitoring-only release above). TLS verification accepted the served certificates for all five sites. No expired-certificate simulation was performed.
 - Review Search Console indexing and analytics report arrival after launch; browser integration alone does not prove reporting.
 - Confirm Dropbox's off-device archive sync when convenient.
 

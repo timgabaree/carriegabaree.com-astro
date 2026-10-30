@@ -10,6 +10,7 @@
   "workers_dev": true,
   "preview_urls": false,
   "routes": [],
+  "triggers": { "crons": ["* * * * *"] },
   "durable_objects": {
     "bindings": [
       {
