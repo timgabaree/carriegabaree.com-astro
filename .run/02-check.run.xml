@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- Code checks, tests, production build and dry run. No upload. -->
+  <configuration default="false" name="02 - Check and build - No upload" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts><script value="site:check" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

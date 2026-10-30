@@ -1,0 +1,34 @@
+{
+  "domain": "carriegabaree.com",
+  "branch": "main",
+  "worker": "carriegabaree-com-astro-production",
+  "checks": [
+    [
+      "run",
+      "check"
+    ],
+    [
+      "test"
+    ],
+    [
+      "run",
+      "build:production"
+    ]
+  ],
+  "liveChecks": [
+    [
+      "scripts/verify-deployment.mjs",
+      "production"
+    ]
+  ],
+  "livePages": [
+    "/",
+    "/publications",
+    "/oral-histories",
+    "/contact",
+    "/privacy",
+    "/sitemap"
+  ],
+  "repository": "carriegabaree.com-astro",
+  "account": "7459bd2037d71d23fd030e3542b9df61"
+}

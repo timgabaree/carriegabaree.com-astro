@@ -11,3 +11,5 @@ worker-build/
 .idea/
 .local/
 public/media/generated/
+# Local website publishing receipts (never credentials or Git source)
+/.website-workflow-local/

@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- Publish the saved version at 100 percent after explicit confirmation. -->
+  <configuration default="false" name="06 - PUBLISH LIVE WEBSITE" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts><script value="site:publish" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

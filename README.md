@@ -1,5 +1,7 @@
 # Carrie Gabaree — Astro
 
+**Website update buttons:** [Start here — numbered WebStorm workflow](WEBSITE-WORKFLOW/00-START-HERE.md). In WebStorm, open the run-configuration dropdown and choose **WEBSITE WORKFLOW**. Setup alone does not commit, push, upload or publish.
+
 Separate Astro/Cloudflare implementation of carriegabaree.com. The original GoDaddy checkout and hosting account are preserved. See [LAUNCH.md](LAUNCH.md) for deployment status, verification, and rollback.
 
 ## Development

@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- Normal browser sign-in only. No deployment. -->
+  <configuration default="false" name="08 - Sign in to Cloudflare if needed" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts><script value="site:login" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

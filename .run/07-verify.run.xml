@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- Check live pages and assets. No contact email. -->
+  <configuration default="false" name="07 - Verify the live website" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts><script value="site:verify" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

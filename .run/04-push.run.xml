@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- Push the clean release branch after confirmation. No website deployment. -->
+  <configuration default="false" name="04 - Send commits to GitHub - Not live" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts><script value="site:push" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

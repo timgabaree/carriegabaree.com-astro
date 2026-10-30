@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- Review and commit ALL listed changes after confirmation. No push. -->
+  <configuration default="false" name="03 - Save changes in Git - Local only" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" />
+    <scripts><script value="site:commit" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>
