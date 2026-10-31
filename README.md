@@ -33,24 +33,6 @@ Staging: `npm run deploy:staging`. Its Basic authentication must protect every p
 
 Never deploy the PHP checkout, alter GoDaddy files, replace email records, or use broad wildcard routes. Intended website routes are only `carriegabaree.com/*` and `www.carriegabaree.com/*`.
 
-## Coordinated monitoring
+## Monitoring
 
-UptimeRobot Solo 50 (annual) now has 23 active, purpose-specific checks across all five sites, plus six paused predecessors retained for history. Alerts go to `tim@timgabaree.com`, as clarified October 29; account login remains `timgabaree@gmail.com`. See [MONITORING.md](MONITORING.md) for the authoritative inventory, intervals, troubleshooting, limitations, and verification. Existing Cloudflare logging/certificate alerts are unchanged.
-
-RGE and Carrie now have separate delivery-failure checks at `/delivery-status/rgesol` and `/delivery-status/carrie`. Monitor `804464267` now checks shared receiver/storage health at `/monitor-status`, rather than combining site failures. The compatibility `/delivery-status` aggregate remains available but is not actively monitored. This separate Worker is maintained here through `wrangler.monitoring.jsonc`; public probes expose empty 200/503 responses, not private incident details. They never send contact inquiries.
-
-- Both RGE and Carrie production/staging Workers write immediate send failures through a private cross-Worker Durable Object binding. Fixed site prefixes isolate their primary and fallback records.
-- Resend webhook `1cc0646f-2501-41a8-bda3-c52ed934987d` listens for failed, bounced, delayed, suppressed, complained, and delivered email events. Svix signatures/timestamps, bounded bodies, application/environment tags, and expected recipients are checked. RGE uses `timgabaree@rgesol.com` in both environments; Carrie uses `carrie@carriegabaree.com` in production and `tim@timgabaree.com` in staging.
-- Stored incidents contain site, environment, fixed issue code, detection time, and revision, never message contents or visitor details. Event IDs are hashed for seven-day deduplication. Newer signed delivery confirmations clear only matching site/environment delivery incidents. Runtime errors recover after repeated scheduled storage checks; see `MONITORING.md`. Reads and writes retry three times and writes have a separate fallback; this is object-level redundancy, not a second storage provider.
-- A healthy status means no unresolved reported failure, not proof that every email reached its inbox. Missing provider events and a simultaneous storage outage ending between polls remain limitations. No recurring paid test emails or customer-facing form submissions are configured.
-- Verification and admin secrets are in Cloudflare and macOS Keychain service `family-sites-email-monitor` (accounts `resend-webhook` and `admin`), not Git or URLs. Tim's existing receiver and secrets remain separate.
-
-Incident response, from this checkout with the required Node version:
-
-```sh
-node scripts/email-monitor-admin.mjs status
-# Investigate first, then acknowledge only an exact reviewed revision:
-node scripts/email-monitor-admin.mjs acknowledge <reviewed-revision>
-```
-
-Automatic recovery normally removes the need to acknowledge resolved incidents. Manual diagnostic tests still require their own acknowledgement; revision matching prevents accidentally clearing a newer failure. Only with explicit approval, `node scripts/email-monitor-admin.mjs test carrie` (or `rgesol`) injects a labeled fallback failure and sends a real UptimeRobot alert, not an inquiry. Confirm the alert and acknowledge the test revision afterward. Local tests are safe: `npm test` and `node scripts/test-monitor-runtime.mjs` never send email. Read recent resolution history with `node scripts/email-monitor-admin.mjs history`.
+Services: UptimeRobot and Cloudflare.

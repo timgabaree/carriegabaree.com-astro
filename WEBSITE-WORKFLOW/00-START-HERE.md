@@ -34,9 +34,8 @@ Each step is separate. Clicking a step does not automatically execute later step
 - These WebStorm configurations select Node **24.22.1** from your existing nvm installation. On another computer, install the version in `.nvmrc` and adjust the interpreter if needed.
 - For a fresh checkout or changed dependencies, run `nvm use` then `npm ci` in this project's Terminal. Stop if installation fails. Existing dependencies are not automatically reinstalled on every preview.
 - Run **08** only if Cloudflare says you need to sign in. Credentials remain in the existing Cloudflare login storage; never enter API keys in these scripts or Git.
-- Upload and publish use version-only commands. They do **not** deploy routes, edit DNS, touch GoDaddy, or deploy the separate email-monitor Worker. Changes to bindings, migrations, domains, routes or secrets need a separate reviewed procedure.
+- Upload and publish use version-only commands. They do **not** deploy routes, edit DNS or touch GoDaddy. They affect only this website. Changes to bindings, migrations, domains, routes or secrets need a separate reviewed procedure.
 - Build files, upload receipts and local evidence are not committed. Receipts are in the ignored `.website-workflow-local/` folder. GitHub gets source files, original assets, scripts and notes—not `node_modules`, generated builds, passwords or API keys. Filename checks are an extra guard, not a complete secret scanner; review all changes yourself.
-- The existing monitoring changes and notes were already uncommitted when these buttons were added. Review those carefully before the first commit. Setting up these buttons does not commit, push or deploy them.
 - Notes-only updates need steps **03–04**, not a website deployment. These buttons intentionally target production, not protected staging.
 - Carrie's original `test:site` is a migration parity audit against the old site. It is intentionally not a release gate for future editorial changes. The workflow uses current code/unit tests, build-safety checks and the live verification suite; the legacy audit remains available separately.
 
