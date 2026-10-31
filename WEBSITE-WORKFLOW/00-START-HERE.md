@@ -1,5 +1,7 @@
 # carriegabaree.com — Website update buttons
 
+Account identifiers in this guide are placeholders. The workflow reads actual values from its configuration; do not replace working configuration values to match these examples.
+
 Open **Run → Run… → WEBSITE WORKFLOW** in WebStorm. Choose a numbered action and click Run. You can also expand `package.json` in the npm tool window and run a `site:` action, or open this folder's numbered `.command` files. Every action prints its description before doing anything. Prompts appear in the Run console; click there to type your answer and press Enter. If your console cannot accept input, use the matching `npm run site:...` command in WebStorm Terminal after `nvm use`.
 
 | Step | Action | Effect |
@@ -30,7 +32,7 @@ Each step is separate. Clicking a step does not automatically execute later step
 ## Setup and boundaries
 
 - Repository: `timgabaree/carriegabaree.com-astro`; release branch: `main`.
-- Production Worker: `carriegabaree-com-astro-production`; account: `7459bd2037d71d23fd030e3542b9df61`.
+- Production Worker: `carriegabaree-com-astro-production`; account: `YOUR_CLOUDFLARE_ACCOUNT_ID`.
 - These WebStorm configurations select Node **24.22.1** from your existing nvm installation. On another computer, install the version in `.nvmrc` and adjust the interpreter if needed.
 - For a fresh checkout or changed dependencies, run `nvm use` then `npm ci` in this project's Terminal. Stop if installation fails. Existing dependencies are not automatically reinstalled on every preview.
 - Run **08** only if Cloudflare says you need to sign in. Credentials remain in the existing Cloudflare login storage; never enter API keys in these scripts or Git.

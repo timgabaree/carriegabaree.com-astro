@@ -1,10 +1,12 @@
 # Migration status — 2026-10-30
 
+Account, deployment, and email-event identifiers, origin addresses, and machine-specific paths are shown as placeholders where applicable. Use your own configuration and backup records for actual values; placeholders are not deployable values.
+
 ## Current state
 
 Live on Cloudflare at https://carriegabaree.com/. Exact-host routes `carriegabaree.com/*` and `www.carriegabaree.com/*` serve the production Astro Worker. HTTPS and the apex hostname are canonical. Existing website DNS still points to the preserved GoDaddy origin; no existing DNS records were replaced.
 
-Production version: `2e8a930e-932e-4f6b-b997-867ed186f439` (October 28 footer/sitemap style release, source commit `d294c33`). Protected staging version: `c7dffb4b-c0a5-4f88-b586-d3290abb5793` (unchanged). Production workers.dev and preview URLs remain disabled. Routes are dashboard-managed: use versions upload/deploy for subsequent production releases, not ordinary deploy.
+Production version: `DEPLOYMENT_VERSION_11` (October 28 footer/sitemap style release, source commit `d294c33`). Protected staging version: `DEPLOYMENT_VERSION_12` (unchanged). Production workers.dev and preview URLs remain disabled. Routes are dashboard-managed: use versions upload/deploy for subsequent production releases, not ordinary deploy.
 
 Private repository: https://github.com/timgabaree/carriegabaree.com-astro
 
@@ -21,13 +23,13 @@ Staging: https://carriegabaree-com-astro-staging.timgabaree-com-astro.workers.de
 - Protected staging: 236 deployed checks across 25 valid pages, legacy redirects, security headers, private-path blocking, and downloaded PDF hashes.
 - Sending domain `forms.carriegabaree.com` verified with only three new sender records: TXT `resend._domainkey.forms`, DNS-only CNAMEs `rsend.forms` and `send.forms`. No existing email record changed.
 - Resend TLS enforced. The first two unused credentials were revoked with explicit approval; replacement staging/production keys are sending-only and domain-restricted, saved in Keychain/Cloudflare. Do not reuse earlier keys.
-- Staging form test to Tim: Resend Delivered, ID `01a184cb-f655-7e3a-9d3e-ebb745001c5d`.
-- Private production adapter test to Tim: Resend Delivered, ID `01a184cc-6343-7aaf-8902-b3cb4f5f7876`. This test did not open production or change its intended Carrie recipient. Tim confirmed both test emails arrived. Production inquiries remain addressed to `carrie@carriegabaree.com`; no test was sent to Carrie.
+- Staging form test to Tim: Resend Delivered, ID `EMAIL_EVENT_ID_5`.
+- Private production adapter test to Tim: Resend Delivered, ID `EMAIL_EVENT_ID_6`. This test did not open production or change its intended Carrie recipient. Tim confirmed both test emails arrived. Production inquiries remain addressed to `carrie@carriegabaree.com`; no test was sent to Carrie.
 - Website minimum TLS changed from 1.0 to 1.2; TLS 1.3 remains enabled. Universal certificate active, managed expiry 2026-12-01.
 - Responsive checks: eight representative pages at 320, 768, and 1440px (24 checks), no horizontal overflow; one main landmark/primary heading and image alternatives verified. Homepage/publications visually reviewed at 390px.
 - Mobile navigation Escape-key behavior and citation copying verified. All five video URLs preserved; one embedded video played successfully in the in-app browser. Some Chrome previews showed a blank third-party player, including on the original site; this was not reproduced in the in-app browser.
 - Live deployment: 231 checks across 25 valid pages, including redirects, security headers, private-path blocking, and downloaded PDF hashes. HTTPS/www redirects preserve queries. Empty live contact form correctly blocks submission; no additional email was sent.
-- Google Analytics `G-39QGYP8FPR` absent before consent and loaded once after Allow. Existing automatic Cloudflare beacon loaded once, retaining the dashboard's EU exclusion. This verifies browser integration, not arrival in analytics reports.
+- Google Analytics `YOUR_GA_MEASUREMENT_ID` absent before consent and loaded once after Allow. Existing automatic Cloudflare beacon loaded once, retaining the dashboard's EU exclusion. This verifies browser integration, not arrival in analytics reports.
 
 ## PageSpeed lab checks
 
@@ -52,11 +54,11 @@ Reports: [home](https://pagespeed.web.dev/analysis/https-carriegabaree-com/svc2x
 
 ## Archives and rollback
 
-Primary archive: `/Volumes/StudioStack NVMe/Website Archives/carriegabaree.com/2026-10-28-pre-cutover/godaddy-carriegabaree.com.tar.gz`
+Primary archive: `<PRIMARY_ARCHIVE_ROOT>/carriegabaree.com/2026-10-28-pre-cutover/godaddy-carriegabaree.com.tar.gz`
 
 SHA-256: `b9cce9a80839f33876c9e5ba520776bc5ab3fa077ef18595dd4d6376847cd634`
 
-Second copy: `/Volumes/StudioStack NVMe/Dropbox/Work Files/Websites/Archive/carriegabaree.com-GoDaddy-2026-10-28/godaddy-carriegabaree.com-backup.zip`
+Second copy: `<SECONDARY_ARCHIVE_ROOT>/carriegabaree.com-GoDaddy-2026-10-28/godaddy-carriegabaree.com-backup.zip`
 
 SHA-256: `c39113e4901b8d1fc32f4cb87d9b10dc5dea097f8dbfb595cbf0917aa146daa5`
 
