@@ -101,3 +101,24 @@ Keep credentials, generated builds, archives, and local reports out of Git and p
 ## Monitoring
 
 Services: UptimeRobot and Cloudflare.
+
+## Public archive search
+
+The private archive editor is the source of truth. Its **Approve for website** action explicitly clears a record's title, description, subjects and all attached text for website use. Approval does not deploy this site. Internal provenance, people/contact tables, file paths and edit history are never part of the website export.
+
+1. Review a real record in the private editor, then choose **Approve for website**. Do not approve text without permission to publish it.
+2. Choose **Download approved website data**. This creates an approved-only JSON snapshot, not a database backup.
+3. In this project, run `npm run archive:import -- /ABSOLUTE/PATH/carrie-archive-approved.json`.
+4. Run `npm run archive:preview`, or WebStorm's **10 - Preview approved archive search (local only)**. Open the printed localhost URL to review the candidate snapshot.
+5. When ready to publish, download a fresh approved export and run `npm run archive:import -- /ABSOLUTE/PATH/carrie-archive-approved.json --publish`. This replaces `src/data/archive-approved.json`, the versioned public-content snapshot. It does not deploy anything.
+6. Follow the normal check, commit, push, upload, publish and verify workflow. Production builds generate both the record pages and Pagefind search index from the same versioned snapshot. Missing or invalid input fails the build.
+
+After building, run `npm run archive:verify` to compare every generated record page and its full text with the approved snapshot, verify the browse links, and check that the search index includes exactly the same records. This also catches missing pages caused by build-time path resolution.
+
+Search-result links retain the query and open a matching-passages section on the record. Excerpts and full text highlight search words and word-prefix variants. Only matching passages appear by default; **Show full document** reveals the rest. The sticky **Back to search results** button restores the query and type filter. Each excerpt links to the corresponding passage and, when available, the original source. PDF links use the physical PDF page number from the imported locator, which can differ from the printed page number; transcript links open the original transcript without inventing a time anchor. Full source text remains readable without JavaScript.
+
+Candidate snapshots stay in ignored `.local/`; preview output stays in `dist-archive-preview/`. Without a candidate snapshot, the local preview is empty. No sample records are supplied. Only the deliberately promoted public snapshot is committed. Pagefind indexes its approved full text and runs search in the browser without database credentials or a public D1 connection. This feature sends no custom search analytics events; normal site analytics and hosting access logs are separate.
+
+The public entry point is `/archive`, linked from the site navigation and HTML sitemap. XML sitemaps include the search page and individual records. Production builds verify exact source-text preservation, approval, record/index parity, canonical links and sitemap inclusion. The Worker permits WebAssembly compilation only on `/archive` and Pagefind's dedicated browser worker; arbitrary JavaScript evaluation remains blocked. Private source files and the editor are not served by the public Worker. Production still rejects the local preview flag. Neither import nor preview commands upload or deploy anything.
+
+Approval is a snapshot workflow, not automatic synchronization. After edits or withdrawal, download a fresh export and rebuild. **Withdrawal does not recall an old downloaded export or an already published copy.** Use a fresh export immediately before any future release; a website rebuild/release is required to remove previously published material. Previously downloaded copies cannot be recalled. Keep private backups out of the public project.

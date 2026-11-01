@@ -31,6 +31,18 @@ Each step is separate. Clicking a step does not automatically execute later step
 
 ## Setup and boundaries
 
+### Archive content updates
+
+The public archive uses a versioned, approved-only snapshot—not a live database connection. In the private editor, review and approve records, then download fresh approved website data. First import without `--publish` and run **10 - Preview approved archive search (local only)** to review it. To prepare the reviewed content for production, run:
+
+```sh
+npm run archive:import -- /ABSOLUTE/PATH/carrie-archive-approved.json --publish
+```
+
+Then follow steps **02–07** above. The import does not deploy. All normal builds include the committed snapshot, so another computer can reproduce the release without access to the private database. Edits or withdrawn approvals reach the public site only after a fresh export, import and release. Never substitute a database backup for the approved export.
+
+### Deployment boundaries
+
 - Repository: `timgabaree/carriegabaree.com-astro`; release branch: `main`.
 - Production Worker: `carriegabaree-com-astro-production`; account: `YOUR_CLOUDFLARE_ACCOUNT_ID`.
 - These WebStorm configurations select Node **24.22.1** from your existing nvm installation. On another computer, install the version in `.nvmrc` and adjust the interpreter if needed.

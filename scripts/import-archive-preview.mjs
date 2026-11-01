@@ -1,0 +1,12 @@
+import {readFile,mkdir,writeFile,rename} from 'node:fs/promises';
+import {validateArchive} from './archive-data.mjs';
+const publish=process.argv[3]==='--publish';
+if(process.argv.length!==(publish?4:3))throw Error('Usage: npm run archive:import -- /absolute/path/to/carrie-archive-approved.json [--publish]');
+const data=JSON.parse(await readFile(process.argv[2],'utf8'));
+const records=validateArchive(data);
+const directory=new URL(publish?'../src/data/':'../.local/',import.meta.url);
+await mkdir(directory,{recursive:true,mode:0o700});
+const temporary=new URL('archive-approved.next.json',directory);
+await writeFile(temporary,JSON.stringify(data)+'\n',{mode:0o600});
+await rename(temporary,new URL('archive-approved.json',directory));
+console.log(`Imported ${records.length} approved records into the ${publish?'versioned publication':'ignored preview'} snapshot. Nothing was deployed. ${publish?'Review, check, commit and publish the website to release this snapshot.':'Rebuild the preview to see changes.'}`);

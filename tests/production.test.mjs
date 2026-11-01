@@ -25,6 +25,20 @@ test('CSP permits both analytics providers without allowing arbitrary scripts', 
   assert.match(connections, /https:\/\/cloudflareinsights\.com/);
   assert.match(connections, /https:\/\/www\.google-analytics\.com/);
 });
+test('public archive routes work; WASM is limited to search and private source stays blocked',async()=>{
+ for(const path of ['/archive','/archive/PUB-WEB-great-war','/archive-index/pagefind.js','/archive-index/pagefind-worker.js']){
+  const response=await worker.fetch(new Request('https://carriegabaree.com'+path),environment());
+  assert.equal(response.status,200);
+  const policy=response.headers.get('Content-Security-Policy');
+  assert.equal(policy.includes("'wasm-unsafe-eval'"),['/archive','/archive-index/pagefind-worker.js'].includes(path));
+  assert.ok(!policy.includes("'unsafe-eval'"));assert.ok(!policy.includes("'unsafe-inline'"));
+ }
+ for(const path of ['/src/data/archive-approved.json','/.local/archive-approved.json','/worker/index.ts']){
+  assert.equal((await worker.fetch(new Request('https://carriegabaree.com'+path),environment())).status,404);
+ }
+ const redirect=await worker.fetch(new Request('https://carriegabaree.com/archive/?q=bomb'),environment());
+ assert.equal(redirect.status,301);assert.equal(redirect.headers.get('location'),'/archive?q=bomb');
+});
 
 test('production preparation is locked, including pages, assets and contact endpoints', async () => {
   for (const override of [{ PRODUCTION_ENABLED: undefined }, { PRODUCTION_ENABLED: 'false' },

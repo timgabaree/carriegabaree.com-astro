@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import pages from '../data/pages.json';
 import media from '../data/media.json';
+import {readArchive} from '../../scripts/archive-data.mjs';
+const archive:{id:string;title:string}[]=readArchive();
 ---
 <style>
   .page-panel a,
@@ -10,4 +12,4 @@ import media from '../data/media.json';
     text-decoration: none;
   }
 </style>
-<BaseLayout title="Sitemap & media | Carrie Gabaree" description="Browse Carrie Gabaree’s pages, publications, oral histories, transcripts, citations and media." path="/sitemap" mainClass="site"><article class="page-panel"><h1>Sitemap &amp; media</h1><h2>Pages</h2><ul>{pages.filter(p=>!p.noindex).map(p=><li><a href={'/'+p.slug}>{p.title}</a></li>)}</ul><h2>Images and media</h2><div class="sitemap-gallery">{media.map(m=><figure><a href={m.src}><img src={m.src} alt={m.alt||'Website image'} loading="lazy" width="200" height="150" /></a><figcaption><a href={m.page}>{m.alt||'View related page'}</a></figcaption></figure>)}</div></article></BaseLayout>
+<BaseLayout title="Sitemap & media | Carrie Gabaree" description="Browse Carrie Gabaree’s pages, publications, oral histories, transcripts, citations and media." path="/sitemap" mainClass="site"><article class="page-panel"><h1>Sitemap &amp; media</h1><h2>Pages</h2><ul>{pages.filter(p=>!p.noindex).map(p=><li><a href={'/'+p.slug}>{p.title}</a></li>)}</ul><h2>Digital archive</h2><p><a href="/archive">Search the archive</a></p><ul>{archive.map(r=><li><a href={'/archive/'+r.id}>{r.title}</a></li>)}</ul><h2>Images and media</h2><div class="sitemap-gallery">{media.map(m=><figure><a href={m.src}><img src={m.src} alt={m.alt||'Website image'} loading="lazy" width="200" height="150" /></a><figcaption><a href={m.page}>{m.alt||'View related page'}</a></figcaption></figure>)}</div></article></BaseLayout>

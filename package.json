@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "archive:import": "node scripts/import-archive-preview.mjs",
+    "archive:build": "node scripts/preview-archive.mjs --build-only",
+    "archive:verify": "node scripts/verify-archive-preview.mjs",
+    "archive:preview": "node scripts/preview-archive.mjs",
     "site:help": "node WEBSITE-WORKFLOW/workflow.mjs help",
     "site:preview": "node WEBSITE-WORKFLOW/workflow.mjs preview",
     "site:check": "node WEBSITE-WORKFLOW/workflow.mjs check",
@@ -17,7 +21,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "build:staging": "PUBLIC_SITE_ENV=staging npm run build",
-    "build:production": "PUBLIC_SITE_ENV=production npm run build",
+    "build:production": "PUBLIC_SITE_ENV=production npm run build && node scripts/verify-archive-preview.mjs --production",
     "preview": "wrangler dev --ip 127.0.0.1 --var ENVIRONMENT:local",
     "test": "node --test tests/*.test.mjs",
     "test:site": "node scripts/verify-site.mjs",
@@ -32,6 +36,7 @@
     "@cloudflare/workers-types": "^5.20261027.1",
     "lightningcss": "1.33.0",
     "node-html-parser": "^9.0.5",
+    "pagefind": "1.6.0",
     "sharp": "0.35.5",
     "typescript": "^6.0.3",
     "wrangler": "^4.154.0"

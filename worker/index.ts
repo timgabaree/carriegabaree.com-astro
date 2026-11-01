@@ -4,7 +4,7 @@ import { persistMailIssue } from './monitoring.ts';
 import legacyRedirects from '../src/data/legacy-redirects.json' with { type: 'json' };
 export { ContactState } from './state.ts';
 
-const pages = 'publications|oral-histories|contact|privacy|sitemap|thank-you';
+const pages = 'publications|oral-histories|contact|privacy|sitemap|thank-you|archive';
 const legacyPage = new RegExp(`^/(${pages})(?:/index)?\\.(?:php|html)$`, 'i');
 const trailingPage = new RegExp(`^/(${pages})/$`, 'i');
 const csp = "default-src 'self'; object-src 'none'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://customer-txz6xqq5qm2ofi03.cloudflarestream.com; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://cloudflareinsights.com; frame-src https://customer-txz6xqq5qm2ofi03.cloudflarestream.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'";
@@ -61,7 +61,10 @@ function secure(response: Response, request: Request, env: Env): Response {
   result.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   result.headers.set('X-Frame-Options', 'SAMEORIGIN');
   result.headers.set('Permissions-Policy', 'camera=(), geolocation=(), microphone=()');
-  result.headers.set('Content-Security-Policy', csp);
+  // Pagefind's dedicated worker has its own CSP; permit WASM there and on the search page fallback.
+  // JavaScript eval stays blocked everywhere.
+  const searchRuntime=['/archive','/archive-index/pagefind-worker.js'].includes(new URL(request.url).pathname);
+  result.headers.set('Content-Security-Policy', searchRuntime ? csp.replace("script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'") : csp);
   if (new URL(request.url).protocol === 'https:') result.headers.set('Strict-Transport-Security', 'max-age=31536000');
   if (env.ENVIRONMENT !== 'production') {
     result.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
@@ -86,7 +89,7 @@ async function route(request: Request, env: Env): Promise<Response> {
   try { path = decodeURIComponent(url.pathname); }
   catch { return new Response('Bad request', { status: 400 }); }
   if (/(^|\/)(?:\.|_notes(?:\/|$)|error_log$)/i.test(path) ||
-      /^\/(?:includes|server-php|worker|src|scripts|node_modules|tmp|archive)(?:\/|$)/i.test(path)) {
+      /^\/(?:includes|server-php|worker|src|scripts|node_modules|tmp)(?:\/|$)/i.test(path)) {
     return new Response('Not found', { status: 404 });
   }
 

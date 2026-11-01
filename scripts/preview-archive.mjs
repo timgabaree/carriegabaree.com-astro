@@ -1,0 +1,16 @@
+import {spawnSync,spawn} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
+import {readPreviewArchive} from './archive-data.mjs';
+if(process.env.PUBLIC_SITE_ENV==='production')throw Error('This command is for local archive previews only.');
+process.env.ARCHIVE_PREVIEW='1';process.env.PUBLIC_SITE_ENV='staging';
+const root=new URL('../',import.meta.url);
+const cli=fileURLToPath(new URL('../node_modules/astro/bin/astro.mjs',import.meta.url));
+const records=readPreviewArchive();
+const result=spawnSync(process.execPath,[cli,'build','--outDir','./dist-archive-preview'],{cwd:root,env:process.env,stdio:'inherit'});
+if(result.status!==0)process.exit(result.status||1);
+console.log(`Archive preview built with ${records.length} approved records. No samples, database credentials, or private source fields included.`);
+if(process.argv.includes('--build-only'))process.exit(0);
+console.log('Open http://127.0.0.1:4382/archive — local preview only. Stop with Control+C.');
+const child=spawn(process.execPath,[cli,'preview','--outDir','./dist-archive-preview','--host','127.0.0.1','--port','4382'],{cwd:root,env:process.env,stdio:'inherit'});
+for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>child.kill(signal));
+child.on('exit',code=>process.exit(code??0));

@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- Local archive search preview. Uses only the approved export in .local; never publishes. -->
+  <configuration default="false" name="10 - Preview approved archive search (local only)" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" /><scripts><script value="archive:preview" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" /><envs /><method v="2" />
+  </configuration>
+</component>

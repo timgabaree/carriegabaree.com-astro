@@ -1,6 +1,7 @@
 node_modules/
 dist/
 dist-production/
+dist-archive-preview/
 .astro/
 .wrangler/
 worker-build/
