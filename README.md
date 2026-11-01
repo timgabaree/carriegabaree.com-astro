@@ -104,6 +104,10 @@ Services: UptimeRobot and Cloudflare.
 
 ## Public archive search
 
+For a guided update in WebStorm, use **09 - SEARCH RECORDS ONLY - Add, change or remove (not live)** under **Run → Run… → WEBSITE WORKFLOW**. It prints instructions, asks for a fresh approved export, summarizes changes and requires confirmation before preparing local publication and preview snapshots. It never deploys. Optionally preview with **10**, then use **02–07** to check, commit, push, upload, publish and verify. Skip 09 for normal website edits. The terminal equivalent is `npm run site:search-records`; the manual import sequence below is still supported.
+
+For live source discovery, use **11 - SEARCH SOURCES - Scan, review and optionally publish** (`npm run site:search-sync`). It scans public content, prepares a full-text review, and can apply explicitly selected changes to the private catalog without overwriting editorial metadata. It verifies a private backup before writes, retrieves fresh approved data, and can guide the normal release sequence with separate confirmations. `--scan-only` is read-only apart from private local reports. See the [workflow guide](WEBSITE-WORKFLOW/00-START-HERE.md) for prerequisites, source exclusions, PDF review, conflict handling and recovery. This is an on-demand tool, not automatic synchronization or a new public database endpoint.
+
 The page and navigation item are named **Search**, at `/search`. Previous `/archive` bookmarks redirect to the matching search page, keeping query parameters and passage links. Search controls use the homepage's flat button styling.
 
 The private archive editor is the source of truth. Its **Approve for website** action explicitly clears a record's title, description, subjects and all attached text for website use. Approval does not deploy this site. Internal provenance, people/contact tables, file paths and edit history are never part of the website export.

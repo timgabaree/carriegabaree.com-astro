@@ -15,6 +15,9 @@ Open **Run → Run… → WEBSITE WORKFLOW** in WebStorm. Choose a numbered acti
 | 06 | `npm run site:publish` — PUBLISH LIVE WEBSITE | Publish the saved version at 100 percent after explicit confirmation. |
 | 07 | `npm run site:verify` — Verify the live website | Check live pages and assets. No contact email. |
 | 08 | `npm run site:login` — Sign in to Cloudflare if needed | Normal browser sign-in only. No deployment. |
+| 09 | `npm run site:search-records` — SEARCH RECORDS ONLY - Add, change or remove (not live) | Optional guided import: instructions, fresh export path, change summary and confirmation. Prepares local data only. |
+| 10 | `npm run archive:preview` — Preview approved archive search (local only) | Optional review of the prepared records at the printed `/search` URL. No upload. |
+| 11 | `npm run site:search-sync` — SEARCH SOURCES - Scan, review and optionally publish | Scan live content, review selected database updates, then optionally continue through the normal release confirmations. |
 
 ## Normal update
 
@@ -33,13 +36,54 @@ Each step is separate. Clicking a step does not automatically execute later step
 
 ### Archive content updates
 
-The public archive uses a versioned, approved-only snapshot—not a live database connection. In the private editor, review and approve records, then download fresh approved website data. First import without `--publish` and run **10 - Preview approved archive search (local only)** to review it. To prepare the reviewed content for production, run:
+**Use 09 only when adding, changing or removing Search records. Skip it for normal website edits.** It prints quick instructions in the Run console; no separate popup is needed.
+
+1. In the private editor, approve additions/edits or withdraw website approval for removals.
+2. Download fresh **approved website data** after the changes. Use the complete approved collection, not a database backup.
+3. Run **09 - SEARCH RECORDS ONLY - Add, change or remove (not live)**. Paste the download's full path; quotes, spaces and numbered download filenames are supported.
+4. Review the added, changed, removed and unchanged record counts. Confirm with the phrase shown. Blank input or a different phrase cancels without changing either snapshot. An empty export requires a separate remove-all confirmation.
+5. Optionally run **10** to review Search locally. Step 09 prepares both the preview data and the website snapshot from the same file.
+6. Run **02 → 03 → 04 → 05 → 06 → 07**. Only **06** makes the change live. Review all files shown by 03; it can include other website edits too.
+
+The database is never edited or deleted by 09. It does not commit, push, upload, publish or change DNS. If the Run console cannot accept input, open WebStorm Terminal, run `nvm use`, then `npm run site:search-records`.
+
+### Scan live source content instead of downloading an export
+
+Use **11 - SEARCH SOURCES - Scan, review and optionally publish** when public pages, PDFs or transcripts have been added or changed. Use **09** for a manually downloaded approved export. Ordinary design/code updates need neither step.
+
+1. Run **11**. It reads the live sitemap, known source URLs and same-site content links. Generated Search results, contact/privacy/utility pages, private endpoints, external hosts and media binaries are excluded. PDFs are supported; this does not transcribe audio/video or perform OCR.
+2. Open the printed `review.txt` path in WebStorm. It contains the previous and proposed full text. Review the original PDFs where extraction warnings appear. Linked full magazine issues are not automatically approved merely because a short article excerpt is already approved.
+3. Enter only the numbered changes you want (for example `1,3`), or leave blank to skip database updates. Enter your configured editor email for attribution, acknowledge any source warnings, and type the explicit database confirmation. **Selected additions/updates approve their full text for website publication.** Existing titles, descriptions and relationships are retained. Restricted records and ambiguous mappings are blocked. Withdrawals retain the database record and text; a missing link, timeout or server error never deletes a record.
+4. Before writes, the workflow rechecks source bytes and downloads a current private database backup. It restores and checks that backup locally. Each record update is transactional and rejects concurrent changes to the reviewed record or text. Multiple selected records are separate transactions: if a later record fails, earlier completed records remain saved. The private receipt shows what completed; do not blindly retry after an uncertain network result.
+5. The workflow retrieves a fresh approved-only snapshot and asks before preparing the website files. No manual export handoff is needed. If the snapshot already matches, no release is offered.
+6. Optionally type `CONTINUE TO RELEASE`. Steps **02–07** then run in order, retaining their individual Git, upload and live-publication confirmations. The Git step lists **all** non-ignored changes; cancel if unrelated work is present. Blank/cancel stops further actions, not previously completed actions. Database approvals are rechecked during release and immediately after the final publication confirmation; stale data stops the release.
+
+For a read-only discovery run:
+
+```sh
+npm run site:search-sync -- --scan-only
+```
+
+This writes only private local review files. It does not change D1, website input, Git, Cloudflare deployments or DNS. The workflow is on-demand, not scheduled, and does not deploy the private editor. Public Search remains a static approved snapshot rather than a live database connection.
+
+#### Local prerequisites and recovery
+
+- Use the pinned Node version and installed project dependencies. PDF extraction needs Python with `pypdf` (validated with 6.10.0). The existing bundled Python is detected if available; another computer can use its own Python installation.
+- By default the adjacent `carrie-archive-admin` project supplies the private database identity and allowed editor emails from its ignored `wrangler.local.jsonc`. The account must match this site's publishing account. An email entered for the audit trail is attribution, not a substitute for authentication: database access uses the existing scoped Keychain credential.
+- To override the admin project/Python paths, copy the structure in `search-sync-settings.example.json` into the ignored `.local/search-sync-settings.json` and enter real local paths. Never put a token into that file. Missing Keychain access stops the process; credentials are never printed, exported or committed.
+- Reviews, backups and completion receipts live in ignored `.local/search-sync/<run>/`, with owner-only file permissions. They contain private data. Keep them out of Git and public assets. They are recovery snapshots, not a second editable database.
+- Database text can be restored from the verified backup only through a separately reviewed recovery operation; there is no automatic rollback. Previous website versions remain available through the normal release process.
+- If a run is interrupted, stop any remaining process first. Inspect `.local/search-sync/running.lock`; remove only that stale lock if no scan is running. Start a fresh scan instead of applying an old plan. Never re-run the initial workbook importer over the live database.
+
+Database operations use the documented [D1 batch-query API](https://developers.cloudflare.com/api/resources/d1/subresources/database/methods/query/), with bound values and bounded text payloads.
+
+The manual import remains available as an alternative:
 
 ```sh
 npm run archive:import -- /ABSOLUTE/PATH/carrie-archive-approved.json --publish
 ```
 
-Then follow steps **02–07** above. The import does not deploy. All normal builds include the committed snapshot, so another computer can reproduce the release without access to the private database. Edits or withdrawn approvals reach the public site only after a fresh export, import and release. Never substitute a database backup for the approved export.
+Then follow steps **02–07** above. All normal builds include the committed snapshot, so another computer can reproduce the release without access to the private database. Edits or withdrawn approvals reach the public site only after a fresh export, import and release.
 
 ### Deployment boundaries
 

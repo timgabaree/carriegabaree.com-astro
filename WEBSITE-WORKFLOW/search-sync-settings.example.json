@@ -1,0 +1,4 @@
+{
+  "adminProject": "/ABSOLUTE/PATH/TO/carrie-archive-admin",
+  "python": "/ABSOLUTE/PATH/TO/PYTHON/WITH/PYPDF"
+}

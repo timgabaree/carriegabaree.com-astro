@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- ONLY for adding, changing or removing Search records. Prints instructions, asks for a fresh export, shows differences and confirms. Local preparation only; never publishes. -->
+  <configuration default="false" name="09 - SEARCH RECORDS ONLY - Add, change or remove (not live)" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" /><scripts><script value="site:search-records" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" /><envs /><method v="2" />
+  </configuration>
+</component>

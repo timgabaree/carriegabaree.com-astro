@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- Search source changes only. Prints instructions and a review file. Selected database updates and every release operation require confirmation. -->
+  <configuration default="false" name="11 - SEARCH SOURCES - Scan, review and optionally publish" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" /><scripts><script value="site:search-sync" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" /><envs /><method v="2" />
+  </configuration>
+</component>

@@ -122,3 +122,10 @@ test('describe mode has no commands or prompts, even for publish',async t=>{
   const f=fixture(t);
   await runWorkflow(f.root,'publish',{describe:true,run:()=>{throw Error('Unexpected command');},ask:async()=>{throw Error('Unexpected prompt');}});
 });
+test('last-moment archive freshness failure prevents live deployment',async t=>{
+  const f=fixture(t);
+  fs.mkdirSync(path.join(f.root,'.website-workflow-local'));
+  fs.writeFileSync(path.join(f.root,'.website-workflow-local/uploaded-version.json'),JSON.stringify({commit,version,worker:config.worker,account:config.account}));
+  await assert.rejects(runWorkflow(f.root,'publish',{run:f.run,ask:async()=> 'PUBLISH example.test',beforePublish:async()=>{throw Error('Archive changed');}}),/Archive changed/);
+  assert.ok(!f.calls.some(c=>c.args.includes('deploy')));
+});

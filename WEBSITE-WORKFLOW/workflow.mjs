@@ -18,6 +18,8 @@ export const steps = {
   publish: ['06 - PUBLISH LIVE WEBSITE', 'After typed approval, send 100% of live traffic to the version saved by step 05.'],
   verify: ['07 - Verify the live website', 'Check live pages and assets; when available, confirm the published Cloudflare version. No contact email.'],
   login: ['08 - Sign in to Cloudflare if needed', 'Open Cloudflare’s normal browser sign-in. No website deployment.'],
+  'search-records': ['09 - SEARCH RECORDS ONLY - Add, change or remove (not live)', 'Guided fresh-export import with a change summary and confirmation. Only for Search record changes; prepares local data, never publishes.'],
+  'search-sync': ['11 - SEARCH SOURCES - Scan, review and optionally publish', 'Read live pages/PDFs, review selected database updates, then optionally run the release steps. Separate confirmations protect database changes and live publication.'],
 };
 
 export function validateIdentity(config, branch, remote, pushRemote, packageName) {
@@ -78,7 +80,7 @@ export async function runWorkflow(root, step, options = {}) {
   if (options.describe || step === 'help') {
     for (const [key, [name, description]] of Object.entries(steps)) console.log(name + '\n  ' + description + '\n  npm run site:' + key);
     console.log('\nProject: ' + root + '\nGitHub: timgabaree/' + config.repository + ' (' + config.branch + ')\nCloudflare: ' + config.worker);
-    console.log('\nSteps 03, 04, 05 and 06 require typed approval. Only step 06 changes the live website.\nRead WEBSITE-WORKFLOW/00-START-HERE.md before your first run. No step changes GoDaddy or DNS.');
+    console.log('\nSteps 03, 04, 05 and 06 require typed approval. Step 11 can guide you through these steps, with the same confirmations. Only the step 06 publication action changes the live website.\nRead WEBSITE-WORKFLOW/00-START-HERE.md before your first run. No step changes GoDaddy or DNS.');
     return;
   }
   assert.equal(process.versions.node, fs.readFileSync(path.join(root, '.nvmrc'), 'utf8').trim(),
@@ -125,6 +127,14 @@ export async function runWorkflow(root, step, options = {}) {
     console.log('\nChecks passed. Production files are prepared; nothing has been uploaded or published.');
   }
   identity();
+  if (step === 'search-sync') {
+    const {syncSearchRecords} = await import('../scripts/sync-search-records.mjs');
+    return syncSearchRecords(root, {ask, scanOnly:options.scanOnly, release:(next,hooks)=>runWorkflow(root,next,{...options,...hooks,ask})});
+  }
+  if (step === 'search-records') {
+    const {prepareSearchRecords} = await import('../scripts/prepare-search-records.mjs');
+    return prepareSearchRecords(root, {ask});
+  }
   if (step === 'preview') return npm('run', 'dev', '--', '--host', '127.0.0.1');
   if (step === 'check') return checks();
   if (step === 'commit') {
@@ -183,6 +193,7 @@ export async function runWorkflow(root, step, options = {}) {
     console.log('\nAbout to publish ' + receipt.version + ' at 100% traffic on https://' + config.domain + '\nGit commit: ' + receipt.commit);
     await confirm(ask, 'PUBLISH ' + config.domain);
     onGitHub(); validateReceipt(receipt, config, head());
+    await options.beforePublish?.();
     cf(['versions', 'deploy', receipt.version + '@100%', '--yes', '--message', 'Website workflow: ' + receipt.commit]);
     save(path.join(stateDir, 'published-version.json'), { ...receipt, publishedAt: new Date().toISOString() });
     cf(['deployments', 'status']);
@@ -266,6 +277,6 @@ export async function verifyLive(root, config) {
 }
 const ownFile = fileURLToPath(import.meta.url);
 if (process.argv[1] && path.resolve(process.argv[1]) === ownFile) {
-  runWorkflow(path.resolve(path.dirname(ownFile), '..'), process.argv[2] ?? 'help', { describe: process.argv.includes('--describe') })
+  runWorkflow(path.resolve(path.dirname(ownFile), '..'), process.argv[2] ?? 'help', { describe: process.argv.includes('--describe'), scanOnly:process.argv.includes('--scan-only') })
     .catch(error => { console.error('\nSTOPPED: ' + error.message + '\nNo automatic retry, force-push or rollback was performed.'); process.exitCode = 1; });
 }
