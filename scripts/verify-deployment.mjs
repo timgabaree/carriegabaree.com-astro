@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
+import {join,relative} from 'node:path';
+import {fileURLToPath} from 'node:url';
 const mode=process.argv[2]??'local';assert.ok(['local','staging','production'].includes(mode));
 const base=mode==='local'?'http://127.0.0.1:8803':mode==='staging'?'https://carriegabaree-com-astro-staging.timgabaree-com-astro.workers.dev':'https://carriegabaree.com';
 const headers={};let checks=0;
@@ -32,11 +34,11 @@ if(mode==='production'){
  const root=new URL('../dist-production/archive-index/',import.meta.url);
  const files=fs.readdirSync(root,{recursive:true,withFileTypes:true}).filter(e=>e.isFile());
  for(const file of files){
-  const local=new URL(file.name,new URL('file://'+file.parentPath+'/'));
-  const relative=decodeURIComponent(local.pathname).slice(decodeURIComponent(root.pathname).length);
-  const r=await get('/archive-index/'+relative);assert.equal(r.status,200,relative);
+  const local=join(file.parentPath,file.name);
+  const assetPath=relative(fileURLToPath(root),local).split('\\').join('/');
+  const r=await get('/archive-index/'+assetPath);assert.equal(r.status,200,assetPath);
   const hash=b=>createHash('sha256').update(b).digest('hex');
-  assert.equal(hash(Buffer.from(await r.arrayBuffer())),hash(fs.readFileSync(local)),relative+' search asset differs');checks++;
+  assert.equal(hash(Buffer.from(await r.arrayBuffer())),hash(fs.readFileSync(local)),assetPath+' search asset differs');checks++;
  }
 }
 assert.equal((await get('/contact-submit')).status,405);assert.equal((await get('/contact-token',{headers:{Origin:'https://attacker.invalid'}})).status,403);checks+=2;
