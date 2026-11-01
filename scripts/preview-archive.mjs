@@ -10,7 +10,7 @@ const result=spawnSync(process.execPath,[cli,'build','--outDir','./dist-archive-
 if(result.status!==0)process.exit(result.status||1);
 console.log(`Archive preview built with ${records.length} approved records. No samples, database credentials, or private source fields included.`);
 if(process.argv.includes('--build-only'))process.exit(0);
-console.log('Open http://127.0.0.1:4382/archive — local preview only. Stop with Control+C.');
+console.log('Open http://127.0.0.1:4382/search — local preview only. Stop with Control+C.');
 const child=spawn(process.execPath,[cli,'preview','--outDir','./dist-archive-preview','--host','127.0.0.1','--port','4382'],{cwd:root,env:process.env,stdio:'inherit'});
 for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>child.kill(signal));
 child.on('exit',code=>process.exit(code??0));

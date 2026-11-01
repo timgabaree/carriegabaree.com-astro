@@ -15,7 +15,7 @@ if(box){
   box.hidden=false;const heading=document.getElementById('search-matches');
   heading.textContent='Matches for “'+query+'”';
   const back=document.getElementById('archive-back');const backParams=new URLSearchParams({q:query});
-  if(params.get('type'))backParams.set('type',params.get('type'));back.href='/archive?'+backParams;
+  if(params.get('type'))backParams.set('type',params.get('type'));back.href='/search?'+backParams;
   const entries=[],sections=[...document.querySelectorAll('.archive-passage')];
   for(const section of sections){
    const paragraph=section.querySelector('p'),text=paragraph.textContent,ranges=matchRanges(text,terms);

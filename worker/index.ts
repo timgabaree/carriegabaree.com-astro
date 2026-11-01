@@ -4,7 +4,7 @@ import { persistMailIssue } from './monitoring.ts';
 import legacyRedirects from '../src/data/legacy-redirects.json' with { type: 'json' };
 export { ContactState } from './state.ts';
 
-const pages = 'publications|oral-histories|contact|privacy|sitemap|thank-you|archive';
+const pages = 'publications|oral-histories|contact|privacy|sitemap|thank-you|search';
 const legacyPage = new RegExp(`^/(${pages})(?:/index)?\\.(?:php|html)$`, 'i');
 const trailingPage = new RegExp(`^/(${pages})/$`, 'i');
 const csp = "default-src 'self'; object-src 'none'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://customer-txz6xqq5qm2ofi03.cloudflarestream.com; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://cloudflareinsights.com; frame-src https://customer-txz6xqq5qm2ofi03.cloudflarestream.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'";
@@ -63,7 +63,7 @@ function secure(response: Response, request: Request, env: Env): Response {
   result.headers.set('Permissions-Policy', 'camera=(), geolocation=(), microphone=()');
   // Pagefind's dedicated worker has its own CSP; permit WASM there and on the search page fallback.
   // JavaScript eval stays blocked everywhere.
-  const searchRuntime=['/archive','/archive-index/pagefind-worker.js'].includes(new URL(request.url).pathname);
+  const searchRuntime=['/search','/archive-index/pagefind-worker.js'].includes(new URL(request.url).pathname);
   result.headers.set('Content-Security-Policy', searchRuntime ? csp.replace("script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'") : csp);
   if (new URL(request.url).protocol === 'https:') result.headers.set('Strict-Transport-Security', 'max-age=31536000');
   if (env.ENVIRONMENT !== 'production') {
@@ -98,6 +98,9 @@ async function route(request: Request, env: Env): Promise<Response> {
   if (!['GET', 'HEAD'].includes(request.method)) {
     return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
   }
+  // Preserve old bookmarks, queries and browser-inherited passage fragments.
+  const archiveAlias=/^\/archive(?:\/([A-Za-z0-9_-]+))?(?:\.html|\/)?$/i.exec(path);
+  if(archiveAlias)return new Response(null,{status:301,headers:{Location:'/search'+(archiveAlias[1]?'/'+archiveAlias[1]:'')+url.search}});
   const page = legacyPage.exec(path) ?? trailingPage.exec(path);
   const alias=(legacyRedirects as Record<string,string>)[path];
   if(alias)return new Response(null,{status:301,headers:{Location:alias+url.search}});

@@ -19,17 +19,20 @@ const get=async(p,init={})=>{
 };
 const pages=JSON.parse(fs.readFileSync(new URL('../src/data/pages.json',import.meta.url)));
 const archive=JSON.parse(fs.readFileSync(new URL('../src/data/archive-approved.json',import.meta.url)));
-for(const p of [...pages,{slug:'sitemap'},{slug:'archive'},...archive.records.map(r=>({slug:'archive/'+r.id}))]){
+for(const p of [...pages,{slug:'sitemap'},{slug:'search'},...archive.records.map(r=>({slug:'search/'+r.id}))]){
  const r=await get('/'+p.slug);assert.equal(r.status,200,p.slug);assert.ok(r.headers.get('content-security-policy'));assert.equal(r.headers.get('x-content-type-options'),'nosniff');
  const html=await r.text();assert.match(html,/<main/);assert.match(html,new RegExp('data-analytics-enabled="'+(mode==='production'?'true':'false')+'"'));
  if(mode!=='production')assert.match(r.headers.get('x-robots-tag'),/noindex/);checks+=6;
 }
 for(const [from,to] of Object.entries(JSON.parse(fs.readFileSync(new URL('../src/data/legacy-redirects.json',import.meta.url))))){const r=await get(from+'?test=1');assert.equal(r.status,301);assert.equal(r.headers.get('location'),to+'?test=1');checks+=2;}
 for(const p of pages){const from=p.slug?'/'+p.slug+'.html':'/index.html';const r=await get(from);assert.equal(r.status,301,from);assert.equal(r.headers.get('location'),'/'+p.slug);checks+=2;}
-for(const p of ['/.git/config','/.env','/worker/index.ts','/includes/config.php','/archive/not-a-record','/archive/archive.sqlite','/src/data/archive-approved.json','/api/public-preview','/random.php','/not-a-page']){assert.equal((await get(p)).status,404,p);checks++;}
-assert.equal((await get('/archive/')).headers.get('location'),'/archive');checks++;
+for(const p of ['/.git/config','/.env','/worker/index.ts','/includes/config.php','/search/not-a-record','/search/archive.sqlite','/src/data/archive-approved.json','/api/public-preview','/random.php','/not-a-page']){assert.equal((await get(p)).status,404,p);checks++;}
+assert.equal((await get('/search/')).headers.get('location'),'/search');checks++;
+for(const suffix of ['',...archive.records.map(r=>'/'+r.id)]){
+ const r=await get('/archive'+suffix+'?q=bomb');assert.equal(r.status,301);assert.equal(r.headers.get('location'),'/search'+suffix+'?q=bomb');checks+=2;
+}
 const xml=await(await get('/sitemap.xml')).text();assert.doesNotMatch(xml,/xml-stylesheet|\.xsl/);assert.match(xml,/<image:loc>/);checks+=2;
-for(const r of archive.records){assert.ok(xml.includes('<loc>https://carriegabaree.com/archive/'+r.id+'</loc>'));checks++;}
+for(const r of archive.records){assert.ok(xml.includes('<loc>https://carriegabaree.com/search/'+r.id+'</loc>'));checks++;}
 if(mode==='production'){
  const root=new URL('../dist-production/archive-index/',import.meta.url);
  const files=fs.readdirSync(root,{recursive:true,withFileTypes:true}).filter(e=>e.isFile());

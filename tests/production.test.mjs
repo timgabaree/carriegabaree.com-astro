@@ -26,18 +26,26 @@ test('CSP permits both analytics providers without allowing arbitrary scripts', 
   assert.match(connections, /https:\/\/www\.google-analytics\.com/);
 });
 test('public archive routes work; WASM is limited to search and private source stays blocked',async()=>{
- for(const path of ['/archive','/archive/PUB-WEB-great-war','/archive-index/pagefind.js','/archive-index/pagefind-worker.js']){
+ for(const path of ['/search','/search/PUB-WEB-great-war','/archive-index/pagefind.js','/archive-index/pagefind-worker.js']){
   const response=await worker.fetch(new Request('https://carriegabaree.com'+path),environment());
   assert.equal(response.status,200);
   const policy=response.headers.get('Content-Security-Policy');
-  assert.equal(policy.includes("'wasm-unsafe-eval'"),['/archive','/archive-index/pagefind-worker.js'].includes(path));
+  assert.equal(policy.includes("'wasm-unsafe-eval'"),['/search','/archive-index/pagefind-worker.js'].includes(path));
   assert.ok(!policy.includes("'unsafe-eval'"));assert.ok(!policy.includes("'unsafe-inline'"));
  }
  for(const path of ['/src/data/archive-approved.json','/.local/archive-approved.json','/worker/index.ts']){
   assert.equal((await worker.fetch(new Request('https://carriegabaree.com'+path),environment())).status,404);
  }
- const redirect=await worker.fetch(new Request('https://carriegabaree.com/archive/?q=bomb'),environment());
- assert.equal(redirect.status,301);assert.equal(redirect.headers.get('location'),'/archive?q=bomb');
+ const redirect=await worker.fetch(new Request('https://carriegabaree.com/search/?q=bomb'),environment());
+ assert.equal(redirect.status,301);assert.equal(redirect.headers.get('location'),'/search?q=bomb');
+});
+
+test('old archive bookmarks redirect to search without losing the query',async()=>{
+ for(const [oldPath,newPath] of [['/archive','/search'],['/archive/','/search'],['/archive.html','/search'],['/archive/PUB-WEB-great-war','/search/PUB-WEB-great-war'],['/archive/AOBJ-0001.html','/search/AOBJ-0001']]){
+  const query='?q=bomb&match=bombing&type=Publication';
+  const response=await worker.fetch(new Request('https://carriegabaree.com'+oldPath+query),environment());
+  assert.equal(response.status,301);assert.equal(response.headers.get('location'),newPath+query);
+ }
 });
 
 test('production preparation is locked, including pages, assets and contact endpoints', async () => {

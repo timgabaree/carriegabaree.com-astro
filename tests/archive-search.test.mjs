@@ -53,6 +53,6 @@ test('search index builds full text and type filters in an isolated test directo
   const entry=JSON.parse(await readFile(join(dir,'pagefind-entry.json'),'utf8'));assert.equal(entry.languages.en.page_count,1);
   const fragments=await readdir(join(dir,'fragment'));assert.equal(fragments.length,1);
   const data=JSON.parse(gunzipSync(await readFile(join(dir,'fragment',fragments[0]))).toString().replace(/^pagefind_dcd/,'').trim());
-  assert.equal(data.url,'/archive/R1');assert.match(data.content,/telescope/);assert.equal(data.meta.kind,'Publication');
+  assert.equal(data.url,'/search/R1');assert.match(data.content,/telescope/);assert.equal(data.meta.kind,'Publication');
  }finally{await rm(dir,{recursive:true,force:true});}
 });

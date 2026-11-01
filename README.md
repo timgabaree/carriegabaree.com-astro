@@ -104,6 +104,8 @@ Services: UptimeRobot and Cloudflare.
 
 ## Public archive search
 
+The page and navigation item are named **Search**, at `/search`. Previous `/archive` bookmarks redirect to the matching search page, keeping query parameters and passage links. Search controls use the homepage's flat button styling.
+
 The private archive editor is the source of truth. Its **Approve for website** action explicitly clears a record's title, description, subjects and all attached text for website use. Approval does not deploy this site. Internal provenance, people/contact tables, file paths and edit history are never part of the website export.
 
 1. Review a real record in the private editor, then choose **Approve for website**. Do not approve text without permission to publish it.
@@ -119,6 +121,6 @@ Search-result links retain the query and open a matching-passages section on the
 
 Candidate snapshots stay in ignored `.local/`; preview output stays in `dist-archive-preview/`. Without a candidate snapshot, the local preview is empty. No sample records are supplied. Only the deliberately promoted public snapshot is committed. Pagefind indexes its approved full text and runs search in the browser without database credentials or a public D1 connection. This feature sends no custom search analytics events; normal site analytics and hosting access logs are separate.
 
-The public entry point is `/archive`, linked from the site navigation and HTML sitemap. XML sitemaps include the search page and individual records. Production builds verify exact source-text preservation, approval, record/index parity, canonical links and sitemap inclusion. The Worker permits WebAssembly compilation only on `/archive` and Pagefind's dedicated browser worker; arbitrary JavaScript evaluation remains blocked. Private source files and the editor are not served by the public Worker. Production still rejects the local preview flag. Neither import nor preview commands upload or deploy anything.
+The public entry point is `/search`, linked from the site navigation and HTML sitemap. XML sitemaps include the search page and individual records. Production builds verify exact source-text preservation, approval, record/index parity, canonical links and sitemap inclusion. The Worker permits WebAssembly compilation only on `/search` and Pagefind's dedicated browser worker; arbitrary JavaScript evaluation remains blocked. Private source files and the editor are not served by the public Worker. Production still rejects the local preview flag. Neither import nor preview commands upload or deploy anything.
 
 Approval is a snapshot workflow, not automatic synchronization. After edits or withdrawal, download a fresh export and rebuild. **Withdrawal does not recall an old downloaded export or an already published copy.** Use a fresh export immediately before any future release; a website rebuild/release is required to remove previously published material. Previously downloaded copies cannot be recalled. Keep private backups out of the public project.

@@ -10,15 +10,15 @@ export function getStaticPaths(){
  return [{params:{slug:undefined},props:{records,record:null}},...records.map((record:ArchiveRecord)=>({params:{slug:record.id},props:{records:[],record}}))];
 }
 const {records,record}=Astro.props;
-const path=record?'/archive/'+record.id:'/archive';
+const path=record?'/search/'+record.id:'/search';
 const preview=process.env.ARCHIVE_PREVIEW==='1';
 ---
-<BaseLayout title={(record?record.title:'Search the archive')+' | Carrie Gabaree'} description="Explore oral histories, publications and archival materials." path={path} mainClass="site" noindex={preview}>
+<BaseLayout title={(record?record.title:'Search')+' | Carrie Gabaree'} description="Explore oral histories, publications and archival materials." path={path} mainClass="site" noindex={preview}>
  <article class="page-panel archive-page">
-  {preview&&<p class="archive-preview-note">Local preview — only website-approved records are included. Nothing here has been published to the live site.</p>}
+  {preview&&<p class="archive-preview-note">Local preview — only website-approved records are included. This view does not publish changes to the live site.</p>}
   {record?<>
    <nav class="archive-record-controls" aria-label="Archive reading controls">
-    <a id="archive-back" class="button button-secondary" href="/archive">← Back to search results</a>
+    <a id="archive-back" class="button button-secondary" href="/search">← Back to search results</a>
     <button id="archive-show-full" class="button button-secondary" type="button" aria-controls="archive-source-text" aria-pressed="false" hidden>Show full document</button>
    </nav>
    <p class="eyebrow">{record.kind}</p><h1>{record.title}</h1>
@@ -37,7 +37,7 @@ const preview=process.env.ARCHIVE_PREVIEW==='1';
    {record.segments.length?record.segments.map((s:{locator:string;content:string},i:number)=>{const source=sourceLink(record.sourceUrl,s.locator);return <section class="archive-passage" tabindex="-1" id={'passage-'+(i+1)}><h3>{s.locator||'Passage '+(i+1)}</h3><p>{s.content}</p>{source&&<a class="archive-source-link" href={source.href}>{source.label}</a>}</section>}):<p>No transcript or publication text is attached to this record.</p>}
    </section>
   </>:<>
-   <p class="eyebrow">Digital archive</p><h1>Search the archive</h1>
+   <p class="eyebrow">Publications & oral histories</p><h1>Search</h1>
    <p class="page-intro">Find stories, people and subjects across oral histories, publications and their full text.</p>
    {records.length===0?<div class="archive-empty"><h2>No records available yet</h2><p>Please check back as the collection grows.</p></div>:<>
     <form id="archive-search-form" role="search" data-record-count={records.length}>
@@ -48,7 +48,7 @@ const preview=process.env.ARCHIVE_PREVIEW==='1';
     <p id="archive-search-status" role="status" aria-live="polite">Browse all {records.length} records below, or search their full text.</p>
     <div id="archive-results" class="archive-results"></div>
     <button id="archive-more" class="button button-secondary" type="button" hidden>Show more results</button>
-    <details id="archive-browse" open><summary>Browse all records</summary><ul class="archive-record-list">{records.map((r:{id:string;title:string;kind:string;summary:string})=><li><h2><a href={'/archive/'+r.id}>{r.title}</a></h2><p class="eyebrow">{r.kind}</p><p>{r.summary}</p></li>)}</ul></details>
+    <details id="archive-browse" open><summary>Browse all records</summary><ul class="archive-record-list">{records.map((r:{id:string;title:string;kind:string;summary:string})=><li><h2><a href={'/search/'+r.id}>{r.title}</a></h2><p class="eyebrow">{r.kind}</p><p>{r.summary}</p></li>)}</ul></details>
     <noscript><p>Keyword search needs JavaScript. You can still browse every record above.</p></noscript>
    </>}
   </>}

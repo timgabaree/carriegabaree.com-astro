@@ -12,7 +12,7 @@ if(form){
   for(const data of batch){
    const card=el('article','');card.className='archive-result';
    const title=el('h2',''),link=el('a',data.meta.title);const url=new URL(data.url,location.origin);
-   if(url.origin!==location.origin||!/^\/archive\/[a-zA-Z0-9_-]+$/.test(url.pathname))throw Error('Invalid result link');
+   if(url.origin!==location.origin||!/^\/search\/[a-zA-Z0-9_-]+$/.test(url.pathname))throw Error('Invalid result link');
    // Decode Pagefind's encoded excerpt in an inert document, then render only text.
    const parsed=new DOMParser().parseFromString(data.excerpt,'text/html');const excerpt=parsed.body.textContent;
    const matched=[...parsed.querySelectorAll('mark')].map(mark=>mark.textContent).join(' ').slice(0,400);
