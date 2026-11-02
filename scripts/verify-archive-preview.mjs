@@ -17,6 +17,15 @@ assert.match(search.querySelector('meta[name="robots"]').getAttribute('content')
 if(production)assert.ok(!search.querySelector('.archive-preview-note'));
 const browse=search.querySelectorAll('.archive-record-list a');
 assert.equal(browse.length,records.length,'Search page must contain every approved record');
+assert.ok(search.querySelector('#archive-advanced'));
+assert.deepEqual(search.querySelectorAll('#archive-scope option').map(o=>o.getAttribute('value')),['passage','document','site']);
+const advanced=JSON.parse(await readFile(new URL('archive-index/advanced-search.json',root),'utf8'));
+assert.equal(advanced.version,1);
+assert.deepEqual(advanced.records.filter(r=>r.kind!=='Website page'),records.map(r=>({id:r.id,url:'/search/'+r.id,title:r.title,kind:r.kind,summary:r.summary,subjects:r.subjects,segments:r.segments})),'Advanced search must use exactly the approved reading text');
+for(const page of advanced.records.filter(r=>r.kind==='Website page')){
+ assert.match(page.url,/^\/[a-z0-9-]*$/);assert.ok(page.segments.length===1);
+ assert.ok(!['/thank-you','/search','/sitemap'].includes(page.url));
+}
 for(const r of records){
  assert.ok(browse.some(a=>a.getAttribute('href')==='/search/'+r.id));
  const html=parse(await readFile(new URL('search/'+r.id+'.html',root),'utf8'));

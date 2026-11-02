@@ -44,6 +44,17 @@ const preview=process.env.ARCHIVE_PREVIEW==='1';
      <div><label for="archive-query">Search the collection</label><input id="archive-query" type="search" maxlength="200" placeholder="Enter a topic, name or phrase" autocomplete="off" /></div>
      <div><label for="archive-type">Material type</label><select id="archive-type"><option value="">All types</option>{[...new Set(records.map((r:{kind:string})=>r.kind))].map(kind=><option value={kind}>{kind}</option>)}</select></div>
      <button class="button" type="submit">Search</button><button class="button button-secondary" type="reset">Clear</button>
+     <details id="archive-advanced"><summary>Advanced search</summary>
+      <p>Use the main search box for <strong>all these words (AND)</strong>. Add optional conditions below. Word searches include endings such as “bombing” for “bomb”; phrases match the words as written, ignoring case and extra spaces. Type words, not AND/OR operators.</p>
+      <div class="archive-advanced-fields">
+       <div><label for="archive-any">Any of these words (OR)</label><input id="archive-any" maxlength="200" placeholder="e.g. museum collection" /></div>
+       <div><label for="archive-phrase">Exact phrase</label><input id="archive-phrase" maxlength="200" placeholder="e.g. body armor" /></div>
+       <div><label for="archive-exclude">Exclude these words (NOT)</label><input id="archive-exclude" maxlength="200" placeholder="e.g. training" /></div>
+       <div><label for="archive-scope">Search within</label><select id="archive-scope" aria-describedby="archive-scope-help"><option value="passage">Same passage</option><option value="document">Same document</option><option value="site">Entire site</option></select></div>
+      </div>
+      <p id="archive-scope-help">Same passage: all conditions must match one transcript segment or PDF page. Same document: words may occur in different passages; exclusions apply to the whole record. Entire site: also includes ordinary website pages, with conditions matched within each page or document. Exact phrases never span passages. Material type still limits results.</p>
+      <button class="button" type="submit">Search with these options</button>
+     </details>
     </form>
     <p id="archive-search-status" role="status" aria-live="polite">Browse all {records.length} records below, or search their full text.</p>
     <div id="archive-results" class="archive-results"></div>

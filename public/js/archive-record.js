@@ -1,4 +1,5 @@
 import {searchTerms,matchRanges,excerptAround,highlightText} from './archive-matches.js';
+import {readAdvanced,advancedParams,compileAdvanced} from './advanced-search.js';
 const controls=document.querySelector('.archive-record-controls'),page=document.querySelector('.archive-page'),siteHeader=document.querySelector('.site-header');
 if(controls&&page&&siteHeader){
  const measure=()=>{
@@ -10,17 +11,19 @@ if(controls&&page&&siteHeader){
 }
 const box=document.getElementById('archive-matches');
 if(box){
- const params=new URLSearchParams(location.search),query=(params.get('q')||'').slice(0,200),terms=searchTerms(query,params.get('match')||'');
- if(query.trim()&&terms.length){
+ const params=new URLSearchParams(location.search),query=(params.get('q')||'').slice(0,200),advanced=params.get('advanced')==='1'?readAdvanced(params):null,matcher=advanced?compileAdvanced(advanced):null,terms=matcher?matcher.terms:searchTerms(query,params.get('match')||'');
+ if(advanced||query.trim()&&terms.length){
   box.hidden=false;const heading=document.getElementById('search-matches');
-  heading.textContent='Matches for “'+query+'”';
-  const back=document.getElementById('archive-back');const backParams=new URLSearchParams({q:query});
+  heading.textContent=advanced?'Advanced search matches':'Matches for “'+query+'”';
+  const back=document.getElementById('archive-back');const backParams=advanced?advancedParams(advanced):new URLSearchParams({q:query});
   if(params.get('type'))backParams.set('type',params.get('type'));back.href='/search?'+backParams;
   const entries=[],sections=[...document.querySelectorAll('.archive-passage')];
   for(const section of sections){
    const paragraph=section.querySelector('p'),text=paragraph.textContent,ranges=matchRanges(text,terms);
-   if(!ranges.length)continue;
-   entries.push({section,text,ranges});highlightText(paragraph,text,terms);
+   if(ranges.length)highlightText(paragraph,text,terms);
+   const include=matcher?(advanced.scope==='passage'?matcher.passage(text):matcher.relevant(text)):ranges.length>0;
+   if(!include)continue;
+   entries.push({section,text,ranges});
   }
   const matching=new Set(entries.map(entry=>entry.section)),toggle=document.getElementById('archive-show-full'),sourceHeading=document.getElementById('archive-source-heading'),sourceStatus=document.getElementById('archive-source-status');
   let showFull=false;
@@ -47,7 +50,8 @@ if(box){
     card.append(links);list.append(card);
    }
    shown=Math.min(entries.length,shown+20);more.hidden=shown===entries.length;
-   status.textContent=entries.length?`${entries.length} passages contain your search words. Showing ${shown} previews. Read a passage below or open its original source.`:'No matching words were found in the attached text. The search result may match the title, subjects or a related word form. Choose “Show full document” to read the record.';
+   const noun=entries.length===1?'passage':'passages',verb=entries.length===1?'matches':'match';
+   status.textContent=entries.length?`${entries.length} ${noun} ${verb} ${advanced?.scope==='passage'?'all your conditions':matcher&&!matcher.positive?'this exclusion-only search':'your search words'}. Showing ${shown} previews. ${advanced&&advanced.scope!=='passage'?'Conditions match the whole document, not necessarily each passage. ':''}Read a passage below or open its original source.`:'No matching words were found in the attached text. The search result may match the title, subjects or a related word form. Choose “Show full document” to read the record.';
   }
   append();more.addEventListener('click',append);
   if(location.hash==='#search-matches'){heading.focus({preventScroll:true});heading.scrollIntoView();}
