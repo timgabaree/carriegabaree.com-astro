@@ -1,0 +1,21 @@
+---
+import sites from '../data/family-sites.json';
+---
+<div class="family-sites">
+ <p id="family-sites-label">Part of the Gabaree family of websites</p>
+ <nav aria-labelledby="family-sites-label">
+  <ul>
+   {sites.map((site,index)=><li>{index>0&&<span class="family-site-separator" aria-hidden="true">·</span>}<a href={site.url} target="_blank" rel="noopener noreferrer">{site.label}<span class="visually-hidden"> (opens in a new tab)</span></a></li>)}
+  </ul>
+ </nav>
+</div>
+<style>
+ .family-sites{margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--color-border);color:var(--color-text-muted)}
+ .family-sites p{font-size:.85rem}
+ .family-sites ul{display:flex;flex-wrap:wrap;justify-content:center;gap:0;list-style:none;padding:0;margin:-.2rem 0 0}
+ .family-sites li{display:inline-flex;align-items:center}
+ .family-sites a{display:inline-flex;align-items:center;min-height:44px;font-size:.82rem;color:var(--color-primary);text-decoration:none}
+ .family-sites a:visited{color:var(--color-primary)}
+ .family-sites a:hover{text-decoration:underline;text-underline-offset:.2em}
+ .family-site-separator{padding:0 .65rem;color:var(--color-text-muted)}
+</style>
