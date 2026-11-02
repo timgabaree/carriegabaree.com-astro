@@ -17,7 +17,8 @@ if(form){
    const parsed=new DOMParser().parseFromString(data.excerpt,'text/html');const excerpt=parsed.body.textContent;
    const matched=[...parsed.querySelectorAll('mark')].map(mark=>mark.textContent).join(' ').slice(0,400);
    const params=new URLSearchParams({q:activeQuery});if(matched)params.set('match',matched);if(activeType)params.set('type',activeType);
-   link.href=url.pathname+(activeQuery?'?'+params+'#search-matches':'');title.append(link);card.append(el('p',data.meta.kind),title);
+   const kind=el('p',data.meta.kind);kind.className='eyebrow';
+   link.href=url.pathname+(activeQuery?'?'+params+'#search-matches':'');title.append(link);card.append(kind,title);
    const preview=el('p','');highlightText(preview,activeQuery?excerpt:data.meta.summary,searchTerms(activeQuery,matched));card.append(preview);
    const read=el('a',activeQuery?'View matching passages →':'Read record →');read.href=link.href;card.append(read);results.append(card);
   }
