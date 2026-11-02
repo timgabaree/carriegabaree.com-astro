@@ -110,6 +110,10 @@ For live source discovery, use **11 - SEARCH SOURCES - Scan, review and optional
 
 The page and navigation item are named **Search**, at `/search`. Previous `/archive` bookmarks redirect to the matching search page, keeping query parameters and passage links. Search controls use the homepage's flat button styling.
 
+For PDF extraction artifacts, use **12 - PDF TEXT ONLY - Clean and review (not live)** (`npm run site:pdf-text`). It uses PDF layout to suggest paragraph reflow, then opens a review checkpoint with editable candidate JSON and original text. Compare against the linked PDF before saving. The private database retains the original extraction and a separate revisioned reading edition; fresh exports use the reviewed edition. Changed source PDFs block export until reconciled rather than silently replacing corrections. This step never publishes, changes rights approval, or modifies the PDFs. See the workflow guide for setup and review details.
+
+Oral-history spelling corrections retain the surname used for the interview, rather than replacing historical names with a current name. Keep the web transcript and approved search text consistent. Reviewed database text preserves the raw import separately; downloadable archival PDFs are not silently rewritten. Source scans accept text that already matches a valid reviewed edition and flag other changes for review.
+
 The private archive editor is the source of truth. Its **Approve for website** action explicitly clears a record's title, description, subjects and all attached text for website use. Approval does not deploy this site. Internal provenance, people/contact tables, file paths and edit history are never part of the website export.
 
 1. Review a real record in the private editor, then choose **Approve for website**. Do not approve text without permission to publish it.

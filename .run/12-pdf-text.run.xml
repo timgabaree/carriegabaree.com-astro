@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <!-- PDF extraction cleanup only. Review editable candidate text against the PDF, then explicitly save. Preserves raw text and never publishes. -->
+  <configuration default="false" name="12 - PDF TEXT ONLY - Clean and review (not live)" type="js.build_tools.npm" folderName="WEBSITE WORKFLOW">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="run" /><scripts><script value="site:pdf-text" /></scripts>
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v24.22.1/bin/node" /><envs /><method v="2" />
+  </configuration>
+</component>

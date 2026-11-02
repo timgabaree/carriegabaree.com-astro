@@ -19,6 +19,7 @@
     "site:login": "node WEBSITE-WORKFLOW/workflow.mjs login",
     "site:search-records": "node WEBSITE-WORKFLOW/workflow.mjs search-records",
     "site:search-sync": "node WEBSITE-WORKFLOW/workflow.mjs search-sync",
+    "site:pdf-text": "node WEBSITE-WORKFLOW/workflow.mjs pdf-text",
     "check": "astro check && tsc -p worker/tsconfig.json",
     "dev": "astro dev",
     "build": "astro build",

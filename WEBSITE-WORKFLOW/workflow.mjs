@@ -20,6 +20,7 @@ export const steps = {
   login: ['08 - Sign in to Cloudflare if needed', 'Open Cloudflare’s normal browser sign-in. No website deployment.'],
   'search-records': ['09 - SEARCH RECORDS ONLY - Add, change or remove (not live)', 'Guided fresh-export import with a change summary and confirmation. Only for Search record changes; prepares local data, never publishes.'],
   'search-sync': ['11 - SEARCH SOURCES - Scan, review and optionally publish', 'Read live pages/PDFs, review selected database updates, then optionally run the release steps. Separate confirmations protect database changes and live publication.'],
+  'pdf-text': ['12 - PDF TEXT ONLY - Clean and review (not live)', 'Review paragraph/name extraction fixes against the original PDF; save a separate reading edition and prepare local Search files. Never publishes.'],
 };
 
 export function validateIdentity(config, branch, remote, pushRemote, packageName) {
@@ -130,6 +131,10 @@ export async function runWorkflow(root, step, options = {}) {
   if (step === 'search-sync') {
     const {syncSearchRecords} = await import('../scripts/sync-search-records.mjs');
     return syncSearchRecords(root, {ask, scanOnly:options.scanOnly, release:(next,hooks)=>runWorkflow(root,next,{...options,...hooks,ask})});
+  }
+  if (step === 'pdf-text') {
+    const {reviewPDFText} = await import('../scripts/review-pdf-text.mjs');
+    return reviewPDFText(root,{ask});
   }
   if (step === 'search-records') {
     const {prepareSearchRecords} = await import('../scripts/prepare-search-records.mjs');

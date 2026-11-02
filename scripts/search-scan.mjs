@@ -3,6 +3,7 @@ import {parse} from 'node-html-parser';
 import {createHash} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {effectiveSegments} from './reviewed-text.mjs';
 
 export const origin = 'https://carriegabaree.com';
 export const hash = value => createHash('sha256').update(typeof value === 'string' || Buffer.isBuffer(value) ? value : JSON.stringify(value)).digest('hex');
@@ -139,6 +140,13 @@ export function planChanges(snapshot,scan) {
     const old=doc?snapshot.text_segments.filter(s=>s.document_id===doc.id).sort((a,b)=>a.ordinal-b.ordinal).map(({locator,content})=>({locator,content})):[];
     // Formatting-only source changes do not overwrite text or renew approvals.
     if(doc && hash(old)===hash(source.segments)){unchanged.push(source.url);continue;}
+    if(doc && snapshot.text_reviews?.some(e=>e.document_id===doc.id)){
+      try {
+        const reviewed=effectiveSegments(snapshot,doc).map(({locator,content})=>({locator,content}));
+        if(hash(reviewed)===hash(source.segments)){unchanged.push(source.url);continue;}
+      } catch { /* A stale review must not be replaced by a scan. */ }
+      blocked.push({url:source.url,reason:'Changed source has reviewed reading text. Review it separately; the scan cannot overwrite corrections.'});continue;
+    }
     const id=record?.id || 'WEB-'+hash(source.url).slice(0,24);
     if(used.has(id) || (!record && snapshot.records.some(r=>r.id===id))){blocked.push({url:source.url,reason:'Conflicting record mapping.'});continue;}
     used.add(id);

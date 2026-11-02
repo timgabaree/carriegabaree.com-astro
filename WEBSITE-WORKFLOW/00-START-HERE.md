@@ -85,6 +85,17 @@ npm run archive:import -- /ABSOLUTE/PATH/carrie-archive-approved.json --publish
 
 Then follow steps **02–07** above. All normal builds include the committed snapshot, so another computer can reproduce the release without access to the private database. Edits or withdrawn approvals reach the public site only after a fresh export, import and release.
 
+### PDF reading-text cleanup — step 12
+
+Use **12 - PDF TEXT ONLY - Clean and review (not live)** only for extracted publication text, not ordinary website edits or oral histories.
+
+1. Choose publication numbers. The tool checks the source PDF checksum and writes private before/after reports plus editable candidate JSON under `.local/pdf-text-review/`.
+2. Open those files in WebStorm while the workflow waits. Change only each segment's `content`; keep every segment number and PDF page label. Compare the complete candidate with the original PDF. Layout-based reflow preserves uncertain boundaries; ambiguous hyphenation, headings and reading order still need review. The verified small-cap author-name repair preserves the accent in the printed source.
+3. Enter your configured editor email, then type `SAVE REVIEWED PDF TEXT` only when satisfied. A restored-and-verified private backup is made first. Concurrent metadata/source/review changes abort the save.
+4. The original extraction remains intact. A separate reading edition and its revision history are saved without changing website approval. Confirm local Search preparation when prompted, preview with step 10, then use the normal checks and steps 03–07 when ready to release. Step 12 itself never publishes or pushes Git.
+
+Setup requires the private archive editor's reviewed-text migration (`0003_reviewed_text.sql`) and matching Worker support. Install them together after a verified backup; the matching schema is included in `scripts/reviewed-text-schema.sql`. The configured Python environment needs `pdfplumber` in addition to `pypdf`. Existing reviewed text is the starting point for future edits. Step 11 leaves unchanged sources alone and blocks changed sources that have reviewed text. A changed PDF needs deliberate source reconciliation and a new review, not rerunning an initial import. The private editor can display both reading text and the preserved original extraction. Export fails closed for stale reviewed editions; it never silently falls back to old raw text.
+
 ### Deployment boundaries
 
 - Repository: `timgabaree/carriegabaree.com-astro`; release branch: `main`.

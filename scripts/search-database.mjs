@@ -5,6 +5,7 @@ import {execFileSync} from 'node:child_process';
 import {DatabaseSync} from 'node:sqlite';
 import {hash} from './search-scan.mjs';
 import {validateArchive} from './archive-data.mjs';
+import {effectiveSegments} from './reviewed-text.mjs';
 
 const identifier = name => {
   if(!/^[a-z][a-z0-9_]*$/i.test(name)) throw Error('Unexpected database identifier.');
@@ -66,7 +67,7 @@ export function saveBackup(snapshot,dir) {
   fs.writeFileSync(path.join(dir,'backup-verification.json'),JSON.stringify({restored:true,sha256:hash(json)},null,2)+'\n',{mode:0o600,flag:'wx'});
   return destination;
 }
-function guard(table,rows,where,params=[]) {
+export function guard(table,rows,where,params=[]) {
   // A failed guard aborts the complete D1 batch. Zero-row UPDATE alone is not enough.
   const columns=rows.length?Object.keys(rows[0]):[];
   if(!rows.length)return {sql:`SELECT CASE WHEN NOT EXISTS(SELECT 1 FROM ${identifier(table)} WHERE ${where}) THEN 1 ELSE abs(-9223372036854775808) END`,params};
@@ -88,6 +89,7 @@ export function buildChangeBatch(snapshot,change,actor,now=new Date().toISOStrin
     return batch;
   }
   const source=change.source;
+  if(docs.some(d=>snapshot.text_reviews?.some(e=>e.document_id===d.id)))throw Error('This source has reviewed reading text. Review its changed PDF separately; scanning cannot overwrite it.');
   if(!source?.segments?.length || Buffer.byteLength(JSON.stringify(source.segments))>1500000)throw Error('Invalid or oversized extracted text.');
   if(change.action==='add')batch.push({sql:"INSERT INTO records(id,kind,title,summary,public_url,state,rights_review,updated_at,updated_by,source_json) VALUES(?,?,?,'',?,'ready','approved',?,?,?)",params:[id,source.kind,change.title,source.url,now,actor,JSON.stringify({created_via:'reviewed-website-scan',source_url:source.url,created_at:now,created_by:actor})]});
   else batch.push({sql:"UPDATE records SET public_url=COALESCE(NULLIF(public_url,''),?),state='ready',rights_review='approved',revision=revision+1,updated_at=?,updated_by=? WHERE id=?",params:[source.url,now,actor,id]});
@@ -104,7 +106,7 @@ export function buildChangeBatch(snapshot,change,actor,now=new Date().toISOStrin
 export function approvedExport(snapshot) {
   const records=snapshot.records.filter(r=>r.state==='ready' && r.rights_review==='approved').sort((a,b)=>a.id.localeCompare(b.id)).map(({id,title,kind,summary,public_url,state,rights_review})=>({id,title,kind,summary,public_url,state,rights_review}));
   const ids=new Set(records.map(r=>r.id));const documents=snapshot.documents.filter(d=>ids.has(d.record_id)).sort((a,b)=>a.id.localeCompare(b.id));
-  const segments=documents.flatMap(d=>snapshot.text_segments.filter(t=>t.document_id===d.id).sort((a,b)=>a.ordinal-b.ordinal).map(({locator,content})=>({record_id:d.record_id,locator,content})));
+  const segments=documents.flatMap(d=>effectiveSegments(snapshot,d).map(({locator,content})=>({record_id:d.record_id,locator,content})));
   const subjects=snapshot.record_subjects.filter(r=>ids.has(r.record_id)).map(r=>({record_id:r.record_id,label:snapshot.subjects.find(s=>s.id===r.subject_id)?.label})).sort((a,b)=>a.record_id.localeCompare(b.record_id)||a.label.localeCompare(b.label));
   const data={schema_version:2,records,segments,subjects};validateArchive(data);return data;
 }
