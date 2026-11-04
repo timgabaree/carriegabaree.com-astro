@@ -7,7 +7,7 @@ export { ContactState } from './state.ts';
 const pages = 'publications|oral-histories|contact|privacy|sitemap|thank-you|search';
 const legacyPage = new RegExp(`^/(${pages})(?:/index)?\\.(?:php|html)$`, 'i');
 const trailingPage = new RegExp(`^/(${pages})/$`, 'i');
-const csp = "default-src 'self'; object-src 'none'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://customer-txz6xqq5qm2ofi03.cloudflarestream.com; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://cloudflareinsights.com; frame-src https://customer-txz6xqq5qm2ofi03.cloudflarestream.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'";
+const csp = "default-src 'self'; object-src 'none'; script-src 'self' https://www.googletagmanager.com https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data: https://customer-txz6xqq5qm2ofi03.cloudflarestream.com; media-src 'self' https://media.carriegabaree.com; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://cloudflareinsights.com; frame-src https://customer-txz6xqq5qm2ofi03.cloudflarestream.com; base-uri 'self'; form-action 'self'; frame-ancestors 'self'";
 
 async function equalSecret(a: string, b: string): Promise<boolean> {
   const encode = (value: string) => crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));

@@ -869,6 +869,20 @@ body {
   text-align: center;
 }
 
+.audio-summary {
+  max-width: 760px;
+  margin: 1.25rem auto;
+}
+
+.oral-history-audio {
+  display: block;
+  width: 100%;
+}
+
+.audio-link {
+  text-align: center;
+}
+
 .oral-history-back {
   justify-content: center;
 }

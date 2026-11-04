@@ -2446,5 +2446,247 @@
       }
     ],
     "component": "portfolio__oralhistories__CORHC-0005-erica-koelder"
+  },
+  {
+    "slug": "portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation",
+    "title": "Cite Walter Mendygral Oral History - Side A | Carrie Gabaree",
+    "description": "Chicago, MLA, and APA citation formats for Walter Mendygral Oral History - Side A.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation.html",
+            "name": "Cite Walter Mendygral Oral History - Side A | Carrie Gabaree",
+            "description": "Chicago, MLA, and APA citation formats for Walter Mendygral Oral History - Side A.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Walter Mendygral Oral History - Side A",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Citation",
+                "item": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__citations__CORHC-0006-walter-mendygral-side-a-citation"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript",
+    "title": "Walter Mendygral Oral History - Side A Transcript | Carrie Gabaree",
+    "description": "Transcript of side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript.html",
+            "name": "Walter Mendygral Oral History - Side A Transcript | Carrie Gabaree",
+            "description": "Transcript of side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "CreativeWork",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript#transcript",
+            "name": "Walter Mendygral Oral History - Side A Transcript",
+            "identifier": "CORHC-0006",
+            "inLanguage": "en-US",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Walter Mendygral Oral History - Side A",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Transcript",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0006-walter-mendygral-side-a-transcript"
+  },
+  {
+    "slug": "portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a",
+    "title": "Walter Mendygral Oral History - Side A | Carrie Gabaree",
+    "description": "Side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a.html",
+            "name": "Walter Mendygral Oral History - Side A | Carrie Gabaree",
+            "description": "Side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
+            "isPartOf": {
+              "@id": "https://carriegabaree.com/#website"
+            },
+            "about": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory"
+            },
+            "breadcrumb": {
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#breadcrumb"
+            },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "AudioObject",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory",
+            "name": "Walter Mendygral Oral History - Side A",
+            "identifier": "CORHC-0006",
+            "description": "Side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
+            "inLanguage": "en-US",
+            "duration": "PT47M53S",
+            "contentUrl": "https://media.carriegabaree.com/oral-histories/CORHC-0006-walter-mendygral-side-a.mp3"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://carriegabaree.com/#person",
+            "name": "Carrie Gabaree",
+            "givenName": "Carrie",
+            "familyName": "Gabaree",
+            "alternateName": "Carrie Tarasuk",
+            "url": "https://carriegabaree.com/",
+            "jobTitle": "Museum Curator and Public Historian",
+            "sameAs": [
+              "https://www.linkedin.com/in/carriegabaree"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carriegabaree.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Oral Histories",
+                "item": "https://carriegabaree.com/oral-histories.html"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Walter Mendygral Oral History - Side A",
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a.html"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "component": "portfolio__oralhistories__CORHC-0006-walter-mendygral-side-a"
   }
 ]
