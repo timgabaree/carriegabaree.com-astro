@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import {readArchive} from '../../../scripts/archive-data.mjs';
+import {groupArchiveRecords} from '../../../scripts/archive-browse.mjs';
 import '../../styles/archive-search.css';
 import {sourceLink} from '../../../public/js/archive-matches.js';
 type ArchiveRecord={id:string;title:string;kind:string;summary:string;sourceUrl:string;subjects:string[];segments:{locator:string;content:string}[]};
@@ -12,6 +13,7 @@ export function getStaticPaths(){
 const {records,record}=Astro.props;
 const path=record?'/search/'+record.id:'/search';
 const preview=process.env.ARCHIVE_PREVIEW==='1';
+const browseGroups=record?[]:groupArchiveRecords(records);
 ---
 <BaseLayout title={(record?record.title:'Search')+' | Carrie Gabaree'} description="Explore oral histories, publications and archival materials." path={path} mainClass="site" noindex={preview}>
  <article class="page-panel archive-page">
@@ -59,7 +61,7 @@ const preview=process.env.ARCHIVE_PREVIEW==='1';
     <p id="archive-search-status" role="status" aria-live="polite">Browse all {records.length} records below, or search their full text.</p>
     <div id="archive-results" class="archive-results"></div>
     <button id="archive-more" class="button button-secondary" type="button" hidden>Show more results</button>
-    <details id="archive-browse" open><summary>Browse all records</summary><ul class="archive-record-list">{records.map((r:{id:string;title:string;kind:string;summary:string})=><li><h2><a href={'/search/'+r.id}>{r.title}</a></h2><p class="eyebrow">{r.kind}</p><p>{r.summary}</p></li>)}</ul></details>
+    <details id="archive-browse" open><summary>Browse all records</summary><div class="archive-browse-groups">{browseGroups.map(group=><section class="archive-browse-group" aria-labelledby={'archive-browse-'+group.kind.toLowerCase().replace(/[^a-z0-9]+/g,'-')}><h2 id={'archive-browse-'+group.kind.toLowerCase().replace(/[^a-z0-9]+/g,'-')}>{group.label}</h2><ul class="archive-record-list">{group.entries.map((r:{id:string;title:string;summary:string})=><li><h3><a href={'/search/'+r.id}>{r.title}</a></h3>{r.summary&&<p>{r.summary}</p>}</li>)}</ul></section>)}</div></details>
     <noscript><p>Keyword search needs JavaScript. You can still browse every record above.</p></noscript>
    </>}
   </>}

@@ -7,6 +7,7 @@ import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {gunzipSync} from 'node:zlib';
 import {searchTerms,matchRanges,excerptAround,sourceLink} from '../public/js/archive-matches.js';
+import {groupArchiveRecords} from '../scripts/archive-browse.mjs';
 const fixture=()=>({schema_version:2,records:[{id:'R1',title:'Title',kind:'publication',summary:'Summary',public_url:null,state:'ready',rights_review:'approved'}],subjects:[{record_id:'R1',label:'History'}],segments:[{record_id:'R1',locator:'Page 1',content:'A searchable telescope passage. <script>untrusted</script>'}]});
 test('passage matching finds bomb word forms and builds excerpts around actual hits',()=>{
  const text='Introduction. '.repeat(80)+'The bomb exploded. Bombs and bombing followed.';
@@ -45,6 +46,17 @@ test('normal builds use the versioned approved snapshot, never a private databas
  const snapshot=JSON.parse(await readFile(new URL('../src/data/archive-approved.json',import.meta.url),'utf8'));
  assert.deepEqual(readArchive(),validateArchive(snapshot));
  assert.ok(readArchive().length>0);
+});
+test('browse groups material types and alphabetizes visible titles',()=>{
+ const groups=groupArchiveRecords([
+  {id:'P2',kind:'Publication',title:'Zebra'},
+  {id:'O2',kind:'Oral history',title:'Walter Mendygral Oral History - Sides A and B'},
+  {id:'P1',kind:'Publication',title:'“Alpha”'},
+  {id:'O1',kind:'Oral history',title:'Erica Koelder Oral History'},
+ ]);
+ assert.deepEqual(groups.map(g=>g.label),['Oral histories','Publications']);
+ assert.deepEqual(groups[0].entries.map(r=>r.id),['O1','O2']);
+ assert.deepEqual(groups[1].entries.map(r=>r.id),['P1','P2']);
 });
 test('search index builds full text and type filters in an isolated test directory',async()=>{
  const dir=await mkdtemp(join(tmpdir(),'archive-index-test-'));
