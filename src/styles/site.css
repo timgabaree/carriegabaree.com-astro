@@ -479,6 +479,10 @@ body {
   color: inherit;
   font-size: 1rem;
 }
+.citation-note a,
+.citation-note a:visited {
+  color: var(--color-primary);
+}
 .citation-actions {
   margin-top: .25rem;
 }
