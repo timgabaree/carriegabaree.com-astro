@@ -106,6 +106,23 @@ test('new records can be approved and withdrawal keeps all private text',async t
   await f.db.batch(buildChangeBatch(after,{action:'withdraw',id:'ONE'},'editor@example.com'));
   after=await readSnapshot(f.db);assert.equal(after.records.length,2);assert.equal(after.documents.length,2);assert.equal(approvedExport(after).records.length,1);
 });
+test('one oral-history record can add a second distinct transcript document',async t=>{
+  const f=fixture(t);
+  f.raw.exec("UPDATE records SET kind='oral_history',source_identifier='CORHC-0006',revision=revision+1 WHERE id='ONE'");
+  const snapshot=await readSnapshot(f.db);
+  const second={
+    ...source(origin+'/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b-transcript','Side B text'),
+    kind:'oral_history',documentKind:'oral_history',pageCount:1,
+  };
+  const plan=planChanges(snapshot,{sources:[second],failures:[]});
+  assert.equal(plan.blocked.length,0);assert.equal(plan.changes.length,1);assert.equal(plan.changes[0].action,'update');
+  await f.db.batch(buildChangeBatch(snapshot,plan.changes[0],'editor@example.com'));
+  const after=await readSnapshot(f.db);
+  assert.equal(after.documents.filter(d=>d.record_id==='ONE').length,2);
+  assert.deepEqual(approvedExport(after).segments.filter(s=>s.record_id==='ONE').map(s=>s.content),['Original source text','Side B text']);
+  const citation={...second,url:origin+'/portfolio/citations/CORHC-0006-walter-mendygral-side-b-citation',kind:'web_page',documentKind:'web_page'};
+  assert.equal(planChanges(snapshot,{sources:[citation],failures:[]}).blocked.length,1);
+});
 test('backup restores all rows, relationships and triggers; cannot overwrite previous backup',async t=>{
   const f=fixture(t),snapshot=await readSnapshot(f.db);const backup=saveBackup(snapshot,path.join(f.root,'backup'));
   const restored=new DatabaseSync(backup);assert.equal(restored.prepare('SELECT count(*) n FROM text_segments').get().n,1);assert.throws(()=>restored.exec("UPDATE records SET title='Oops'"));restored.close();

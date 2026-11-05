@@ -136,7 +136,11 @@ export function planChanges(snapshot,scan) {
     if(records.length>1 || documents.length>1){blocked.push({url:source.url,reason:'Ambiguous existing source mapping; resolve duplicates in the catalog first.'});continue;}
     const record=records[0],doc=documents[0];
     if(record?.rights_review==='restricted'){blocked.push({url:source.url,reason:'Record is restricted. Review permissions in the private editor.'});continue;}
-    if(record && !doc && snapshot.documents.some(d=>d.record_id===record.id)){blocked.push({url:source.url,reason:'Record already has a different text source. Manual reconciliation required.'});continue;}
+    if(record && !doc && snapshot.documents.some(d=>d.record_id===record.id)){
+      const path=new URL(source.url).pathname;
+      const additionalOralHistoryTranscript=record.kind==='oral_history' && source.kind==='oral_history' && /-transcript$/.test(path);
+      if(!additionalOralHistoryTranscript){blocked.push({url:source.url,reason:'Record already has a different text source. Manual reconciliation required.'});continue;}
+    }
     const old=doc?snapshot.text_segments.filter(s=>s.document_id===doc.id).sort((a,b)=>a.ordinal-b.ordinal).map(({locator,content})=>({locator,content})):[];
     // Formatting-only source changes do not overwrite text or renew approvals.
     if(doc && hash(old)===hash(source.segments)){unchanged.push(source.url);continue;}

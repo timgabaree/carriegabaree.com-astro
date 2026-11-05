@@ -95,7 +95,7 @@ export function buildChangeBatch(snapshot,change,actor,now=new Date().toISOStrin
   else batch.push({sql:"UPDATE records SET public_url=COALESCE(NULLIF(public_url,''),?),state='ready',rights_review='approved',revision=revision+1,updated_at=?,updated_by=? WHERE id=?",params:[source.url,now,actor,id]});
   const document=change.document;
   if(document && (document.record_id!==id || !docs.some(d=>d.id===document.id)))throw Error('Document does not belong to the reviewed record.');
-  const docId=document?.id || id+'-website-text';
+  const docId=document?.id || (docs.length ? id+'-website-text-'+hash(source.url).slice(0,12) : id+'-website-text');
   if(document) {
     batch.push({sql:'DELETE FROM text_segments WHERE document_id=?',params:[docId]});
     batch.push({sql:'UPDATE documents SET sha256=?,review_note=?,source_page_count=? WHERE id=?',params:[source.sha256,'Website scan reviewed by '+actor+' at '+now,String(source.pageCount),docId]});
