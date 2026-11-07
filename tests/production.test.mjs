@@ -14,6 +14,24 @@ function environment(overrides = {}) {
   };
 }
 
+test('Walter legacy identifiers redirect to CGDA pages and PDFs without losing queries', async () => {
+  for (const side of ['a', 'b']) {
+    const old = `CORHC-0006-walter-mendygral-side-${side}`;
+    const current = `CGDA-0001-walter-mendygral-side-${side}`;
+    for (const [section, suffix] of [['oralhistories',''],['oralhistories','-transcript'],['citations','-citation']]) {
+      for (const ending of ['', '/', '.html']) {
+        const response = await worker.fetch(new Request(`https://carriegabaree.com/portfolio/${section}/${old}${suffix}${ending}?q=Walter`), environment());
+        assert.equal(response.status, 301);
+        assert.equal(response.headers.get('location'), `/portfolio/${section}/${current}${suffix}?q=Walter`);
+      }
+    }
+    const pdf = await worker.fetch(new Request(`https://carriegabaree.com/portfolio/oralhistories/${old}-transcript.pdf`), environment());
+    assert.equal(pdf.headers.get('location'), `/portfolio/oralhistories/${current}-transcript.pdf`);
+  }
+  const cantigny = await worker.fetch(new Request('https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith'), environment());
+  assert.equal(cantigny.status, 200);
+});
+
 test('CSP permits both analytics providers without allowing arbitrary scripts', async () => {
   const response = await worker.fetch(new Request('https://carriegabaree.com/'), environment());
   const csp = response.headers.get('Content-Security-Policy');

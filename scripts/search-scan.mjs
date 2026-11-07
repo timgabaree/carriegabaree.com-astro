@@ -131,7 +131,7 @@ export function planChanges(snapshot,scan) {
       blocked.push({url:source.url,reason:'Identical source bytes already belong to a catalog record. Alternate link not imported as a duplicate.'});continue;
     }
     // Match newly linked transcripts to original workbook identities, not a second catalog row.
-    const identifier=new URL(source.url).pathname.match(/CORHC-\d+/)?.[0];
+    const identifier=new URL(source.url).pathname.match(/(?:CORHC|CGDA)-\d+/)?.[0];
     if(!records.length && identifier) records=snapshot.records.filter(r=>r.source_identifier===identifier);
     if(records.length>1 || documents.length>1){blocked.push({url:source.url,reason:'Ambiguous existing source mapping; resolve duplicates in the catalog first.'});continue;}
     const record=records[0],doc=documents[0];

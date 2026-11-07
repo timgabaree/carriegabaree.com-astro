@@ -108,10 +108,10 @@ test('new records can be approved and withdrawal keeps all private text',async t
 });
 test('one oral-history record can add a second distinct transcript document',async t=>{
   const f=fixture(t);
-  f.raw.exec("UPDATE records SET kind='oral_history',source_identifier='CORHC-0006',revision=revision+1 WHERE id='ONE'");
+  f.raw.exec("UPDATE records SET kind='oral_history',source_identifier='CGDA-0001',revision=revision+1 WHERE id='ONE'");
   const snapshot=await readSnapshot(f.db);
   const second={
-    ...source(origin+'/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b-transcript','Side B text'),
+    ...source(origin+'/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-transcript','Side B text'),
     kind:'oral_history',documentKind:'oral_history',pageCount:1,
   };
   const plan=planChanges(snapshot,{sources:[second],failures:[]});
@@ -120,7 +120,7 @@ test('one oral-history record can add a second distinct transcript document',asy
   const after=await readSnapshot(f.db);
   assert.equal(after.documents.filter(d=>d.record_id==='ONE').length,2);
   assert.deepEqual(approvedExport(after).segments.filter(s=>s.record_id==='ONE').map(s=>s.content),['Original source text','Side B text']);
-  const citation={...second,url:origin+'/portfolio/citations/CORHC-0006-walter-mendygral-side-b-citation',kind:'web_page',documentKind:'web_page'};
+  const citation={...second,url:origin+'/portfolio/citations/CGDA-0001-walter-mendygral-side-b-citation',kind:'web_page',documentKind:'web_page'};
   assert.equal(planChanges(snapshot,{sources:[citation],failures:[]}).blocked.length,1);
 });
 test('backup restores all rows, relationships and triggers; cannot overwrite previous backup',async t=>{

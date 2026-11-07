@@ -2448,7 +2448,7 @@
     "component": "portfolio__oralhistories__CORHC-0005-erica-koelder"
   },
   {
-    "slug": "portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation",
+    "slug": "portfolio/citations/CGDA-0001-walter-mendygral-side-a-citation",
     "title": "Cite Walter Mendygral Oral History - Side A | Carrie Gabaree",
     "description": "Chicago, MLA, and APA citation formats for Walter Mendygral Oral History - Side A.",
     "mainClass": "site",
@@ -2460,18 +2460,18 @@
         "@graph": [
           {
             "@type": "WebPage",
-            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation#webpage",
-            "url": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation.html",
+            "@id": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-a-citation#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-a-citation.html",
             "name": "Cite Walter Mendygral Oral History - Side A | Carrie Gabaree",
             "description": "Chicago, MLA, and APA citation formats for Walter Mendygral Oral History - Side A.",
             "isPartOf": {
               "@id": "https://carriegabaree.com/#website"
             },
             "about": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a#oralhistory"
             },
             "breadcrumb": {
-              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation#breadcrumb"
+              "@id": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-a-citation#breadcrumb"
             },
             "inLanguage": "en-US"
           },
@@ -2490,7 +2490,7 @@
           },
           {
             "@type": "BreadcrumbList",
-            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation#breadcrumb",
+            "@id": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-a-citation#breadcrumb",
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -2508,23 +2508,23 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Walter Mendygral Oral History - Side A",
-                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a.html"
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a.html"
               },
               {
                 "@type": "ListItem",
                 "position": 4,
                 "name": "Citation",
-                "item": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-a-citation.html"
+                "item": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-a-citation.html"
               }
             ]
           }
         ]
       }
     ],
-    "component": "portfolio__citations__CORHC-0006-walter-mendygral-side-a-citation"
+    "component": "portfolio__citations__CGDA-0001-walter-mendygral-side-a-citation"
   },
   {
-    "slug": "portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript",
+    "slug": "portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-transcript",
     "title": "Walter Mendygral Oral History - Side A Transcript | Carrie Gabaree",
     "description": "Transcript of side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
     "mainClass": "site",
@@ -2536,29 +2536,29 @@
         "@graph": [
           {
             "@type": "WebPage",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript#webpage",
-            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript.html",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-transcript#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-transcript.html",
             "name": "Walter Mendygral Oral History - Side A Transcript | Carrie Gabaree",
             "description": "Transcript of side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
             "isPartOf": {
               "@id": "https://carriegabaree.com/#website"
             },
             "about": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a#oralhistory"
             },
             "breadcrumb": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript#breadcrumb"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-transcript#breadcrumb"
             },
             "inLanguage": "en-US"
           },
           {
             "@type": "CreativeWork",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript#transcript",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-transcript#transcript",
             "name": "Walter Mendygral Oral History - Side A Transcript",
-            "identifier": "CORHC-0006",
+            "identifier": "CGDA-0001",
             "inLanguage": "en-US",
             "isPartOf": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a#oralhistory"
             }
           },
           {
@@ -2576,7 +2576,7 @@
           },
           {
             "@type": "BreadcrumbList",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript#breadcrumb",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-transcript#breadcrumb",
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -2594,23 +2594,23 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Walter Mendygral Oral History - Side A",
-                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a.html"
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a.html"
               },
               {
                 "@type": "ListItem",
                 "position": 4,
                 "name": "Transcript",
-                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a-transcript.html"
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-transcript.html"
               }
             ]
           }
         ]
       }
     ],
-    "component": "portfolio__oralhistories__CORHC-0006-walter-mendygral-side-a-transcript"
+    "component": "portfolio__oralhistories__CGDA-0001-walter-mendygral-side-a-transcript"
   },
   {
-    "slug": "portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a",
+    "slug": "portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a",
     "title": "Walter Mendygral Oral History - Side A | Carrie Gabaree",
     "description": "Side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
     "mainClass": "site",
@@ -2622,30 +2622,30 @@
         "@graph": [
           {
             "@type": "WebPage",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#webpage",
-            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a.html",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a.html",
             "name": "Walter Mendygral Oral History - Side A | Carrie Gabaree",
             "description": "Side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
             "isPartOf": {
               "@id": "https://carriegabaree.com/#website"
             },
             "about": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a#oralhistory"
             },
             "breadcrumb": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#breadcrumb"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a#breadcrumb"
             },
             "inLanguage": "en-US"
           },
           {
             "@type": "AudioObject",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#oralhistory",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a#oralhistory",
             "name": "Walter Mendygral Oral History - Side A",
-            "identifier": "CORHC-0006",
+            "identifier": "CGDA-0001",
             "description": "Side A of an oral-history interview with Walter Mendygral about joining the Army Air Corps, military training, and his World War II service.",
             "inLanguage": "en-US",
             "duration": "PT47M53S",
-            "contentUrl": "https://media.carriegabaree.com/oral-histories/CORHC-0006-walter-mendygral-side-a.mp3"
+            "contentUrl": "https://media.carriegabaree.com/oral-histories/CGDA-0001-walter-mendygral-side-a.mp3"
           },
           {
             "@type": "Person",
@@ -2662,7 +2662,7 @@
           },
           {
             "@type": "BreadcrumbList",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a#breadcrumb",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a#breadcrumb",
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -2680,17 +2680,17 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Walter Mendygral Oral History - Side A",
-                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-a.html"
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a.html"
               }
             ]
           }
         ]
       }
     ],
-    "component": "portfolio__oralhistories__CORHC-0006-walter-mendygral-side-a"
+    "component": "portfolio__oralhistories__CGDA-0001-walter-mendygral-side-a"
   },
   {
-    "slug": "portfolio/citations/CORHC-0006-walter-mendygral-side-b-citation",
+    "slug": "portfolio/citations/CGDA-0001-walter-mendygral-side-b-citation",
     "title": "Cite Walter Mendygral Oral History - Side B | Carrie Gabaree",
     "description": "Chicago, MLA, and APA citation formats for Walter Mendygral Oral History - Side B.",
     "mainClass": "site",
@@ -2702,18 +2702,18 @@
         "@graph": [
           {
             "@type": "WebPage",
-            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-b-citation#webpage",
-            "url": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-b-citation.html",
+            "@id": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-b-citation#webpage",
+            "url": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-b-citation.html",
             "name": "Cite Walter Mendygral Oral History - Side B | Carrie Gabaree",
             "description": "Chicago, MLA, and APA citation formats for Walter Mendygral Oral History - Side B.",
             "isPartOf": {
               "@id": "https://carriegabaree.com/#website"
             },
             "about": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b#oralhistory"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b#oralhistory"
             },
             "breadcrumb": {
-              "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-b-citation#breadcrumb"
+              "@id": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-b-citation#breadcrumb"
             },
             "inLanguage": "en-US"
           },
@@ -2732,7 +2732,7 @@
           },
           {
             "@type": "BreadcrumbList",
-            "@id": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-b-citation#breadcrumb",
+            "@id": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-b-citation#breadcrumb",
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -2750,23 +2750,23 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Walter Mendygral Oral History - Side B",
-                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b.html"
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b.html"
               },
               {
                 "@type": "ListItem",
                 "position": 4,
                 "name": "Citation",
-                "item": "https://carriegabaree.com/portfolio/citations/CORHC-0006-walter-mendygral-side-b-citation.html"
+                "item": "https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-b-citation.html"
               }
             ]
           }
         ]
       }
     ],
-    "component": "portfolio__citations__CORHC-0006-walter-mendygral-side-b-citation"
+    "component": "portfolio__citations__CGDA-0001-walter-mendygral-side-b-citation"
   },
   {
-    "slug": "portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b-transcript",
+    "slug": "portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-transcript",
     "title": "Walter Mendygral Oral History - Side B Transcript | Carrie Gabaree",
     "description": "Transcript of side B of an oral-history interview with Walter Mendygral about his World War II service and Mendygral family history.",
     "mainClass": "site",
@@ -2778,29 +2778,29 @@
         "@graph": [
           {
             "@type": "WebPage",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b-transcript#webpage",
-            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b-transcript.html",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-transcript#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-transcript.html",
             "name": "Walter Mendygral Oral History - Side B Transcript | Carrie Gabaree",
             "description": "Transcript of side B of an oral-history interview with Walter Mendygral about his World War II service and Mendygral family history.",
             "isPartOf": {
               "@id": "https://carriegabaree.com/#website"
             },
             "about": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b#oralhistory"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b#oralhistory"
             },
             "breadcrumb": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b-transcript#breadcrumb"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-transcript#breadcrumb"
             },
             "inLanguage": "en-US"
           },
           {
             "@type": "CreativeWork",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b-transcript#transcript",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-transcript#transcript",
             "name": "Walter Mendygral Oral History - Side B Transcript",
-            "identifier": "CORHC-0006",
+            "identifier": "CGDA-0001",
             "inLanguage": "en-US",
             "isPartOf": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b#oralhistory"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b#oralhistory"
             }
           },
           {
@@ -2818,7 +2818,7 @@
           },
           {
             "@type": "BreadcrumbList",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b-transcript#breadcrumb",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-transcript#breadcrumb",
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -2836,23 +2836,23 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Walter Mendygral Oral History - Side B",
-                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b.html"
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b.html"
               },
               {
                 "@type": "ListItem",
                 "position": 4,
                 "name": "Transcript",
-                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b-transcript.html"
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-transcript.html"
               }
             ]
           }
         ]
       }
     ],
-    "component": "portfolio__oralhistories__CORHC-0006-walter-mendygral-side-b-transcript"
+    "component": "portfolio__oralhistories__CGDA-0001-walter-mendygral-side-b-transcript"
   },
   {
-    "slug": "portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b",
+    "slug": "portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b",
     "title": "Walter Mendygral Oral History - Side B | Carrie Gabaree",
     "description": "Side B of an oral-history interview with Walter Mendygral about his World War II service and Mendygral family history.",
     "mainClass": "site",
@@ -2864,30 +2864,30 @@
         "@graph": [
           {
             "@type": "WebPage",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b#webpage",
-            "url": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b.html",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b#webpage",
+            "url": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b.html",
             "name": "Walter Mendygral Oral History - Side B | Carrie Gabaree",
             "description": "Side B of an oral-history interview with Walter Mendygral about his World War II service and Mendygral family history.",
             "isPartOf": {
               "@id": "https://carriegabaree.com/#website"
             },
             "about": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b#oralhistory"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b#oralhistory"
             },
             "breadcrumb": {
-              "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b#breadcrumb"
+              "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b#breadcrumb"
             },
             "inLanguage": "en-US"
           },
           {
             "@type": "AudioObject",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b#oralhistory",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b#oralhistory",
             "name": "Walter Mendygral Oral History - Side B",
-            "identifier": "CORHC-0006",
+            "identifier": "CGDA-0001",
             "description": "Side B of an oral-history interview with Walter Mendygral about his World War II service and Mendygral family history.",
             "inLanguage": "en-US",
             "duration": "PT41M31S",
-            "contentUrl": "https://media.carriegabaree.com/oral-histories/CORHC-0006-walter-mendygral-side-b.mp3?v=20261106-loudness"
+            "contentUrl": "https://media.carriegabaree.com/oral-histories/CGDA-0001-walter-mendygral-side-b.mp3?v=20261106-loudness"
           },
           {
             "@type": "Person",
@@ -2904,7 +2904,7 @@
           },
           {
             "@type": "BreadcrumbList",
-            "@id": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b#breadcrumb",
+            "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b#breadcrumb",
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -2922,13 +2922,13 @@
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Walter Mendygral Oral History - Side B",
-                "item": "https://carriegabaree.com/portfolio/oralhistories/CORHC-0006-walter-mendygral-side-b.html"
+                "item": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b.html"
               }
             ]
           }
         ]
       }
     ],
-    "component": "portfolio__oralhistories__CORHC-0006-walter-mendygral-side-b"
+    "component": "portfolio__oralhistories__CGDA-0001-walter-mendygral-side-b"
   }
 ]
