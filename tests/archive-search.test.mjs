@@ -1,3 +1,4 @@
+import {archiveDisplay} from '../scripts/archive-display.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {validateArchive,emptyArchive,readPreviewArchive,readArchive} from '../scripts/archive-data.mjs';
@@ -44,7 +45,8 @@ test('archive preview is off by default and forbidden in production',()=>{
 });
 test('normal builds use the versioned approved snapshot, never a private database',async()=>{
  const snapshot=JSON.parse(await readFile(new URL('../src/data/archive-approved.json',import.meta.url),'utf8'));
- assert.deepEqual(readArchive(),validateArchive(snapshot));
+ const pages=JSON.parse(await readFile(new URL('../src/data/pages.json',import.meta.url),'utf8'));
+ assert.deepEqual(readArchive(),archiveDisplay(validateArchive(snapshot),pages));
  assert.ok(readArchive().length>0);
 });
 test('browse groups material types and alphabetizes visible titles',()=>{

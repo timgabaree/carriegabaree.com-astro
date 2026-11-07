@@ -36,7 +36,7 @@ export function searchAdvanced(records,query){
   if(record.kind==='Website page'&&query.scope!=='site')continue;
   if(query.type&&record.kind!==query.type)continue;
   const passages=record.segments.map(s=>s.content);
-  const metadata=[record.title,record.summary,...(record.subjects||[])];
+  const metadata=[record.title,record.identifier||'',record.summary,...(record.subjects||[])];
   const matched=query.scope==='passage'?passages.some(matcher.passage):matcher.accepts([...metadata,...passages]);
   if(!matched)continue;
   const indices=passages.flatMap((text,i)=>(query.scope==='passage'?matcher.passage(text):matcher.relevant(text))?[i]:[]);

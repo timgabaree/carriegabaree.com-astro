@@ -4,7 +4,7 @@ import {readArchive} from '../../../scripts/archive-data.mjs';
 import {groupArchiveRecords} from '../../../scripts/archive-browse.mjs';
 import '../../styles/archive-search.css';
 import {sourceLink} from '../../../public/js/archive-matches.js';
-type ArchiveRecord={id:string;title:string;kind:string;summary:string;sourceUrl:string;subjects:string[];segments:{locator:string;content:string}[]};
+type ArchiveRecord={id:string;identifier:string;title:string;kind:string;summary:string;sourceUrl:string;subjects:string[];segments:{locator:string;content:string}[]};
 interface Props {records:ArchiveRecord[];record:ArchiveRecord|null;}
 export function getStaticPaths(){
  const records=readArchive();
@@ -23,7 +23,7 @@ const browseGroups=record?[]:groupArchiveRecords(records);
     <a id="archive-back" class="button button-secondary" href="/search">← Back to search results</a>
     <button id="archive-show-full" class="button button-secondary" type="button" aria-controls="archive-source-text" aria-pressed="false" hidden>Show full document</button>
    </nav>
-   <p class="eyebrow">{record.kind}</p><h1>{record.title}</h1>
+   <p class="eyebrow">{record.kind}</p><h1>{record.title}</h1><p class="archive-identifier">{record.identifier}</p>
    <p class="page-intro">{record.summary}</p>
    {record.subjects.length>0&&<p class="archive-subjects"><strong>Subjects:</strong> {record.subjects.join(' · ')}</p>}
    {record.sourceUrl&&<p><a class="button button-secondary" href={record.sourceUrl}>View original on Carrie’s website</a></p>}
@@ -61,7 +61,7 @@ const browseGroups=record?[]:groupArchiveRecords(records);
     <p id="archive-search-status" role="status" aria-live="polite">Browse all {records.length} records below, or search their full text.</p>
     <div id="archive-results" class="archive-results"></div>
     <button id="archive-more" class="button button-secondary" type="button" hidden>Show more results</button>
-    <details id="archive-browse" open><summary>Browse all records</summary><div class="archive-browse-groups">{browseGroups.map(group=><section class="archive-browse-group" aria-labelledby={'archive-browse-'+group.kind.toLowerCase().replace(/[^a-z0-9]+/g,'-')}><h2 id={'archive-browse-'+group.kind.toLowerCase().replace(/[^a-z0-9]+/g,'-')}>{group.label}</h2><ul class="archive-record-list">{group.entries.map((r:{id:string;title:string;summary:string})=><li><h3><a href={'/search/'+r.id}>{r.title}</a></h3>{r.summary&&<p>{r.summary}</p>}</li>)}</ul></section>)}</div></details>
+    <details id="archive-browse" open><summary>Browse all records</summary><div class="archive-browse-groups">{browseGroups.map(group=><section class="archive-browse-group" aria-labelledby={'archive-browse-'+group.kind.toLowerCase().replace(/[^a-z0-9]+/g,'-')}><h2 id={'archive-browse-'+group.kind.toLowerCase().replace(/[^a-z0-9]+/g,'-')}>{group.label}</h2><ul class="archive-record-list">{group.entries.map((r:{id:string;identifier:string;title:string;summary:string})=><li><h3><a href={'/search/'+r.id}>{r.title}</a></h3><p class="archive-identifier">{r.identifier}</p>{r.summary&&<p>{r.summary}</p>}</li>)}</ul></section>)}</div></details>
     <noscript><p>Keyword search needs JavaScript. You can still browse every record above.</p></noscript>
    </>}
   </>}

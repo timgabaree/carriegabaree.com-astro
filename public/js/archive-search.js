@@ -7,6 +7,7 @@ if(form){
  const status=document.getElementById('archive-search-status'),results=document.getElementById('archive-results'),more=document.getElementById('archive-more');
  const advanced=document.getElementById('archive-advanced'),any=document.getElementById('archive-any'),phrase=document.getElementById('archive-phrase'),exclude=document.getElementById('archive-exclude'),scope=document.getElementById('archive-scope');
  let engine,advancedData,request=0,matches=[],shown=0,activeQuery='',activeType='',activeAdvanced=null;
+ const identifierLine=data=>{const p=document.createElement('p');p.className='archive-identifier';p.textContent=data.meta.identifier||'';return p;};
  const el=(tag,text)=>{const node=document.createElement(tag);node.textContent=text;return node;};
  async function append(token){
   more.disabled=true;
@@ -19,7 +20,7 @@ if(form){
    if(data.advanced){
     const isPage=data.meta.kind==='Website page',params=advancedParams(activeAdvanced),terms=compileAdvanced(activeAdvanced).terms;
     link.href=url.pathname+(isPage?'':'?'+params+'#search-matches');title.append(link);
-    const kind=el('p',data.meta.kind);kind.className='eyebrow';card.append(kind,title);
+    const kind=el('p',data.meta.kind);kind.className='eyebrow';card.append(kind,title);if(data.meta.identifier)card.append(identifierLine(data));
     const preview=el('p','');highlightText(preview,excerptAround(data.preview,matchRanges(data.preview,terms)),terms);card.append(preview);
     if(!isPage&&activeAdvanced.scope!=='passage')card.append(el('p','Conditions match the whole document; highlighted words may occur in different passages.'));
     const read=el('a',isPage?'Read page →':'View matching passages →');read.href=link.href;card.append(read);results.append(card);continue;
@@ -29,7 +30,7 @@ if(form){
    const matched=[...parsed.querySelectorAll('mark')].map(mark=>mark.textContent).join(' ').slice(0,400);
    const params=new URLSearchParams({q:activeQuery});if(matched)params.set('match',matched);if(activeType)params.set('type',activeType);
    const kind=el('p',data.meta.kind);kind.className='eyebrow';
-   link.href=url.pathname+(activeQuery?'?'+params+'#search-matches':'');title.append(link);card.append(kind,title);
+   link.href=url.pathname+(activeQuery?'?'+params+'#search-matches':'');title.append(link);card.append(kind,title);if(data.meta.identifier)card.append(identifierLine(data));
    const preview=el('p','');highlightText(preview,activeQuery?excerpt:data.meta.summary,searchTerms(activeQuery,matched));card.append(preview);
    const read=el('a',activeQuery?'View matching passages →':'Read record →');read.href=link.href;card.append(read);results.append(card);
   }
@@ -47,7 +48,7 @@ if(form){
     const criteria=activeAdvanced;
     if(!advancedData){const response=await fetch('/archive-index/advanced-search.json');if(!response.ok)throw Error('Advanced search unavailable');const data=await response.json();if(data.version!==1||!Array.isArray(data.records))throw Error('Invalid search data');advancedData=data.records;}
     if(token!==request)return;
-    found={results:searchAdvanced(advancedData,criteria).map(r=>({data:async()=>({advanced:true,url:r.url,meta:{title:r.title,kind:r.kind},preview:r.preview})}))};
+    found={results:searchAdvanced(advancedData,criteria).map(r=>({data:async()=>({advanced:true,url:r.url,meta:{title:r.title,kind:r.kind,identifier:r.identifier},preview:r.preview})}))};
    }else{
     engine??=await import('/archive-index/pagefind.js');
     found=await engine.search(activeQuery||null,{filters:activeType?{type:activeType}:{}});

@@ -1,3 +1,4 @@
+import {archiveDisplay} from './archive-display.mjs';
 import {readFileSync,existsSync} from 'node:fs';
 import {resolve} from 'node:path';
 export const emptyArchive={schema_version:2,records:[],segments:[],subjects:[]};
@@ -29,10 +30,10 @@ export function readPreviewArchive(){
  // Astro bundles this module into a different directory during static rendering.
  // Both Astro and the preview command run from the project root.
  const file=resolve(process.cwd(),'.local/archive-approved.json');
- return validateArchive(existsSync(file)?JSON.parse(readFileSync(file,'utf8')):emptyArchive);
+ return archiveDisplay(validateArchive(existsSync(file)?JSON.parse(readFileSync(file,'utf8')):emptyArchive),JSON.parse(readFileSync(resolve(process.cwd(),'src/data/pages.json'),'utf8')));
 }
 export function readArchive(){
  if(process.env.ARCHIVE_PREVIEW==='1')return readPreviewArchive();
  // Published input is versioned with the site. Missing input fails the build closed.
- return validateArchive(JSON.parse(readFileSync(resolve(process.cwd(),'src/data/archive-approved.json'),'utf8')));
+ return archiveDisplay(validateArchive(JSON.parse(readFileSync(resolve(process.cwd(),'src/data/archive-approved.json'),'utf8'))),JSON.parse(readFileSync(resolve(process.cwd(),'src/data/pages.json'),'utf8')));
 }
