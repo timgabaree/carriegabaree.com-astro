@@ -50,6 +50,20 @@
     "page": "/oral-histories"
   },
   {
+    "src": "/media/walter-mendygral-army-1200x900.webp",
+    "alt": "Walter Mendygral wearing military flight gear beside an aircraft, circa December 1941",
+    "title": "Walter Mendygral — Side A (photograph circa December 1941)",
+    "page": "/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a",
+    "additionalPages": ["/oral-histories", "/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-preservation"]
+  },
+  {
+    "src": "/media/walter-mendygral-army-1200x900.webp",
+    "alt": "Walter Mendygral wearing military flight gear beside an aircraft, circa December 1941",
+    "title": "Walter Mendygral — Side B (photograph circa December 1941)",
+    "page": "/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b",
+    "additionalPages": ["/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-preservation"]
+  },
+  {
     "src": "/media/carriegabaree-header-192x192.webp",
     "alt": "Portrait of Carrie Gabaree",
     "page": "/contact"
