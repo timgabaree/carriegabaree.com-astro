@@ -1,0 +1,51 @@
+# Carrie Gabaree
+
+> Carrie Gabaree is a museum curator and public historian specializing in cultural heritage, collections, exhibitions, interpretation, education, oral history, and public engagement.
+
+This site includes Carrie's professional portfolio and a public-history archive of publications, oral-history recordings, transcripts, and citation guides. Use the linked pages as primary sources. Preserve names, titles, dates, archival identifiers, and source qualifications exactly as presented; do not infer an exact date when a source does not provide one.
+
+## Professional overview
+
+- [Home](https://carriegabaree.com/): Professional background in museum curation, public history, collections, exhibitions, interpretation, and public engagement.
+- [Publications](https://carriegabaree.com/publications): Selected work on U.S. Army artifacts, military material culture, World War I body armor, and American helmet development.
+- [Oral histories](https://carriegabaree.com/oral-histories): Interviews, recordings, transcripts, documentation, preservation, and interpretation.
+- [Archive search](https://carriegabaree.com/search): Search across approved public archive records and full-text transcripts.
+- [Contact Carrie Gabaree](https://carriegabaree.com/contact): Inquiries about museum collections, historical research, consulting, speaking, and professional collaboration.
+
+## Publications and citation guides
+
+- [The Great War: U.S. Army Artifacts](https://carriegabaree.com/portfolio/citations/cmhpub70-128): Publication details and citation guidance for the U.S. Army Center of Military History volume with contributions by Carrie M. Gabaree.
+- [Protecting the Doughboys](https://carriegabaree.com/portfolio/citations/ah106wpp30-31): Article and citation guidance on the development of American body armor during World War I.
+- [A New Helmet for a New Army](https://carriegabaree.com/portfolio/citations/ah104wpp30-31): Article and citation guidance on American protective helmet development during World War I.
+
+## Oral-history interviews and transcripts
+
+- [Nicole Smith oral history](https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith): Interview page with recording and documentation.
+- [Nicole Smith transcript](https://carriegabaree.com/portfolio/oralhistories/CORHC-0001-nicole-smith-transcript): Full transcript of the October 21, 2005 interview.
+- [Clark Welch and Ray Albin oral history, August 10, 2007](https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin): Interview concerning Vietnam War service, Operation Shenandoah II, and the Battle of Ong Thanh.
+- [Clark Welch and Ray Albin transcript, August 10, 2007](https://carriegabaree.com/portfolio/oralhistories/CORHC-0002-clark-welch-ray-albin-transcript): Full transcript of the August 10, 2007 interview.
+- [Clark Welch and Ray Albin follow-up oral history, October 1, 2008](https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin): Follow-up interview examining Operation Shenandoah II and the Battle of Ong Thanh in greater detail.
+- [Clark Welch and Ray Albin transcript, October 1, 2008](https://carriegabaree.com/portfolio/oralhistories/CORHC-0003-clark-welch-ray-albin-transcript): Full transcript of the October 1, 2008 follow-up interview.
+- [Shannon Morgan oral history](https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan): Interview about joining the U.S. Army after September 11, service with the 1st Infantry Division, and Team Lioness in Iraq.
+- [Shannon Morgan transcript](https://carriegabaree.com/portfolio/oralhistories/CORHC-0004-shannon-morgan-transcript): Full transcript of the April 1, 2009 interview.
+- [Erica Koelder oral history](https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder): Interview about Army family life and support for soldiers and families.
+- [Erica Koelder transcript](https://carriegabaree.com/portfolio/oralhistories/CORHC-0005-erica-koelder-transcript): Full transcript of the April 30, 2010 interview.
+- [Walter Mendygral oral history, Side A](https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a): Interview about joining the Army Air Corps, military training, and World War II service.
+- [Walter Mendygral Side A transcript](https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-transcript): Full transcript of Side A.
+- [Walter Mendygral oral history, Side B](https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b): Interview about World War II service and Mendygral family history.
+- [Walter Mendygral Side B transcript](https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-transcript): Full transcript of Side B.
+
+## Oral-history citation guides
+
+- [Cite Nicole Smith](https://carriegabaree.com/portfolio/citations/CORHC-0001-nicole-smith-citation): Citation information for the October 21, 2005 oral history.
+- [Cite Clark Welch and Ray Albin, August 10, 2007](https://carriegabaree.com/portfolio/citations/CORHC-0002-clark-welch-ray-albin-citation): Citation information for the first interview.
+- [Cite Clark Welch and Ray Albin, October 1, 2008](https://carriegabaree.com/portfolio/citations/CORHC-0003-clark-welch-ray-albin-citation): Citation information for the follow-up interview.
+- [Cite Shannon Morgan](https://carriegabaree.com/portfolio/citations/CORHC-0004-shannon-morgan-citation): Citation information for the April 1, 2009 oral history.
+- [Cite Erica Koelder](https://carriegabaree.com/portfolio/citations/CORHC-0005-erica-koelder-citation): Citation information for the April 30, 2010 oral history.
+- [Cite Walter Mendygral Side A](https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-a-citation): Chicago, MLA, and APA citation formats for Side A.
+- [Cite Walter Mendygral Side B](https://carriegabaree.com/portfolio/citations/CGDA-0001-walter-mendygral-side-b-citation): Chicago, MLA, and APA citation formats for Side B.
+
+## Optional
+
+- [HTML sitemap](https://carriegabaree.com/sitemap): Public pages and media.
+- [Privacy policy](https://carriegabaree.com/privacy): Data collection, use, retention, protection, and visitor choices.
