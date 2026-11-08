@@ -108,7 +108,7 @@ async function route(request: Request, env: Env): Promise<Response> {
       const value = request.headers.get(name);
       if (value) headers.set(name, value);
     }
-    const upstream = await fetch(source, { method: request.method, headers, redirect: 'error' });
+    const upstream = await fetch(source, { method: request.method, headers, redirect: 'manual' });
     if (![200, 206, 416].includes(upstream.status)) {
       await upstream.body?.cancel();
       return new Response('Download unavailable. Please try again.', { status: 502 });
