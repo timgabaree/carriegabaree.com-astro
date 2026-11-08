@@ -2930,5 +2930,51 @@
       }
     ],
     "component": "portfolio__oralhistories__CGDA-0001-walter-mendygral-side-b"
+  },
+  {
+    "slug": "portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a-preservation",
+    "title": "Walter Mendygral — Side A Preservation Master | Carrie Gabaree",
+    "description": "Listen to and download the unchanged Side A digital preservation master: 96 kHz, 32-bit floating-point stereo WAV (2.21 GB).",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "AudioObject",
+        "name": "Walter Mendygral — Side A Preservation Master",
+        "identifier": "CGDA-0001",
+        "contentUrl": "https://media.carriegabaree.com/oral-histories/preservation/CGDA-0001_MASTER_Walter_Mendygral_01.wav",
+        "encodingFormat": "audio/wav",
+        "contentSize": "2.21 GB",
+        "isPartOf": {
+          "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a#oralhistory"
+        }
+      }
+    ],
+    "component": "portfolio__oralhistories__CGDA-0001-walter-mendygral-side-a-preservation"
+  },
+  {
+    "slug": "portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b-preservation",
+    "title": "Walter Mendygral — Side B Preservation Master | Carrie Gabaree",
+    "description": "Listen to and download the unchanged Side B digital preservation master: 96 kHz, 32-bit floating-point stereo WAV (1.91 GB).",
+    "mainClass": "site",
+    "ogType": "article",
+    "noindex": false,
+    "schema": [
+      {
+        "@context": "https://schema.org",
+        "@type": "AudioObject",
+        "name": "Walter Mendygral — Side B Preservation Master",
+        "identifier": "CGDA-0001",
+        "contentUrl": "https://media.carriegabaree.com/oral-histories/preservation/CGDA-0001_MASTER_Walter_Mendygral_02.wav",
+        "encodingFormat": "audio/wav",
+        "contentSize": "1.91 GB",
+        "isPartOf": {
+          "@id": "https://carriegabaree.com/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-b#oralhistory"
+        }
+      }
+    ],
+    "component": "portfolio__oralhistories__CGDA-0001-walter-mendygral-side-b-preservation"
   }
 ]

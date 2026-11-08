@@ -1,10 +1,10 @@
 ---
-interface Props { src: string; label: string; download: string }
-const { src, label, download } = Astro.props;
+interface Props { src: string; label: string; download: string; format?: 'MP3' | 'WAV'; preservation?: string }
+const { src, label, download, format = 'MP3', preservation } = Astro.props;
 ---
 <div class="oral-history-player" data-audio-player>
   <audio class="oral-history-audio" controls preload="metadata" aria-label={label}>
-    <source src={src} type="audio/mpeg" />
+    <source src={src} type={format === 'WAV' ? 'audio/wav' : 'audio/mpeg'} />
     Your browser does not support the audio player.
   </audio>
   <div class="audio-skip-controls" role="group" aria-label="Skip through recording" hidden>
@@ -16,8 +16,9 @@ const { src, label, download } = Astro.props;
     </button>
   </div>
   <div class="audio-download-controls">
-    <a class="button button-secondary" href={download} download>Download MP3</a>
+    <a class="button button-secondary" href={download} download>Download {format}</a>
   </div>
+  {preservation && <div class="audio-download-controls"><a class="button button-secondary" href={preservation}>Preservation WAV</a></div>}
 </div>
 <script is:inline src="/js/oral-history-audio.js" defer></script>
 <style>

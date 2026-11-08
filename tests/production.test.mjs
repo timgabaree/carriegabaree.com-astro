@@ -168,3 +168,19 @@ test('Walter downloads preserve range responses and request the correct public e
   await worker.fetch(new Request('https://carriegabaree.com/downloads/CGDA-0001-walter-mendygral-side-a.mp3', { method: 'POST' }), environment());
   assert.equal(calls.length, count);
 });
+
+test('preservation downloads stream WAV masters with catalog filenames', async (t) => {
+  t.mock.method(globalThis, 'fetch', async (url, options) => {
+    assert.match(url, /^https:\/\/media\.carriegabaree\.com\/oral-histories\/preservation\/CGDA-0001_MASTER_Walter_Mendygral_0[12]\.wav$/);
+    assert.equal(options.headers.get('Range'), 'bytes=0-3');
+    return new Response('RIFF', { status: 206, headers: { 'Content-Range': 'bytes 0-3/2207166354' } });
+  });
+  for (const number of ['01', '02']) {
+    const file = `CGDA-0001_MASTER_Walter_Mendygral_${number}.wav`;
+    const r = await worker.fetch(new Request(`https://carriegabaree.com/downloads/${file}`, { headers: { Range: 'bytes=0-3' } }), environment());
+    assert.equal(r.status, 206);
+    assert.equal(r.headers.get('Content-Type'), 'audio/wav');
+    assert.equal(r.headers.get('Content-Disposition'), `attachment; filename="${file}"`);
+    assert.equal(await r.text(), 'RIFF');
+  }
+});

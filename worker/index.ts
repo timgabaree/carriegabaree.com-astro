@@ -98,10 +98,11 @@ async function route(request: Request, env: Env): Promise<Response> {
   if (!['GET', 'HEAD'].includes(request.method)) {
     return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
   }
-  // Only these two public recordings may be downloaded; never proxy a supplied URL.
-  const download = /^\/downloads\/(CGDA-0001-walter-mendygral-side-([ab])\.mp3)$/.exec(path);
+  // Only these public access and preservation recordings may be downloaded; never proxy a supplied URL.
+  const download = /^\/downloads\/(CGDA-0001-walter-mendygral-side-([ab])\.mp3|CGDA-0001_MASTER_Walter_Mendygral_0[12]\.wav)$/.exec(path);
   if (download) {
-    const source = 'https://media.carriegabaree.com/oral-histories/' + download[1] +
+    const wav = download[1].endsWith('.wav');
+    const source = 'https://media.carriegabaree.com/oral-histories/' + (wav ? 'preservation/' : '') + download[1] +
       (download[2] === 'b' ? '?v=20261106-loudness' : '');
     const headers = new Headers();
     for (const name of ['Range', 'If-Range']) {
@@ -114,7 +115,7 @@ async function route(request: Request, env: Env): Promise<Response> {
       return new Response('Download unavailable. Please try again.', { status: 502 });
     }
     const response = new Response(upstream.body, upstream);
-    response.headers.set('Content-Type', 'audio/mpeg');
+    response.headers.set('Content-Type', wav ? 'audio/wav' : 'audio/mpeg');
     response.headers.set('Content-Disposition', `attachment; filename="${download[1]}"`);
     response.headers.set('Cache-Control', 'no-cache');
     response.headers.set('X-Robots-Tag', 'noindex');

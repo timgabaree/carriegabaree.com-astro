@@ -1,0 +1,24 @@
+---
+import PageHeader from '../../components/PageHeader.astro';
+import OralHistoryAudio from '../../components/OralHistoryAudio.astro';
+---
+<article class="page-panel citation-page">
+  <PageHeader class="page-header">
+    <p class="eyebrow">Carrie Gabaree Digital Archive</p>
+    <h1>Walter Mendygral — Side A Preservation Master</h1>
+    <p class="page-intro">Listen to or download the original digital preservation master for Side A of Walter Mendygral’s oral history.</p>
+  </PageHeader>
+  <section class="citation-summary audio-summary">
+    <img class="oral-history-player-image" src="/media/walter-mendygral-army-1200x900.webp" alt="Walter Mendygral wearing military flight gear beside an aircraft" width="1200" height="900" />
+    <OralHistoryAudio src="https://media.carriegabaree.com/oral-histories/preservation/CGDA-0001_MASTER_Walter_Mendygral_01.wav" label="Walter Mendygral — Side A Preservation Master" format="WAV" download="/downloads/CGDA-0001_MASTER_Walter_Mendygral_01.wav" />
+  </section>
+  <section class="citation-summary">
+    <p class="publication-meta">CGDA-0001 · Side A · Runtime: 47:53 · 2.21 GB</p>
+    <p><strong>Format:</strong> WAV · 96 kHz · 32-bit floating point · stereo</p>
+    <p>This is an unchanged copy of the digital preservation master. It retains the original recorded sound; the edited MP3 edition is available on the main oral-history page.</p>
+    <p>This large file may take time to load or download, especially on mobile data. If your browser cannot play this WAV format, download it to a compatible audio player or use the MP3 edition.</p>
+    <details><summary>File verification</summary><p>Filename: CGDA-0001_MASTER_Walter_Mendygral_01.wav</p><p class="master-checksum">SHA-256: <code>8653459348c51db2d237b99684b59bb18fecb84ac40fa4141a49474566c8269a</code></p></details>
+  </section>
+  <div class="button-group citation-actions oral-history-back"><a class="button button-secondary" href="/portfolio/oralhistories/CGDA-0001-walter-mendygral-side-a">Back to Side A and transcript</a></div>
+</article>
+<style>.master-checksum { overflow-wrap: anywhere; }</style>
