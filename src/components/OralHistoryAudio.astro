@@ -1,0 +1,45 @@
+---
+interface Props { src: string; label: string }
+const { src, label } = Astro.props;
+---
+<div class="oral-history-player" data-audio-player>
+  <audio class="oral-history-audio" controls preload="metadata" aria-label={label}>
+    <source src={src} type="audio/mpeg" />
+    Your browser does not support the audio player.
+  </audio>
+  <div class="audio-skip-controls" role="group" aria-label="Skip through recording" hidden>
+    <button type="button" class="button button-secondary" data-skip="-10" disabled>
+      <span aria-hidden="true">↶</span> Back 10 seconds
+    </button>
+    <button type="button" class="button button-secondary" data-skip="10" disabled>
+      Forward 10 seconds <span aria-hidden="true">↷</span>
+    </button>
+  </div>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-audio-player]').forEach((player) => {
+    const audio = player.querySelector('audio')!;
+    const controls = player.querySelector<HTMLElement>('.audio-skip-controls')!;
+    const buttons = player.querySelectorAll<HTMLButtonElement>('[data-skip]');
+    const update = () => {
+      const ready = Number.isFinite(audio.duration) && audio.duration > 0 && audio.readyState >= 1;
+      buttons.forEach((button) => { button.disabled = !ready; });
+    };
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!Number.isFinite(audio.duration) || audio.readyState < 1) return;
+        audio.currentTime = Math.max(0, Math.min(audio.duration, audio.currentTime + Number(button.dataset.skip)));
+      });
+    });
+    ['loadedmetadata', 'durationchange', 'emptied', 'error'].forEach((event) => audio.addEventListener(event, update));
+    controls.hidden = false;
+    update();
+  });
+</script>
+<style>
+  .oral-history-player { width: 100%; }
+  .audio-skip-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 0.75rem; }
+  .audio-skip-controls[hidden] { display: none; }
+  .audio-skip-controls button { min-height: 44px; margin: 0; padding: 0.65rem 0.85rem; border: 1px solid transparent; gap: 0.4rem; font: inherit; cursor: pointer; }
+  .audio-skip-controls button:disabled { opacity: 0.5; cursor: default; }
+</style>

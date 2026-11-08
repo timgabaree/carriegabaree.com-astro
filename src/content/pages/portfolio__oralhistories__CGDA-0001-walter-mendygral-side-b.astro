@@ -1,5 +1,6 @@
 ---
 import PageHeader from '../../components/PageHeader.astro';
+import OralHistoryAudio from '../../components/OralHistoryAudio.astro';
 import CitationCard from '../../components/CitationCard.astro';
 ---
 <article class="page-panel citation-page">
@@ -21,10 +22,7 @@ import CitationCard from '../../components/CitationCard.astro';
       width="1200"
       height="900"
     />
-    <audio class="oral-history-audio" controls preload="metadata">
-      <source src="https://media.carriegabaree.com/oral-histories/CGDA-0001-walter-mendygral-side-b.mp3?v=20261106-loudness" type="audio/mpeg" />
-      Your browser does not support the audio player.
-    </audio>
+    <OralHistoryAudio src="https://media.carriegabaree.com/oral-histories/CGDA-0001-walter-mendygral-side-b.mp3?v=20261106-loudness" label="Walter Mendygral Oral History - Side B" />
     <p class="oral-history-links audio-link">
       <a href="https://media.carriegabaree.com/oral-histories/CGDA-0001-walter-mendygral-side-b.mp3?v=20261106-loudness">Download or open the MP3</a>
     </p>
