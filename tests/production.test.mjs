@@ -138,3 +138,33 @@ test('production email uses the fixed recipient and has no staging subject prefi
   assert.equal(await sendMail({ name: 'Test', email: 'synthetic@example.invalid', topic: 'other',
     message: 'Synthetic only', csrf_token: 'a'.repeat(64) }, environment()), true);
 });
+
+test('Walter downloads preserve range responses and request the correct public editions', async (t) => {
+  const calls = [];
+  t.mock.method(globalThis, 'fetch', async (url, options) => {
+    calls.push({ url, options });
+    return new Response(options.method === 'HEAD' ? null : 'MP3', {
+      status: 206, headers: { 'Content-Range': 'bytes 0-2/100', 'Accept-Ranges': 'bytes' },
+    });
+  });
+  for (const side of ['a', 'b']) {
+    const file = `CGDA-0001-walter-mendygral-side-${side}.mp3`;
+    const response = await worker.fetch(new Request(`https://carriegabaree.com/downloads/${file}?url=https://example.com`, {
+      headers: { Range: 'bytes=0-2', Cookie: 'private-cookie' },
+    }), environment());
+    assert.equal(response.status, 206);
+    assert.equal(response.headers.get('Content-Disposition'), `attachment; filename="${file}"`);
+    assert.equal(response.headers.get('Content-Range'), 'bytes 0-2/100');
+    assert.equal(await response.text(), 'MP3');
+    const call = calls.at(-1);
+    assert.equal(call.url, `https://media.carriegabaree.com/oral-histories/${file}${side === 'b' ? '?v=20261106-loudness' : ''}`);
+    assert.equal(call.options.headers.get('Range'), 'bytes=0-2');
+    assert.equal(call.options.headers.get('Cookie'), null);
+  }
+  const head = await worker.fetch(new Request('https://carriegabaree.com/downloads/CGDA-0001-walter-mendygral-side-a.mp3', { method: 'HEAD' }), environment());
+  assert.equal(await head.text(), '');
+  const count = calls.length;
+  await worker.fetch(new Request('https://carriegabaree.com/downloads/unknown.mp3'), environment());
+  await worker.fetch(new Request('https://carriegabaree.com/downloads/CGDA-0001-walter-mendygral-side-a.mp3', { method: 'POST' }), environment());
+  assert.equal(calls.length, count);
+});

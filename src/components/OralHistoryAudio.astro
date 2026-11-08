@@ -1,6 +1,6 @@
 ---
-interface Props { src: string; label: string }
-const { src, label } = Astro.props;
+interface Props { src: string; label: string; download: string }
+const { src, label, download } = Astro.props;
 ---
 <div class="oral-history-player" data-audio-player>
   <audio class="oral-history-audio" controls preload="metadata" aria-label={label}>
@@ -15,12 +15,16 @@ const { src, label } = Astro.props;
       Forward 10 seconds <span aria-hidden="true">↷</span>
     </button>
   </div>
+  <div class="audio-download-controls">
+    <a class="button button-secondary" href={download} download>Download MP3</a>
+  </div>
 </div>
 <script is:inline src="/js/oral-history-audio.js" defer></script>
 <style>
   .oral-history-player { width: 100%; }
   .audio-skip-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 0.75rem; }
   .audio-skip-controls[hidden] { display: none; }
-  .audio-skip-controls button { min-height: 44px; margin: 0; padding: 0.65rem 0.85rem; border: 1px solid transparent; gap: 0.4rem; font: inherit; cursor: pointer; }
+  .audio-skip-controls button, .audio-download-controls .button { box-sizing: border-box; width: 210px; max-width: 100%; text-align: center; line-height: 1.5; height: 48px; margin: 0; padding: 0.65rem 0.85rem; border: 1px solid transparent; gap: 0.4rem; font-family: inherit; font-size: 1rem; font-weight: 400; white-space: nowrap; cursor: pointer; }
+  .audio-download-controls { display: flex; justify-content: center; margin-top: 0.5rem; }
   .audio-skip-controls button:disabled { opacity: 0.5; cursor: default; }
 </style>

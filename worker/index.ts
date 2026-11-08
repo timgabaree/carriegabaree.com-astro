@@ -98,6 +98,28 @@ async function route(request: Request, env: Env): Promise<Response> {
   if (!['GET', 'HEAD'].includes(request.method)) {
     return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
   }
+  // Only these two public recordings may be downloaded; never proxy a supplied URL.
+  const download = /^\/downloads\/(CGDA-0001-walter-mendygral-side-([ab])\.mp3)$/.exec(path);
+  if (download) {
+    const source = 'https://media.carriegabaree.com/oral-histories/' + download[1] +
+      (download[2] === 'b' ? '?v=20261106-loudness' : '');
+    const headers = new Headers();
+    for (const name of ['Range', 'If-Range']) {
+      const value = request.headers.get(name);
+      if (value) headers.set(name, value);
+    }
+    const upstream = await fetch(source, { method: request.method, headers, redirect: 'error' });
+    if (![200, 206, 416].includes(upstream.status)) {
+      await upstream.body?.cancel();
+      return new Response('Download unavailable. Please try again.', { status: 502 });
+    }
+    const response = new Response(upstream.body, upstream);
+    response.headers.set('Content-Type', 'audio/mpeg');
+    response.headers.set('Content-Disposition', `attachment; filename="${download[1]}"`);
+    response.headers.set('Cache-Control', 'no-cache');
+    response.headers.set('X-Robots-Tag', 'noindex');
+    return response;
+  }
   // Preserve old bookmarks, queries and browser-inherited passage fragments.
   const archiveAlias=/^\/archive(?:\/([A-Za-z0-9_-]+))?(?:\.html|\/)?$/i.exec(path);
   if(archiveAlias)return new Response(null,{status:301,headers:{Location:'/search'+(archiveAlias[1]?'/'+archiveAlias[1]:'')+url.search}});
