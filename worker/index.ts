@@ -64,7 +64,10 @@ function secure(response: Response, request: Request, env: Env): Response {
   // Pagefind's dedicated worker has its own CSP; permit WASM there and on the search page fallback.
   // JavaScript eval stays blocked everywhere.
   const searchRuntime=['/search','/archive-index/pagefind-worker.js'].includes(new URL(request.url).pathname);
-  result.headers.set('Content-Security-Policy', searchRuntime ? csp.replace("script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'") : csp);
+  // Native browser XML viewers use inline styles to hide the raw source and format the tree.
+  const sitemapXml = new URL(request.url).pathname === '/sitemap.xml' && result.status === 200 && /^application\/xml(?:;|$)/i.test(result.headers.get('Content-Type') ?? '');
+  const policy = sitemapXml ? csp.replace("style-src 'self'", "style-src 'self' 'unsafe-inline'") : csp;
+  result.headers.set('Content-Security-Policy', searchRuntime ? policy.replace("script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'") : policy);
   if (new URL(request.url).protocol === 'https:') result.headers.set('Strict-Transport-Security', 'max-age=31536000');
   if (env.ENVIRONMENT !== 'production') {
     result.headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
