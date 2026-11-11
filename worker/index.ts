@@ -65,7 +65,7 @@ function secure(response: Response, request: Request, env: Env): Response {
   // JavaScript eval stays blocked everywhere.
   const searchRuntime=['/search','/archive-index/pagefind-worker.js'].includes(new URL(request.url).pathname);
   // Native browser XML viewers use inline styles to hide the raw source and format the tree.
-  const sitemapXml = new URL(request.url).pathname === '/sitemap.xml' && result.status === 200 && /^application\/xml(?:;|$)/i.test(result.headers.get('Content-Type') ?? '');
+  const sitemapXml = new URL(request.url).pathname === '/sitemap.xml' && [200, 304].includes(result.status) && /^application\/xml(?:;|$)/i.test(result.headers.get('Content-Type') ?? '');
   const policy = sitemapXml ? csp.replace("style-src 'self'", "style-src 'self' 'unsafe-inline'") : csp;
   result.headers.set('Content-Security-Policy', searchRuntime ? policy.replace("script-src 'self'", "script-src 'self' 'wasm-unsafe-eval'") : policy);
   if (new URL(request.url).protocol === 'https:') result.headers.set('Strict-Transport-Security', 'max-age=31536000');
