@@ -17,8 +17,7 @@ export function summarizeTraffic(request: GeoRequest, response: Response, now = 
  const automation = /bot\b|crawler|spider|headless|curl\/|wget\/|python|httpclient|go-http-client|facebookexternalhit|slackbot|preview|lighthouse|pagespeed|monitor|uptime|selenium|playwright|puppeteer/i.test(ua);
  const browser = /Edg(?:e|A|iOS)?\//.test(ua) ? 'Edge' : /OPR\/|Opera/.test(ua) ? 'Opera' : /SamsungBrowser\//.test(ua) ? 'Samsung Internet' : /Firefox\/|FxiOS\//.test(ua) ? 'Firefox' : /Chrome\/|CriOS\//.test(ua) ? 'Chrome' : /Safari\//.test(ua) && /Version\//.test(ua) ? 'Safari' : 'Other / unknown';
  const device = /iPad|Tablet|Silk\//i.test(ua) || (/Android/i.test(ua) && !/Mobile/i.test(ua)) ? 'Tablet' : /Mobile|iPhone|iPod/i.test(ua) ? 'Mobile' : browser !== 'Other / unknown' ? 'Desktop' : 'Unknown';
- const navigation = request.headers.get('sec-fetch-mode') === 'navigate' && request.headers.get('sec-fetch-dest') === 'document';
- const category = verified ? 'verified_bot' : automation || (hasScore && bot!.score! < 30) ? 'suspected_automation' : browser !== 'Other / unknown' && navigation ? 'browser_like' : 'unclassified';
+ const category = verified ? 'verified_bot' : automation || (hasScore && bot!.score! < 30) ? 'suspected_automation' : browser !== 'Other / unknown' ? 'browser_like' : 'unclassified';
  const clean = (v: unknown, size=80) => typeof v === 'string' ? v.normalize('NFC').replace(/[\u0000-\u001f\u007f]/g,'').trim().slice(0,size) || 'Unknown' : 'Unknown';
  return {day:now.toISOString().slice(0,10),site:url.hostname,country:clean(cf.country,2),region:clean(cf.region),region_code:clean(cf.regionCode,8),city:clean(cf.city),browser,device,category,signal:hasScore?'score_available':verified?'verified_only':'basic_signals'};
 }

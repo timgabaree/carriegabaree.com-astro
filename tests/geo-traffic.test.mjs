@@ -15,7 +15,9 @@ test('aggregation projects only approved dimensions and classifies combinations'
  assert.equal(summarizeTraffic(req({}, {botManagement:{verifiedBot:true,score:99}}),res()).category,'verified_bot');
  assert.equal(summarizeTraffic(req({}, {botManagement:{score:5}}),res()).category,'suspected_automation');
  assert.equal(summarizeTraffic(req({}, {botManagement:{score:0}}),res()).signal,'basic_signals');
- assert.equal(summarizeTraffic(req({'sec-fetch-mode':'','sec-fetch-dest':''}),res()).category,'unclassified');
+ assert.equal(summarizeTraffic(req({'sec-fetch-mode':'','sec-fetch-dest':''}),res()).category,'browser_like');
+ assert.equal(summarizeTraffic(req({'user-agent':'unrecognized-client'}),res()).category,'unclassified');
+ assert.equal(summarizeTraffic(req({'sec-fetch-mode':'','sec-fetch-dest':''},{botManagement:{score:5}}),res()).category,'suspected_automation');
  assert.equal(summarizeTraffic(req({'user-agent':'Mozilla/5.0 (iPad) Version/17.0 Safari/605.1.15'}),res()).device,'Tablet');
  assert.equal(summarizeTraffic(req({'user-agent':'Mozilla/5.0 (iPhone) Version/17.0 Mobile Safari/605.1.15'}),res()).browser,'Safari');
 });
