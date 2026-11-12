@@ -28,11 +28,13 @@ test('excludes private preferences, prefetches, non-pages, failures and noncanon
  assert.equal(summarizeTraffic(req({},null),res()),null);
  assert.equal(summarizeTraffic(req(),res(304)).category,'browser_like');
 });
-test('SQL aggregates without storing individual events and scheduling fails open',async()=>{
+test('SQL writes aggregate and sanitized request details; scheduling fails open',async()=>{
  const raw=new DatabaseSync(':memory:');raw.exec('CREATE TABLE traffic_daily(day TEXT,site TEXT,country TEXT,region TEXT,region_code TEXT,city TEXT,browser TEXT,device TEXT,category TEXT,signal TEXT,requests INTEGER,PRIMARY KEY(day,site,country,region,region_code,city,browser,device,category,signal))');
- const db={prepare(sql){return {bind(...p){return {async run(){return raw.prepare(sql).run(...p);}};}};}};
+ raw.exec('CREATE TABLE traffic_requests(id INTEGER PRIMARY KEY,occurred_at TEXT,day TEXT,site TEXT,path TEXT,country TEXT,region TEXT,city TEXT,browser TEXT,device TEXT,category TEXT,signal TEXT)');
+ const db={async batch(q){return Promise.all(q.map(s=>s.run()))},prepare(sql){return {bind(...p){return {async run(){return raw.prepare(sql).run(...p);}};}};}};
  await recordTraffic(req(),res(),db);await recordTraffic(req(),res(),db);
- assert.equal(raw.prepare('SELECT requests FROM traffic_daily').get().requests,2);raw.close();
+ assert.equal(raw.prepare('SELECT requests FROM traffic_daily').get().requests,2);
+ const events=raw.prepare('SELECT * FROM traffic_requests').all();assert.equal(events.length,2);assert.equal(events[0].path,'/');assert.match(events[0].occurred_at,/Z$/);assert.ok(!JSON.stringify(events).includes('secret'));raw.close();
  const pending=[];const broken={prepare(){throw Error('private diagnostic');}};
  const error=console.error;const logged=[];console.error=x=>logged.push(x);
  try {queueTraffic(req(),res(),{ENVIRONMENT:'production',GEO_DB:broken},{waitUntil:p=>pending.push(p)});await Promise.all(pending);assert.deepEqual(logged,['{"event":"geo_aggregate_write_failed"}']);}finally{console.error=error;}

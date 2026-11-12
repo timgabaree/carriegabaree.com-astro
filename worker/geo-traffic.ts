@@ -1,5 +1,5 @@
-// Aggregate successful page requests only. Never persist IPs, URLs, query strings,
-// raw user agents, cookies, fingerprints, or per-request timestamps.
+// Record successful public page requests without IPs, query strings,
+// raw user agents, cookies, fingerprints, or visitor identifiers.
 export const SITES = ['timgabaree.com','carriegabaree.com','rgesol.com','finngabaree.com','clintgabaree.com'];
 type GeoCf = {country?: string; region?: string; regionCode?: string; city?: string; botManagement?: {score?: number; verifiedBot?: boolean}; verifiedBotCategory?: string};
 type GeoRequest = Request & {cf?: GeoCf};
@@ -23,11 +23,15 @@ export function summarizeTraffic(request: GeoRequest, response: Response, now = 
  return {day:now.toISOString().slice(0,10),site:url.hostname,country:clean(cf.country,2),region:clean(cf.region),region_code:clean(cf.regionCode,8),city:clean(cf.city),browser,device,category,signal:hasScore?'score_available':verified?'verified_only':'basic_signals'};
 }
 export async function recordTraffic(request: GeoRequest, response: Response, db: D1Database) {
- const v = summarizeTraffic(request,response);
+ const now = new Date();
+ const v = summarizeTraffic(request,response,now);
  if (!v) return;
- await db.prepare(`INSERT INTO traffic_daily(day,site,country,region,region_code,city,browser,device,category,signal,requests)
+ await db.batch([db.prepare(`INSERT INTO traffic_daily(day,site,country,region,region_code,city,browser,device,category,signal,requests)
  VALUES(?,?,?,?,?,?,?,?,?,?,1) ON CONFLICT(day,site,country,region,region_code,city,browser,device,category,signal)
- DO UPDATE SET requests=traffic_daily.requests+1`).bind(v.day,v.site,v.country,v.region,v.region_code,v.city,v.browser,v.device,v.category,v.signal).run();
+ DO UPDATE SET requests=traffic_daily.requests+1`).bind(v.day,v.site,v.country,v.region,v.region_code,v.city,v.browser,v.device,v.category,v.signal),
+ db.prepare(`INSERT INTO traffic_requests(occurred_at,day,site,path,country,region,city,browser,device,category,signal)
+ VALUES(?,?,?,?,?,?,?,?,?,?,?)`).bind(now.toISOString(),v.day,v.site,new URL(request.url).pathname.slice(0,1000),v.country,v.region,v.city,v.browser,v.device,v.category,v.signal)
+ ]);
 }
 export function queueTraffic(request: GeoRequest, response: Response, env: {ENVIRONMENT?:string; GEO_DB?:D1Database}, ctx?:ExecutionContext) {
  if (env.ENVIRONMENT !== 'production' || !env.GEO_DB || !ctx) return;
