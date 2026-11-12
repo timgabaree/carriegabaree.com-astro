@@ -3,6 +3,7 @@ import { persistMailIssue } from './monitoring.ts';
 import contactTopics from '../src/data/contact-topics.json' with { type: 'json' };
 
 export interface Env {
+  GEO_DB?: GeoBindings["GEO_DB"];
   ASSETS: Fetcher;
   DELIVERY_STATUS?: DurableObjectNamespace;
   CONTACT_STATE: DurableObjectNamespace;

@@ -46,5 +46,12 @@
     "logs": {
       "invocation_logs": false
     }
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "GEO_DB",
+      "database_name": "family-site-traffic",
+      "database_id": "f68d949c-53f7-474b-b48e-2ebda8422994"
+    }
+  ]
 }

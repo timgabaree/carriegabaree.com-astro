@@ -1,3 +1,4 @@
+import {queueTraffic} from './geo-traffic.ts';
 import { handleContact } from './contact.ts';
 import type { Env } from './contact.ts';
 import { persistMailIssue } from './monitoring.ts';
@@ -144,8 +145,8 @@ async function route(request: Request, env: Env): Promise<Response> {
 }
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
-    try { return secure(await route(request, env), request, env); }
+  async fetch(request: Request, env: Env, ctx?: ExecutionContext): Promise<Response> {
+    try { const response=secure(await route(request, env), request, env); queueTraffic(request,response,env,ctx); return response; }
     catch {
       if (/^\/contact-(token|submit|conversion)(?:\.php|\/)?$/.test(new URL(request.url).pathname)) {
         try { await persistMailIssue(env, 'contact_runtime_error'); } catch { /* Return failure, never fake success. */ }
